@@ -4,6 +4,16 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var GlobalAPI = (function () {
     function GlobalAPI() {
     }
+    Object.defineProperty(GlobalAPI.prototype, "event", {
+        get: function () {
+            if (!this._event) {
+                this._event = new egret.EventDispatcher();
+            }
+            return this._event;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(GlobalAPI, "UI", {
         get: function () {
             if (!this._UI) {

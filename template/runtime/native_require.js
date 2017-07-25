@@ -20,6 +20,7 @@ var game_file_list = [
 	"bin-debug/Main.js",
 	"bin-debug/modules/common/ApplicationFacade.js",
 	"bin-debug/modules/common/CommonMutation.js",
+	"bin-debug/modules/common/MyCustomEvent.js",
 	"bin-debug/modules/common/NoticeDefine.js",
 	"bin-debug/modules/common/StartupCommand.js",
 	"bin-debug/modules/data/UserData.js",

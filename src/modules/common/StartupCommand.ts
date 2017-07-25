@@ -11,11 +11,9 @@ class StartupCommmand extends puremvc.SimpleCommand implements puremvc.ICommand{
 
 
         // 注册mediator
-        // GlobalAPI.facede.registerMediator(new CommomMutation());
         puremvc.Facade.getInstance().registerMediator(new CommomMutation());
 
 
-        // GlobalAPI.facede.sendNotification("TEST");
         puremvc.Facade.getInstance().sendNotification("TEST");
     }
 }

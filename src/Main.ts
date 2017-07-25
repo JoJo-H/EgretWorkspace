@@ -184,7 +184,8 @@ class Main extends eui.UILayer {
      */
     protected startCreateScene(): void {
         ApplicationFacade.getInstance().startup(this.stage);
-        // GlobalAPI.facede = puremvc.Facade.getInstance();
+        // facade是单例的，所以下面获取的是ApplicationFacade的实例
+        GlobalAPI.facede = puremvc.Facade.getInstance();
         GlobalAPI.setStage(this.stage);
         GlobalAPI.UI.setRoot(this.stage);
         GlobalAPI.UI.runScene(Home);
