@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MenuSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="720" height="1280">
+	<e:Group bottom="20" horizontalCenter="0">
+		<e:Button id="btn2048" label="2048" x="0" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<e:Button label="Button2" x="105" y="1" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<e:Button label="Button3" x="212" y="2" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<e:Button label="Button4" x="311" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<e:layout>
+			<e:HorizontalLayout/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

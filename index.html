@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
+	<script egret="lib" src="resourcemanager/resourcemanager.js" src-release="resourcemanager/resourcemanager.min.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
+	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
+	<script egret="lib" src="libs/modules/socket/socket.js" src-release="libs/modules/socket/socket.min.js"></script>
+	<script egret="lib" src="libs/modules/dragonBones/dragonBones.js" src-release="libs/modules/dragonBones/dragonBones.min.js"></script>
+	<script egret="lib" src="libs/modules/is/is.js" src-release="libs/modules/is/is.min.js"></script>
+	<script egret="lib" src="libs/modules/moment/moment.js" src-release="libs/modules/moment/moment.min.js"></script>
+	<script egret="lib" src="libs/modules/numeral/numeral.js" src-release="libs/modules/numeral/numeral.min.js"></script>
+	<script egret="lib" src="libs/modules/puremvc/puremvc.js" src-release="libs/modules/puremvc/puremvc.min.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <script egret="lib" src="polyfill/promise.js" src-release="polyfill/promise.min.js"></script>
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+	<script egret="game" src="bin-debug/supports/BaseComponent.js"></script>
+	<script egret="game" src="bin-debug/modules/game/2048/Game2048View.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
+	<script egret="game" src="bin-debug/modules/common/ApplicationFacade.js"></script>
+	<script egret="game" src="bin-debug/modules/common/CommonMutation.js"></script>
+	<script egret="game" src="bin-debug/modules/common/NoticeDefine.js"></script>
+	<script egret="game" src="bin-debug/modules/common/StartupCommand.js"></script>
+	<script egret="game" src="bin-debug/modules/data/UserData.js"></script>
+	<script egret="game" src="bin-debug/modules/game/2048/Game2048Data.js"></script>
+	<script egret="game" src="bin-debug/modules/game/2048/Game2048OverView.js"></script>
+	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/modules/game/2048/GridItem.js"></script>
+	<script egret="game" src="bin-debug/modules/main/Home.js"></script>
+	<script egret="game" src="bin-debug/modules/main/Menu.js"></script>
+	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/supports/DataCenter.js"></script>
+	<script egret="game" src="bin-debug/supports/Display.js"></script>
+	<script egret="game" src="bin-debug/supports/Global.js"></script>
+	<script egret="game" src="bin-debug/supports/GlobalAPI.js"></script>
+	<script egret="game" src="bin-debug/supports/UI.js"></script>
+	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
+	<!--game_files_end-->
+</head>
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="fixeWidth"
+         data-frame-rate="30"
+         data-content-width="720"
+         data-content-height="1280"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="true" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.5">
+    </div>
+    <script>
+        /**
+         * {
+         * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+         * "audioType": 0 //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+         * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+         * "retina": //是否基于devicePixelRatio缩放画布
+         * }
+         **/
+        egret.runEgret({renderMode:"canvas", audioType:0});
+    </script>
+</body>
+</html>

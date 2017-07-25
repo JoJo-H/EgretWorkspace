@@ -1,0 +1,51 @@
+{
+  "native": {
+    "path_ignore": []
+  },
+  "publish": {
+    "web": 0,
+    "native": 1,
+    "path": "bin-release"
+  },
+  "egret_version": "4.1.0",
+  "modules": [
+    {
+      "name": "egret"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "resourcemanager",
+      "path": "resourcemanager"
+    },
+    {
+      "name": "eui"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "socket"
+    },
+    {
+      "name": "dragonBones"
+    },
+    {
+      "name": "is",
+      "path": "../MyGameTools/thirds/is"
+    },
+    {
+      "name": "moment",
+      "path": "../MyGameTools/thirds/moment"
+    },
+    {
+      "name": "numeral",
+      "path": "../MyGameTools/thirds/numeral"
+    },
+    {
+      "name": "puremvc",
+      "path": "../MyGameTools/thirds/puremvc"
+    }
+  ]
+}

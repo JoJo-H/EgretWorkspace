@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonEmptySkin" xmlns:e="http://ns.egret.com/eui" states="up,down,disabled" >
+	<e:Label id="labelDisplay" text="Label" horizontalCenter="0" verticalCenter="0" textColor="0x3F0C0C" size="28"/>
+</e:Skin>

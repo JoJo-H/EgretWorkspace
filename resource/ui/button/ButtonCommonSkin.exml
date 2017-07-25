@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonCommonSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down,disabled" >
+	<e:Image source="button_caipiao_png" scale9Grid="16,17,61,56" anchorOffsetX="0" anchorOffsetY="0" top.disabled="0" left.disabled="0" bottom.disabled="0" right.disabled="0" top="0" right="0" bottom="0" left="0"/>
+	<e:Label id="labelDisplay" text="Label" horizontalCenter="0" verticalCenter="0" textColor="0x3f0c0c" size="28" size.disabled="26"/>
+</e:Skin>

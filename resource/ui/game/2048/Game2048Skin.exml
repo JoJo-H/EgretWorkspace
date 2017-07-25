@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Game2048Skin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group x="0" y="0">
+		<e:Image source="bg_zsht_png" scale9Grid="84,38,508,229" width="720" height="1280" x="0" y="0"/>
+		<e:BitmapLabel font="font_huode_fnt" text="2048" horizontalCenter="0" top="55"/>
+		<e:Button id="btnStart" label="New Game" x="477" y="114" skinName="ButtonCommonSkin" anchorOffsetX="0" width="216"/>
+		<e:Group x="37" y="168">
+			<e:Label x="0" y="0" text="{'SCORE  '+data.curScore}"/>
+			<e:Label x="0" y="47" text="{'BEST   '+data.bestScore}"/>
+		</e:Group>
+		<e:Label text="{data.desc}" x="38" y="125"/>
+		<e:Group horizontalCenter="0" y="333" width="630" height="630">
+			<e:Image source="bg_ptht_png" scale9Grid="83,52,501,319" top="0" left="0" right="0" bottom="0"/>
+			<e:Group id="gamePanel" top="15" left="15" right="15" bottom="15" width="600" height="600"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

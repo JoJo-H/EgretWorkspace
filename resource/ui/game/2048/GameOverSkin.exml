@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameOverSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="720" height="1280" x="0" y="0" fillAlpha="0.5"/>
+    <e:Group id="gameOve" width="280" height="160" horizontalCenter="0" verticalCenter="0">
+        <e:Rect fillColor="0xe0e0e0" fillAlpha="0.7" enabled="true" ellipseWidth="32" ellipseHeight="32" left="0" top="0" right="0" bottom="0"/>
+        <e:Label text="Game Over !" anchorOffsetX="0" anchorOffsetY="0" height="60" left="0" textAlign="center" verticalAlign="middle" bold="true" italic="true" size="35" textColor="0xff3600" width="100%" top="0"/>
+        <e:Label anchorOffsetX="0" anchorOffsetY="0" height="50" left="0" right="0" top="60" size="28" text="{data.curScore}" textAlign="center" bold="true" verticalAlign="middle" textColor="0x727272"/>
+        <e:Label id="btnNewGame" anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" size="28" text="New Game" textAlign="center" bold="true" verticalAlign="middle" bottom="0" textColor="0x288cff" height="50"/>
+        <e:layout>
+            <e:BasicLayout/>
+        </e:layout>
+    </e:Group>
+</e:Skin>
