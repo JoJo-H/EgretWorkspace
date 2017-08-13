@@ -33,4 +33,5 @@ class GlobalAPI {
     public static get stage(){
         return this._stage;
     }
+    
 }
