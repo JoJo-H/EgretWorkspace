@@ -23,6 +23,7 @@ class GlobalAPI {
             this._UI = new UI();
         }
         return this._UI;
+        //
     }
 
     public static setStage(s:egret.Stage):void {
