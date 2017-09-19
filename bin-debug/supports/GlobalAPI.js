@@ -20,6 +20,7 @@ var GlobalAPI = (function () {
                 this._UI = new UI();
             }
             return this._UI;
+            //
         },
         enumerable: true,
         configurable: true
