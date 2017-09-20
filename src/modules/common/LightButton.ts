@@ -17,7 +17,7 @@ class LightButton extends BaseButton {
     private playAnimation():void {
         var mcSX : number = this.width / 235;
         var mcSY : number = this.height / 108;
-        BaseFactory.fast("lightbutton2_ske.dbmv",{container:this,onComplete:()=>{
+        BaseFactory.fast("lightbutton2_ske.dbmv",{scaleX:mcSX,scaleY:mcSY,container:this,onComplete:()=>{
             console.log("添加动画成功!");
         }},MovieType.DBFAST);
     }

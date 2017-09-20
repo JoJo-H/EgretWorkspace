@@ -20,7 +20,7 @@ var LightButton = (function (_super) {
     LightButton.prototype.playAnimation = function () {
         var mcSX = this.width / 235;
         var mcSY = this.height / 108;
-        BaseFactory.fast("lightbutton2_ske.dbmv", { container: this, onComplete: function () {
+        BaseFactory.fast("lightbutton2_ske.dbmv", { scaleX: mcSX, scaleY: mcSY, container: this, onComplete: function () {
                 console.log("添加动画成功!");
             } }, MovieType.DBFAST);
     };
