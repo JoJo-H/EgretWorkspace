@@ -75,12 +75,12 @@ var BaseComponent = (function (_super) {
         configurable: true
     });
     BaseComponent.prototype.onAddToStage = function (e) {
-        this.onEnter(this.getArgs());
+        this.onEnter();
     };
     BaseComponent.prototype.onRemoveFromStage = function (e) {
         this.onExit();
     };
-    BaseComponent.prototype.onEnter = function (args) {
+    BaseComponent.prototype.onEnter = function () {
     };
     BaseComponent.prototype.onExit = function () {
     };

@@ -117,8 +117,8 @@ var Game2048View = (function (_super) {
         _this.skinName = "Game2048Skin";
         return _this;
     }
-    Game2048View.prototype.onEnter = function (args) {
-        _super.prototype.onEnter.call(this, args);
+    Game2048View.prototype.onEnter = function () {
+        _super.prototype.onEnter.call(this);
         this.setData(Game2048Data.getInstance());
         this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStart, this);
         this.gridSize = (this.gamePanel.width - this.gridSpacing * 5) / 4;

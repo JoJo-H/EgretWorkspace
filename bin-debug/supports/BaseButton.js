@@ -12,5 +12,5 @@ var BaseButton = (function (_super) {
         return _super.call(this) || this;
     }
     return BaseButton;
-}(eui.Button));
+}(Button));
 __reflect(BaseButton.prototype, "BaseButton");

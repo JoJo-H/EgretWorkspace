@@ -37,7 +37,7 @@ class BaseFactory {
         return this._egretFactory;
     }
 
-    static create(path:string,type:MovieType,armatur?:string):IMovie{
+    private static create(path:string,type:MovieType,armature?:string):IMovie{
         var arr = path.split("/");
         var fileName = arr[arr.length - 1];
         var movie : any;
@@ -56,6 +56,30 @@ class BaseFactory {
         return movie;
     }
 
+    static fast(name:string,option:IMovieOptionInfo,type:MovieType):IMovie {
+        var movie = this.create('assets/animation/fast/' + name,type);
+        var playTime = option.playTimes ? option.playTimes : 0;
+        movie.play('1',playTime);
+        movie.touchEnabled = false;
+        movie.once(MovieEvent.COMPLETE,()=>{
+            if(option.onComplete){
+                option.onComplete();
+            }
+        },this);
+        movie.scaleX = option.scaleX ? option.scaleX : 1;
+        movie.scaleY = option.scaleY ? option.scaleY : 1;
+        if(option.container) {
+            option.container.addChild(movie);
+            movie.x = option.container.width / 2 + ( option.offsetX || 0 );
+            movie.y = option.container.height / 2 + ( option.offsetY || 0 );
+        }else {
+            GlobalAPI.stage.addChild(movie);
+            movie.x = GlobalAPI.stage.width / 2 + ( option.offsetX || 0 );
+            movie.y = GlobalAPI.stage.height / 2 + ( option.offsetY || 0 );
+        }
+        return movie;
+    }
+
     static getFilenameWithoutExt(path: string): string {
         var arr = path.split('/');
         var filename = arr[arr.length - 1];
@@ -64,6 +88,16 @@ class BaseFactory {
     }
 }
 
+
+interface IMovieOptionInfo {
+    scaleX?:number;
+    scaleY?:number;
+    container?:egret.DisplayObjectContainer;
+    offsetX?:number;
+    offsetY?:number;
+    onComplete?:Function;
+    playTimes?:number;
+}
 
 class MovieEvent extends egret.Event {
     static FRAME_LABEL: string = "Frame_Label";

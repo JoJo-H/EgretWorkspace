@@ -10,18 +10,24 @@ var Button = (function (_super) {
     __extends(Button, _super);
     function Button() {
         var _this = _super.call(this) || this;
-        _this.touchChildren = false;
-        _this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onTouchBegin, _this);
-        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onEnter, _this);
-        _this.addEventListener(egret.Event.REMOVED_FROM_STAGE, _this.onExit, _this);
+        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
+        _this.addEventListener(egret.Event.REMOVED_FROM_STAGE, _this.onRemoveFromStage, _this);
         return _this;
     }
-    Button.prototype.onExit = function () {
+    Button.prototype.onAddToStage = function (e) {
+        this.onEnter();
+    };
+    Button.prototype.onRemoveFromStage = function (e) {
+        this.onExit();
     };
     Button.prototype.onEnter = function () {
     };
-    Button.prototype.onTouchBegin = function (event) {
+    Button.prototype.onExit = function () {
+    };
+    Button.prototype.dispose = function () {
+        this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onRemoveFromStage, this);
     };
     return Button;
-}(eui.Component));
+}(eui.Button));
 __reflect(Button.prototype, "Button");

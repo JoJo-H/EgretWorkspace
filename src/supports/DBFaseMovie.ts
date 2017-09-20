@@ -37,6 +37,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
         playTimes = playTimes == 0 ? -1 : playTimes;
         this.prepareResource().then(()=>{
             this._playName = name;
+            this.getMC().play(name,playTimes);
         });
     }
 
@@ -63,6 +64,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
         if(this._mc && this._frameRate!=null) {
             this._mc.clipTimeScale = this._frameRate / 24;
         }
+        return this._mc;
     }
 
     private _frameRate: number = null;

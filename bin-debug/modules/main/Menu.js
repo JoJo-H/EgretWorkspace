@@ -13,8 +13,8 @@ var Menu = (function (_super) {
         _this.skinName = "MenuSkin";
         return _this;
     }
-    Menu.prototype.onEnter = function (args) {
-        _super.prototype.onEnter.call(this, args);
+    Menu.prototype.onEnter = function () {
+        _super.prototype.onEnter.call(this);
         this.btn2048.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOpen2048, this);
     };
     Menu.prototype.onOpen2048 = function (event) {

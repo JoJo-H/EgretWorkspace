@@ -8,8 +8,8 @@ class Menu extends BaseComponent {
         this.skinName = "MenuSkin";
     }
 
-    onEnter(args):void {
-        super.onEnter(args);
+    onEnter():void {
+        super.onEnter();
 
         this.btn2048.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onOpen2048,this);
     }

@@ -31,7 +31,8 @@
 		"font_huode_png": "assets/font/font_huode.png",
 		"button_caipiao_png": "assets/Button/button_caipiao.png",
 		"bg_ptht_png": "assets/main/bg_ptht.png",
-		"bg_home_jpg": "assets/main/bg_home.jpg"
+		"bg_home_jpg": "assets/main/bg_home.jpg",
+		"lightbutton2_tex_png": "assets/animation/fast/lightbutton2_tex.png"
 	},
 	"groups": {
 		"preload": [
@@ -66,10 +67,16 @@
 			"font_huode_png",
 			"button_caipiao_png",
 			"bg_ptht_png",
-			"bg_home_jpg"
+			"bg_home_jpg",
+			"lightbutton2_tex_png"
 		]
 	},
 	"resources": {
+		"config.json": {
+			"url": "config.json",
+			"type": "json",
+			"name": "config.json"
+		},
 		"default.res.json": {
 			"url": "default.res.json",
 			"type": "json",
@@ -79,6 +86,11 @@
 			"url": "default.thm.json",
 			"type": "json",
 			"name": "default.thm.json"
+		},
+		"wing.res.json": {
+			"url": "wing.res.json",
+			"type": "json",
+			"name": "wing.res.json"
 		},
 		"config": {
 			"description.json": {
@@ -115,13 +127,6 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -142,6 +147,13 @@
 					"url": "assets/CheckBox/checkbox_unselect.png",
 					"type": "image",
 					"name": "assets/CheckBox/checkbox_unselect.png"
+				}
+			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"Panel": {
@@ -168,18 +180,6 @@
 					"name": "assets/ProgressBar/track_pb.png"
 				}
 			},
-			"ScrollBar": {
-				"roundthumb.png": {
-					"url": "assets/ScrollBar/roundthumb.png",
-					"type": "image",
-					"name": "assets/ScrollBar/roundthumb.png"
-				},
-				"track_sb.png": {
-					"url": "assets/ScrollBar/track_sb.png",
-					"type": "image",
-					"name": "assets/ScrollBar/track_sb.png"
-				}
-			},
 			"RadioButton": {
 				"radiobutton_select_disabled.png": {
 					"url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -200,6 +200,18 @@
 					"url": "assets/RadioButton/radiobutton_unselect.png",
 					"type": "image",
 					"name": "assets/RadioButton/radiobutton_unselect.png"
+				}
+			},
+			"ScrollBar": {
+				"roundthumb.png": {
+					"url": "assets/ScrollBar/roundthumb.png",
+					"type": "image",
+					"name": "assets/ScrollBar/roundthumb.png"
+				},
+				"track_sb.png": {
+					"url": "assets/ScrollBar/track_sb.png",
+					"type": "image",
+					"name": "assets/ScrollBar/track_sb.png"
 				}
 			},
 			"Slider": {
@@ -263,6 +275,20 @@
 					"url": "assets/main/bg_zsht.png",
 					"type": "image",
 					"name": "assets/main/bg_zsht.png"
+				}
+			},
+			"animation": {
+				"fast": {
+					"lightbutton2_ske.dbmv": {
+						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
+					},
+					"lightbutton2_tex.png": {
+						"url": "assets/animation/fast/lightbutton2_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/lightbutton2_tex.png"
+					}
 				}
 			}
 		}

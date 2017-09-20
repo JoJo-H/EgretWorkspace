@@ -8,8 +8,8 @@ class Game2048OverView extends BaseComponent {
         this.skinName = "GameOverSkin";
     }
 
-    onEnter(args):void {
-        super.onEnter(args);
+    onEnter():void {
+        super.onEnter();
 
         this.btnNewGame.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onONewGame,this);
     }

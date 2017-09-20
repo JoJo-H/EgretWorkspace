@@ -1,27 +1,32 @@
 
 
-class Button extends eui.Component {
+class Button extends eui.Button{
 
     constructor(){
         super();
-        this.touchChildren = false;
-        this.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchBegin,this);
-        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onEnter, this);
-        this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
+        this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
+        this.addEventListener(egret.Event.REMOVED_FROM_STAGE,this.onRemoveFromStage,this);
     }
-    
 
-    onExit():void {
+    private onAddToStage(e:egret.Event):void {
+        this.onEnter();
+    }
+
+    private onRemoveFromStage(e:egret.Event):void {
+        this.onExit();
+    }
+
+    protected onEnter():void {
         
     }
 
-    onEnter():void {
-        
-    }
-
-    protected onTouchBegin(event:egret.TouchEvent):void {
+    protected onExit():void {
 
     }
 
+    dispose():void {
+        this.removeEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
+        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE,this.onRemoveFromStage,this);
+    }
 
 }

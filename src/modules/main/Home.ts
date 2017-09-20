@@ -7,7 +7,7 @@ class Home extends BaseComponent {
         this.skinName = "HomeSkin";
     }
 
-    onEnter(args):void {
-        super.onEnter(args);
+    onEnter():void {
+        super.onEnter();
     }
 }

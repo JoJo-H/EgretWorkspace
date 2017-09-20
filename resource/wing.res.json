@@ -2,6 +2,11 @@
   "groups": [],
   "resources": [
     {
+      "url": "config.json",
+      "type": "json",
+      "name": "config.json"
+    },
+    {
       "url": "default.res.json",
       "type": "json",
       "name": "default.res.json"
@@ -10,6 +15,11 @@
       "url": "default.thm.json",
       "type": "json",
       "name": "default.thm.json"
+    },
+    {
+      "url": "wing.res.json",
+      "type": "json",
+      "name": "wing.res.json"
     },
     {
       "url": "config/description.json",
@@ -42,11 +52,6 @@
       "name": "button_up_png"
     },
     {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "selected_png"
-    },
-    {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
       "type": "image",
       "name": "checkbox_select_disabled_png"
@@ -65,6 +70,11 @@
       "url": "assets/CheckBox/checkbox_unselect.png",
       "type": "image",
       "name": "checkbox_unselect_png"
+    },
+    {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "selected_png"
     },
     {
       "url": "assets/Panel/border.png",
@@ -87,16 +97,6 @@
       "name": "track_pb_png"
     },
     {
-      "url": "assets/ScrollBar/roundthumb.png",
-      "type": "image",
-      "name": "roundthumb_png"
-    },
-    {
-      "url": "assets/ScrollBar/track_sb.png",
-      "type": "image",
-      "name": "track_sb_png"
-    },
-    {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
       "type": "image",
       "name": "radiobutton_select_disabled_png"
@@ -115,6 +115,16 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "radiobutton_unselect_png"
+    },
+    {
+      "url": "assets/ScrollBar/roundthumb.png",
+      "type": "image",
+      "name": "roundthumb_png"
+    },
+    {
+      "url": "assets/ScrollBar/track_sb.png",
+      "type": "image",
+      "name": "track_sb_png"
     },
     {
       "url": "assets/Slider/thumb.png",
@@ -170,6 +180,16 @@
       "url": "assets/main/bg_zsht.png",
       "type": "image",
       "name": "bg_zsht_png"
+    },
+    {
+      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/lightbutton2_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/lightbutton2_tex.png",
+      "type": "image",
+      "name": "lightbutton2_tex_png"
     }
   ]
 }

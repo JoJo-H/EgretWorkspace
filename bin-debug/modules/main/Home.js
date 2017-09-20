@@ -13,8 +13,8 @@ var Home = (function (_super) {
         _this.skinName = "HomeSkin";
         return _this;
     }
-    Home.prototype.onEnter = function (args) {
-        _super.prototype.onEnter.call(this, args);
+    Home.prototype.onEnter = function () {
+        _super.prototype.onEnter.call(this);
     };
     return Home;
 }(BaseComponent));

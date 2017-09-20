@@ -9,16 +9,20 @@ var __extends = (this && this.__extends) || function (d, b) {
 var LightButton = (function (_super) {
     __extends(LightButton, _super);
     function LightButton() {
-        var _this = _super.call(this) || this;
-        _this.playAnimation();
-        return _this;
+        return _super.call(this) || this;
+        //因为皮肤被实例化的时候，相关的业务逻辑依赖并没有初始化完全，容易产生报错。
+        //在这里调用playAnimation会报错，
     }
+    LightButton.prototype.onEnter = function () {
+        _super.prototype.onEnter.call(this);
+        this.playAnimation();
+    };
     LightButton.prototype.playAnimation = function () {
         var mcSX = this.width / 235;
         var mcSY = this.height / 108;
-        var movie = BaseFactory.create("assets/animation/fast/lightbutton2_ske.dbmv", MovieType.DBFAST);
-        movie.touchEnabled = false;
-        this.addChild(movie);
+        BaseFactory.fast("lightbutton2_ske.dbmv", { container: this, onComplete: function () {
+                console.log("添加动画成功!");
+            } }, MovieType.DBFAST);
     };
     return LightButton;
 }(BaseButton));

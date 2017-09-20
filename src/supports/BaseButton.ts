@@ -1,5 +1,5 @@
 
-class BaseButton extends eui.Button {
+class BaseButton extends Button {
 
 
     constructor(){

@@ -18,8 +18,8 @@ class Game2048View extends BaseComponent {
         this.skinName = "Game2048Skin";
     }
 
-    onEnter(args):void {
-        super.onEnter(args);
+    onEnter():void {
+        super.onEnter();
         this.setData(Game2048Data.getInstance());
         this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onStart,this);
 

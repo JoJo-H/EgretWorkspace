@@ -22,7 +22,7 @@ var BaseFactory = (function () {
         }
         return this._egretFactory;
     };
-    BaseFactory.create = function (path, type, armatur) {
+    BaseFactory.create = function (path, type, armature) {
         var arr = path.split("/");
         var fileName = arr[arr.length - 1];
         var movie;
@@ -33,6 +33,34 @@ var BaseFactory = (function () {
                 movie = new DBFaseMovie();
                 movie.setPath(path);
                 break;
+            case MovieType.MOVIECLIP:
+                break;
+            default:
+                break;
+        }
+        return movie;
+    };
+    BaseFactory.fast = function (name, option, type) {
+        var movie = this.create('assets/animation/fast/' + name, type);
+        var playTime = option.playTimes ? option.playTimes : 0;
+        movie.play('1', playTime);
+        movie.touchEnabled = false;
+        movie.once(MovieEvent.COMPLETE, function () {
+            if (option.onComplete) {
+                option.onComplete();
+            }
+        }, this);
+        movie.scaleX = option.scaleX ? option.scaleX : 1;
+        movie.scaleY = option.scaleY ? option.scaleY : 1;
+        if (option.container) {
+            option.container.addChild(movie);
+            movie.x = option.container.width / 2 + (option.offsetX || 0);
+            movie.y = option.container.height / 2 + (option.offsetY || 0);
+        }
+        else {
+            GlobalAPI.stage.addChild(movie);
+            movie.x = GlobalAPI.stage.width / 2 + (option.offsetX || 0);
+            movie.y = GlobalAPI.stage.height / 2 + (option.offsetY || 0);
         }
         return movie;
     };

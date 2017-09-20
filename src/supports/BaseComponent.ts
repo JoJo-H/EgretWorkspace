@@ -73,14 +73,14 @@ class BaseComponent extends eui.Component {
     }
 
     private onAddToStage(e:egret.Event):void {
-        this.onEnter(this.getArgs());
+        this.onEnter();
     }
 
     private onRemoveFromStage(e:egret.Event):void {
         this.onExit();
     }
 
-    protected onEnter(args):void {
+    protected onEnter():void {
         
     }
 

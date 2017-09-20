@@ -13,8 +13,8 @@ var Game2048OverView = (function (_super) {
         _this.skinName = "GameOverSkin";
         return _this;
     }
-    Game2048OverView.prototype.onEnter = function (args) {
-        _super.prototype.onEnter.call(this, args);
+    Game2048OverView.prototype.onEnter = function () {
+        _super.prototype.onEnter.call(this);
         this.btnNewGame.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onONewGame, this);
     };
     Game2048OverView.prototype.onONewGame = function (event) {

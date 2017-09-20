@@ -41,6 +41,7 @@ var DBFaseMovie = (function (_super) {
         playTimes = playTimes == 0 ? -1 : playTimes;
         this.prepareResource().then(function () {
             _this._playName = name;
+            _this.getMC().play(name, playTimes);
         });
     };
     DBFaseMovie.prototype.gotoAndStop = function (name, frame) {
@@ -65,6 +66,7 @@ var DBFaseMovie = (function (_super) {
         if (this._mc && this._frameRate != null) {
             this._mc.clipTimeScale = this._frameRate / 24;
         }
+        return this._mc;
     };
     Object.defineProperty(DBFaseMovie.prototype, "frameRate", {
         get: function () {

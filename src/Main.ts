@@ -38,11 +38,15 @@
         "png": "image",
         "webp": "image",
         "json": "json",
+        "dbmv": "dbmv",
         "fnt": "font",
         "pvr": "pvr",
         "mp3": "sound",
         "aa":"sound"
     }
+    // if (path == "a/custom/file/type.bin") {
+    //     return "customType";
+    // }
     var type = typeMap[ext];
     if (type == "json") {
         if (path.indexOf("sheet") >= 0) {
@@ -86,7 +90,33 @@ class Main extends eui.UILayer {
 
         //     }
         // });
-        
+        RES.processor.map("dbmv",{
+            async onLoadStart(host:RES.ProcessHost, resource:RES.ResourceInfo):Promise<any>{
+                let data = await host.load(resource,RES.processor.BinaryProcessor);
+                let imagePath : string = resource.name.replace("ske.dbmv","tex.png");
+                //todo获取资源信息ResourceInfo
+                // RES.getResourceInfo(imagePath);
+                var r :any = (<any>host.resourceConfig).getResource(imagePath);
+                //name type url {assets/animation/fast/lightbutton1_tex.pngimage,assets/animation/fast/lightbutton1_tex.png}
+                if (!r) {
+                    throw new RES.ResourceManagerError(1001, imagePath);
+                }
+                var texture : egret.Texture = await host.load(r);
+                dragonBones.addMovieGroup(data,texture);
+                return data;
+            },
+            async onRemoveStart(host,resource):Promise<any>{
+                // let data = host.get(resource);
+                // data.dispose();
+                return Promise.resolve();
+            },
+            getData(host:RES.ProcessHost,resouce:RES.ResourceInfo,key:string,subKey:string):any{
+
+            }
+        });
+        if( egret.MainContext.deviceType == egret.MainContext.DEVICE_PC || window.innerHeight / window.innerWidth < 1.6){
+            this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
+        }
 
         super.createChildren();
         //inject the custom material parser
