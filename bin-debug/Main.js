@@ -77,7 +77,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 // 资源配置，您可以访问
 // https://github.com/egret-labs/resourcemanager/tree/master/docs
-// 了解更多细节 
+// 了解更多细节
+//避免图集重复加载
+RES.FEATURE_FLAG.LOADING_STATE = 1;
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
@@ -121,7 +123,8 @@ var Main = (function (_super) {
                             case 1:
                                 data = _a.sent();
                                 imagePath = resource.name.replace("ske.dbmv", "tex.png");
-                                r = host.resourceConfig.getResource(imagePath);
+                                r = RES.getResourceInfo(imagePath);
+                                // var r :any = (<any>host.resourceConfig).getResource(imagePath);
                                 //name type url {assets/animation/fast/lightbutton1_tex.pngimage,assets/animation/fast/lightbutton1_tex.png}
                                 if (!r) {
                                     throw new RES.ResourceManagerError(1001, imagePath);

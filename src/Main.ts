@@ -30,7 +30,10 @@
 
 // 资源配置，您可以访问
 // https://github.com/egret-labs/resourcemanager/tree/master/docs
-// 了解更多细节 
+// 了解更多细节
+//避免图集重复加载
+RES.FEATURE_FLAG.LOADING_STATE = 1;
+
 @RES.mapConfig("config.json",()=>"resource",path => {
     var ext = path.substr(path.lastIndexOf(".") + 1);
     var typeMap = {
@@ -92,15 +95,18 @@ class Main extends eui.UILayer {
         // });
         RES.processor.map("dbmv",{
             async onLoadStart(host:RES.ProcessHost, resource:RES.ResourceInfo):Promise<any>{
+                //等待dbmc的文件加载解析完
                 let data = await host.load(resource,RES.processor.BinaryProcessor);
+                //assets/animation/fast/lightbutton2_tex.png
                 let imagePath : string = resource.name.replace("ske.dbmv","tex.png");
-                //todo获取资源信息ResourceInfo
-                // RES.getResourceInfo(imagePath);
-                var r :any = (<any>host.resourceConfig).getResource(imagePath);
+                //获取资源信息ResourceInfo
+                var r :any = RES.getResourceInfo(imagePath);
+                // var r :any = (<any>host.resourceConfig).getResource(imagePath);
                 //name type url {assets/animation/fast/lightbutton1_tex.pngimage,assets/animation/fast/lightbutton1_tex.png}
                 if (!r) {
                     throw new RES.ResourceManagerError(1001, imagePath);
                 }
+                //图集需要在预加载加载完成。
                 var texture : egret.Texture = await host.load(r);
                 dragonBones.addMovieGroup(data,texture);
                 return data;
