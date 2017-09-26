@@ -21,9 +21,9 @@ var DragonMovie = (function (_super) {
         this._skeletonJson = path + "_anim.json";
         this._textureImage = path + "_texture.png";
         this._textureJson = path + "_texture.json";
-        var fileName = BaseFactory.getFilenameWithoutExt(path);
-        this._fileName = fileName + "_dragonGroup";
-        this._armatureName = armature ? armature : fileName;
+        this._dragonBonesName = BaseFactory.getFilenameWithoutExt(path);
+        this._fileName = this._dragonBonesName + "_dragonGroup";
+        this._armatureName = armature ? armature : this._dragonBonesName;
         if (!this._intialized) {
             this._intialized = true;
             if (this.stage) {
@@ -60,9 +60,14 @@ var DragonMovie = (function (_super) {
             var texData = RES.getRes(this._textureJson);
             var texImg = RES.getRes(this._textureImage);
             //把动画数据添加到工厂里
-            BaseFactory.getEgretFactory().addDragonBonesData(dragonBones.DataParser.parseDragonBonesData(aniData));
+            //BaseFactory.getEgretFactory().getAllDragonBonesData();
+            if (!BaseFactory.getEgretFactory().getDragonBonesData(this._dragonBonesName)) {
+                BaseFactory.getEgretFactory().parseDragonBonesData(aniData, this._dragonBonesName);
+            }
             //把纹理集数据和图片添加到工厂里
-            BaseFactory.getEgretFactory().addTextureAtlas(new dragonBones.EgretTextureAtlas(texImg, texData));
+            if (!BaseFactory.getEgretFactory().getTextureAtlasData(this._dragonBonesName)) {
+                BaseFactory.getEgretFactory().parseTextureAtlasData(texData, texImg, this._dragonBonesName);
+            }
             //从工厂里创建出Armature
             this._armature = BaseFactory.getEgretFactory().buildArmature(this._armatureName);
             this._armature.display.x = this._armature.display.y = 0;
