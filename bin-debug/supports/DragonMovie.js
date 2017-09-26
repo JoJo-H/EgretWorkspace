@@ -13,6 +13,7 @@ var DragonMovie = (function (_super) {
         _this.isCache = false;
         _this._intialized = false;
         _this._replaceDisplayArr = [];
+        _this._initEvent = false;
         _this._frameRate = null;
         return _this;
     }
@@ -81,6 +82,7 @@ var DragonMovie = (function (_super) {
             if (this._frameRate) {
                 this.frameRate = this._frameRate;
             }
+            this.initEvent();
         }
         return this._armature;
     };
@@ -109,18 +111,33 @@ var DragonMovie = (function (_super) {
     DragonMovie.prototype.onComplete = function (e) {
         this.dispatchEvent(new MovieEvent(MovieEvent.COMPLETE));
     };
+    DragonMovie.prototype.start = function (e) {
+        console.log("开始播放动画：", this._fileName + ".", this._armatureName);
+    };
+    DragonMovie.prototype.frameEvent = function (evt) {
+        //自定义事件的值 == evt.frameLabel
+        console.log("armature 播放到了一个关键帧！ 帧标签为：", evt.frameLabel);
+    };
     DragonMovie.prototype.onAddToStage = function () {
-        if (this._armature) {
+        this.initEvent();
+    };
+    DragonMovie.prototype.initEvent = function () {
+        if (this._armature && !this._initEvent) {
+            this._initEvent = true;
             dragonBones.WorldClock.clock.add(this._armature);
+            // this._armature.addEventListener(dragonBones.EgretEvent.START,this.start,this);
             this._armature.addEventListener(dragonBones.EgretEvent.FRAME_EVENT, this.onFrame, this);
             this._armature.addEventListener(dragonBones.EgretEvent.COMPLETE, this.onComplete, this);
             this._armature.addEventListener(dragonBones.EgretEvent.LOOP_COMPLETE, this.onComplete, this);
+            this._armature.addEventListener(dragonBones.AnimationEvent.START, this.start, this);
         }
     };
     DragonMovie.prototype.onRemoveFromStage = function () {
         dragonBones.WorldClock.clock.remove(this._armature);
         if (this._armature) {
+            this._initEvent = false;
             this._armature.animation.stop();
+            this._armature.removeEventListener(dragonBones.EgretEvent.START, this.start, this);
             this._armature.removeEventListener(dragonBones.EgretEvent.FRAME_EVENT, this.onFrame, this);
             this._armature.removeEventListener(dragonBones.EgretEvent.COMPLETE, this.onComplete, this);
             this._armature.removeEventListener(dragonBones.EgretEvent.LOOP_COMPLETE, this.onComplete, this);
@@ -150,6 +167,12 @@ var DragonMovie = (function (_super) {
     };
     DragonMovie.prototype.addReplaceDisplayInfo = function (info) {
         this._replaceDisplayArr.push(info);
+    };
+    DragonMovie.prototype.replaceGlobal = function (textureName) {
+        //全局换装可实现将一个骨骼动画的骨架中全部贴图替换，如果使用全局换装功能，则新骨骼动画纹理集与源骨骼动画纹理集必须尺寸以及内部元素尺寸相同。
+        if (this._armature && RES.getRes(textureName)) {
+            this._armature.replacedTexture(RES.getRes(textureName));
+        }
     };
     return DragonMovie;
 }(egret.DisplayObjectContainer));
