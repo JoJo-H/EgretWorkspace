@@ -23,6 +23,18 @@ interface IMovie extends egret.DisplayObject {
     isCache:boolean;
 }
 
+interface IMovieOptionInfo {
+    onComplete?:Function;
+    playTimes?:number;
+    actionName?:string;
+
+    scaleX?:number;
+    scaleY?:number;
+    container?:egret.DisplayObjectContainer;
+    offsetX?:number;
+    offsetY?:number;
+}
+
 class BaseFactory {
 
     constructor(){
@@ -64,6 +76,11 @@ class BaseFactory {
                 movie.setPath(path);
                 break;
             case MovieType.MOVIECLIP :
+                movie = new MovieClip();
+                movie.isCache = false;
+                movie.setPath(path);
+                break;
+            case MovieType.SEQUNCE_MOVIE :
                 break;
             default :
                 throw new Error("创建动画错误,动画类型:"+type);
@@ -115,58 +132,3 @@ class BaseFactory {
     }
 }
 
-
-
-
-
-interface IMovieOptionInfo {
-    onComplete?:Function;
-    playTimes?:number;
-    actionName?:string;
-
-    scaleX?:number;
-    scaleY?:number;
-    container?:egret.DisplayObjectContainer;
-    offsetX?:number;
-    offsetY?:number;
-}
-
-class MovieEvent extends egret.Event {
-    static FRAME_LABEL: string = "Frame_Label";
-    static LOOP_COMPLETE: string = "Loop_Complete";
-    static COMPLETE: string = "Complete";
-
-    constructor(name: string, label: string = null) {
-        super(name);
-        this._frameLabel = label;
-    }
-
-    private _frameLabel: string;
-    get frameLabel(): string {
-        return this._frameLabel;
-    }
-}
-
-class MovieClock {
-
-    private _lastTime : number = 0;
-    constructor(){
-
-    }
-
-    start():void {
-        this._lastTime = egret.getTimer();
-        egret.startTick(this.tick,this);
-    }
-
-    private tick(time:number):boolean {
-        var gap = time - this._lastTime;
-        this._lastTime = time;
-        dragonBones.WorldClock.clock.advanceTime( gap / 1000 );
-        return false;
-    }
-
-    stop():void {
-        egret.stopTick(this.tick,this);
-    }
-}
