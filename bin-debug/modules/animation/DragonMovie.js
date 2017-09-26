@@ -125,11 +125,10 @@ var DragonMovie = (function (_super) {
         if (this._armature && !this._initEvent) {
             this._initEvent = true;
             dragonBones.WorldClock.clock.add(this._armature);
-            // this._armature.addEventListener(dragonBones.EgretEvent.START,this.start,this);
+            this._armature.addEventListener(dragonBones.EgretEvent.START, this.start, this);
             this._armature.addEventListener(dragonBones.EgretEvent.FRAME_EVENT, this.onFrame, this);
             this._armature.addEventListener(dragonBones.EgretEvent.COMPLETE, this.onComplete, this);
             this._armature.addEventListener(dragonBones.EgretEvent.LOOP_COMPLETE, this.onComplete, this);
-            this._armature.addEventListener(dragonBones.AnimationEvent.START, this.start, this);
         }
     };
     DragonMovie.prototype.onRemoveFromStage = function () {
