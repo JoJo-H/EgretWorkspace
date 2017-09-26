@@ -13,6 +13,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
     }
 
     public setPath(path:string):void {
+        //  assets/animation/fast/xxx_ske.dbmv
         this._dataPath = path;
         this._texturePath = path.replace("_ske.dbmv","_tex.png");
         this._fileName = BaseFactory.getFilenameWithoutExt(path).replace("_ske","");
@@ -59,7 +60,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
         if(this._mc == null) {
             this._mc = dragonBones.buildMovie(this._fileName);
             this.addChild(this._mc);
-            
+            this.initEvents();
         }
         if(this._mc && this._frameRate!=null) {
             this._mc.clipTimeScale = this._frameRate / 24;
