@@ -1,0 +1,5 @@
+
+2017.09.26 04：23 PM
+    龙骨构建代码
+bug：动画事件派发失败；
+警告：dragonBones.js:9230 Same name data. Robot

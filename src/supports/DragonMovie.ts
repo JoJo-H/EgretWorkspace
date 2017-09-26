@@ -6,18 +6,21 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
     constructor(){
         super();
     }
-    private _dragonBonsName : string;
+    private _skeletonJson : string;
     private _textureImage : string;
-    private _textureFile : string;
+    private _textureJson : string;
     private _armatureName : string;
     private _fileName : string;
     private _intialized:boolean = false;
-    setPath(name:string,armature:string=name):void {
-        this._fileName = name + "_dragonGroup";
-        this._dragonBonsName = name + "_anim.json";
-        this._textureImage = name + "_texture.png";
-        this._textureFile = name + "_texture.json";
-        this._armatureName = armature;
+    setPath(path:string,armature?:string):void {
+        // dir: assets/animation/dragonBones/xxx
+        this._skeletonJson = path + "_anim.json";
+        this._textureImage = path + "_texture.png";
+        this._textureJson = path + "_texture.json";
+
+        var fileName = BaseFactory.getFilenameWithoutExt(path);
+        this._fileName = fileName + "_dragonGroup";
+        this._armatureName = armature ? armature : fileName ;
         if (!this._intialized) {
             this._intialized = true;
             if (this.stage) {
@@ -41,16 +44,17 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
 
     play(name: string, playTimes?: number): void{
         this.prepareResource().then(()=>{
-
+            this.getArmture().animation.play(name,playTimes);
         });
     }
 
     private _armature : dragonBones.Armature;
+    private _replaceDisplayArr : MovieSlotDisplayInfo[] = [];
     getArmture():dragonBones.Armature {
         if(!this._armature) {
             dragonBones.WorldClock.clock.remove(this._armature);
-            var aniData = RES.getRes(this._armatureName);
-            var texData = RES.getRes(this._textureFile);
+            var aniData = RES.getRes(this._skeletonJson);
+            var texData = RES.getRes(this._textureJson);
             var texImg = RES.getRes(this._textureImage);
             //把动画数据添加到工厂里
             BaseFactory.getEgretFactory().addDragonBonesData(dragonBones.DataParser.parseDragonBonesData(aniData));
@@ -60,12 +64,15 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
             this._armature = BaseFactory.getEgretFactory().buildArmature(this._armatureName);
             this._armature.display.x = this._armature.display.y = 0;
             
-            this.initEvent();
             this.addChild(this._armature.display);
+
             //插槽替换资源
+            if(this._replaceDisplayArr.length) {
+                var info = this._replaceDisplayArr.shift();
+                this.replaceDisplay(info.name,<egret.DisplayObject>info.display);
+            }
 
             dragonBones.WorldClock.clock.add(this._armature);
-
             if(this._frameRate){
                 this.frameRate = this._frameRate;
             }
@@ -81,23 +88,18 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
 
     private prepareResource():Promise<any> {
         var aniData = RES.getRes(this._armatureName);
-        var texData = RES.getRes(this._textureFile);
+        var texData = RES.getRes(this._textureJson);
         var texImg = RES.getRes(this._textureImage);
         if( aniData && texData && texImg ) {
             return new Promise<any>((resolve,reject)=>{
                 resolve();
             });
         }else {
-            RES.createGroup(this._fileName,[this._armatureName,this._textureFile,this._textureImage]);
+            RES.createGroup(this._fileName,[this._skeletonJson,this._textureJson,this._textureImage]);
             return RES.loadGroup(this._fileName);
         }
     }
 
-    initEvent():void {
-        this._armature.addEventListener(dragonBones.EgretEvent.FRAME_EVENT,this.onFrame,this);
-        this._armature.addEventListener(dragonBones.EgretEvent.COMPLETE,this.onComplete,this);
-        this._armature.addEventListener(dragonBones.EgretEvent.LOOP_COMPLETE,this.onComplete,this);
-    }
     private onFrame(e:dragonBones.EgretEvent):void {
         var ev = new MovieEvent(MovieEvent.FRAME_LABEL, e.frameLabel);
         this.dispatchEvent(ev);
@@ -108,11 +110,22 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
     }
 
     private onAddToStage():void {
-
+        if(this._armature) {
+            dragonBones.WorldClock.clock.add(this._armature);
+            this._armature.addEventListener(dragonBones.EgretEvent.FRAME_EVENT,this.onFrame,this);
+            this._armature.addEventListener(dragonBones.EgretEvent.COMPLETE,this.onComplete,this);
+            this._armature.addEventListener(dragonBones.EgretEvent.LOOP_COMPLETE,this.onComplete,this);
+        }
     }
 
     private onRemoveFromStage():void {
-
+        dragonBones.WorldClock.clock.remove(this._armature);
+        if(this._armature) {
+            this._armature.animation.stop();
+            this._armature.removeEventListener(dragonBones.EgretEvent.FRAME_EVENT,this.onFrame,this);
+            this._armature.removeEventListener(dragonBones.EgretEvent.COMPLETE,this.onComplete,this);
+            this._armature.removeEventListener(dragonBones.EgretEvent.LOOP_COMPLETE,this.onComplete,this);
+        }
     }
 
     private _frameRate: number = null;
@@ -129,4 +142,23 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
     dispose():void{
 
     }
+
+    replaceDisplay(slotName:string,display:egret.DisplayObject):void {
+        if(this._armature) {
+            var slot = this._armature.getSlot(slotName);
+            slot.displayIndex = 0;
+            slot.display = display;
+        }
+    }
+    addReplaceDisplayInfo(info:MovieSlotDisplayInfo):void {
+        this._replaceDisplayArr.push(info);
+    }
+}
+
+
+interface MovieSlotDisplayInfo {
+    name:string;
+    display:egret.DisplayObject|string;
+    offsetX?:number;
+    offsetY?:number;
 }

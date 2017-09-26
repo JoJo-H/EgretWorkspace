@@ -22,11 +22,6 @@
       "name": "wing.res.json"
     },
     {
-      "url": "config/description.json",
-      "type": "json",
-      "name": "description_json"
-    },
-    {
       "url": "assets/bg.jpg",
       "type": "image",
       "name": "bg_jpg"
@@ -182,6 +177,36 @@
       "name": "bg_zsht_png"
     },
     {
+      "url": "assets/animation/dragonBones/duizhanshengli_anim.json",
+      "type": "json",
+      "name": "duizhanshengli_anim_json"
+    },
+    {
+      "url": "assets/animation/dragonBones/duizhanshengli_texture.json",
+      "type": "json",
+      "name": "duizhanshengli_texture_json"
+    },
+    {
+      "url": "assets/animation/dragonBones/duizhanshengli_texture.png",
+      "type": "image",
+      "name": "duizhanshengli_texture_png"
+    },
+    {
+      "url": "assets/animation/dragonBones/robot_anim.json",
+      "type": "json",
+      "name": "robot_anim_json"
+    },
+    {
+      "url": "assets/animation/dragonBones/robot_texture.json",
+      "type": "json",
+      "name": "robot_texture_json"
+    },
+    {
+      "url": "assets/animation/dragonBones/robot_texture.png",
+      "type": "image",
+      "name": "robot_texture_png"
+    },
+    {
       "url": "assets/animation/fast/lightbutton2_ske.dbmv",
       "type": "dbmv",
       "name": "assets/animation/fast/lightbutton2_ske.dbmv"
@@ -190,6 +215,21 @@
       "url": "assets/animation/fast/lightbutton2_tex.png",
       "type": "image",
       "name": "lightbutton2_tex_png"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/penjinbi_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_tex.png",
+      "type": "image",
+      "name": "penjinbi_tex_png"
+    },
+    {
+      "url": "config/description.json",
+      "type": "json",
+      "name": "description_json"
     }
   ]
 }

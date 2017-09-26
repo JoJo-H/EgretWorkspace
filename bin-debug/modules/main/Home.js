@@ -15,6 +15,18 @@ var Home = (function (_super) {
     }
     Home.prototype.onEnter = function () {
         _super.prototype.onEnter.call(this);
+        BaseFactory.playAnim({ container: this, actionName: "Walk", scaleX: 0.5, scaleY: 0.5, offsetX: 100, onComplete: function () {
+                console.log("添加机器人Walk成功!");
+            } }, "robot", "robot");
+        BaseFactory.playAnim({ container: this, actionName: "Run", scaleX: 0.5, scaleY: 0.5, offsetX: -100, onComplete: function () {
+                console.log("添加机器人Run成功!");
+            } }, "robot", "robot");
+        BaseFactory.playAnim({ playTimes: 2, container: this, actionName: "Standby", scaleX: 0.5, scaleY: 0.5, offsetY: -100, onComplete: function () {
+                console.log("添加机器人Standby成功!");
+            } }, "robot", "robot");
+    };
+    Home.prototype.onExit = function () {
+        _super.prototype.onExit.call(this);
     };
     return Home;
 }(BaseComponent));

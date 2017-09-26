@@ -17,6 +17,7 @@ var DBFaseMovie = (function (_super) {
         return _this;
     }
     DBFaseMovie.prototype.setPath = function (path) {
+        //  assets/animation/fast/xxx_ske.dbmv
         this._dataPath = path;
         this._texturePath = path.replace("_ske.dbmv", "_tex.png");
         this._fileName = BaseFactory.getFilenameWithoutExt(path).replace("_ske", "");
@@ -62,6 +63,7 @@ var DBFaseMovie = (function (_super) {
         if (this._mc == null) {
             this._mc = dragonBones.buildMovie(this._fileName);
             this.addChild(this._mc);
+            this.initEvents();
         }
         if (this._mc && this._frameRate != null) {
             this._mc.clipTimeScale = this._frameRate / 24;
