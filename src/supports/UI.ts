@@ -170,6 +170,7 @@ class UI extends eui.UILayer{
     }
 
     remove(component:BaseComponent):void {
+        if(!component) return;
         component.dispose();
         Display.removeFromParent(component);
     }

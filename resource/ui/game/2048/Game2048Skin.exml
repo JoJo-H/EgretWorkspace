@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Game2048Skin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="Game2048Skin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<e:Group x="0" y="0">
 		<e:Image source="bg_zsht_png" scale9Grid="84,38,508,229" width="720" height="1280" x="0" y="0"/>
+		<ns1:Button notice="REMOVE_BOX" label="CLOSE" x="560" y="15" skinName="ButtonCommonSkin" width="140" height="60"/>
 		<e:BitmapLabel font="font_huode_fnt" text="2048" horizontalCenter="0" top="55"/>
 		<e:Button id="btnStart" label="New Game" x="477" y="114" skinName="ButtonCommonSkin" anchorOffsetX="0" width="216"/>
 		<e:Group x="37" y="168">

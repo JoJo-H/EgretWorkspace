@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="MenuSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="720" height="1280">
 	<e:Group bottom="20" horizontalCenter="0">
-		<e:Button id="btn2048" label="2048" x="0" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
-		<e:Button id="btn2" label="Button2" x="105" y="1" skinName="ButtonCommonSkin" width="140" height="60"/>
-		<e:Button id="btn3" label="Button3" x="212" y="2" skinName="ButtonCommonSkin" width="140" height="60"/>
-		<ns1:LightButton id="btn4" label="Button4" x="311" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button notice="OPEN_GAMNES_PANEL" label="小游戏" x="0" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button label="Button2" x="105" y="1" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button label="Button3" x="212" y="2" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:LightButton label="Button4" x="311" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
 		<e:layout>
 			<e:HorizontalLayout/>
 		</e:layout>

@@ -6,23 +6,28 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var GameMutation = (function (_super) {
-    __extends(GameMutation, _super);
-    function GameMutation(viewComponet) {
-        return _super.call(this, CommomMutation.NAME, viewComponet) || this;
+var GameMediator = (function (_super) {
+    __extends(GameMediator, _super);
+    function GameMediator(viewComponet) {
+        return _super.call(this, GameMediator.NAME, viewComponet) || this;
     }
-    GameMutation.prototype.listNotificationInterests = function () {
+    GameMediator.prototype.listNotificationInterests = function () {
         _super.prototype.listNotificationInterests.call(this);
-        return [GameDefine.OPEN_TURNTABLE];
+        return [GameDefine.GAME_OPEN_2048, GameDefine.GAME_OPEN_TURNTABLE
+        ];
     };
-    GameMutation.prototype.handleNotification = function (notification) {
+    GameMediator.prototype.handleNotification = function (notification) {
         _super.prototype.handleNotification.call(this, notification);
         switch (notification.getName()) {
-            case GameDefine.OPEN_TURNTABLE:
+            case GameDefine.GAME_OPEN_2048:
+                GlobalAPI.UI.addBox(Game2048View);
+                break;
+            case GameDefine.GAME_OPEN_TURNTABLE:
+                GlobalAPI.UI.addBox(GameTurntableView);
                 break;
         }
     };
-    return GameMutation;
+    return GameMediator;
 }(puremvc.Mediator));
-GameMutation.NAME = "GameMutation";
-__reflect(GameMutation.prototype, "GameMutation", ["puremvc.IMediator", "puremvc.INotifier"]);
+GameMediator.NAME = "GameMutation";
+__reflect(GameMediator.prototype, "GameMediator", ["puremvc.IMediator", "puremvc.INotifier"]);

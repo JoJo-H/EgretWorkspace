@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="GameTurntableSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<e:Rect width="720" height="1280" fillAlpha="0.6"/>
+	<ns1:Button notice="REMOVE_BOX" label="CLOSE" x="570" y="9" skinName="ButtonCommonSkin" width="140" height="60"/>
 	<e:Image source="s3_bg_png" x="624" y="58" rotation="90"/>
 	<e:Image id="imgRing" source="g_png" anchorOffsetX="252" anchorOffsetY="252" x="349" y="332"/>
 	<e:Image id="imgStart" source="z_png" anchorOffsetX="108" anchorOffsetY="108" verticalCenter="-308" x="349"/>

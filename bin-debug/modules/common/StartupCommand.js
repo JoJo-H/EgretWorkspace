@@ -13,10 +13,12 @@ var StartupCommmand = (function (_super) {
     }
     StartupCommmand.prototype.execute = function (notification) {
         _super.prototype.execute.call(this, notification);
+        Button.THROTTLE_TIME = 500;
         // 注册proxy
         // GlobalAPI.facede.registerProxy(new GoldProxy());
         // 注册mediator
-        puremvc.Facade.getInstance().registerMediator(new CommomMutation());
+        puremvc.Facade.getInstance().registerMediator(new CommomMediator());
+        puremvc.Facade.getInstance().registerMediator(new GameMediator());
         puremvc.Facade.getInstance().sendNotification("TEST");
     };
     return StartupCommmand;

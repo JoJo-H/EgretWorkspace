@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="PanelGamesSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="PanelGamesSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
 	<e:Rect width="720" height="1280" fillAlpha="0.6"/>
+	<e:Group horizontalCenter="0" top="20">
+		<ns1:Button notice="GAME_OPEN_2048" label="2048" x="0" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button notice="GAME_OPEN_TURNTABLE" label="转盘" x="105" y="1" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button notice="GAME_OPEN_LAOHUJI" label="老虎机" x="212" y="2" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:Button notice="GAME_OPEN_LUCK_DRAW" label="九宫格抽奖" x="222" y="12" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<ns1:LightButton notice="REMOVE_BOX" label="CLOSE" x="311" y="0" skinName="ButtonCommonSkin" width="140" height="60"/>
+		<e:layout>
+			<e:TileLayout requestedColumnCount="4"/>
+		</e:layout>
+	</e:Group>
 </e:Skin>

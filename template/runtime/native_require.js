@@ -26,7 +26,7 @@ var game_file_list = [
 	"bin-debug/modules/animation/MovieEvent.js",
 	"bin-debug/modules/animation/SequnceMovie.js",
 	"bin-debug/modules/common/ApplicationFacade.js",
-	"bin-debug/modules/common/CommonMutation.js",
+	"bin-debug/modules/common/CommomMediator.js",
 	"bin-debug/modules/common/LightButton.js",
 	"bin-debug/modules/common/MyCustomEvent.js",
 	"bin-debug/modules/common/NoticeDefine.js",

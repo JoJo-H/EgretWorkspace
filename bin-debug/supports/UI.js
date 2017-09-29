@@ -176,6 +176,8 @@ var UI = (function (_super) {
         return false;
     };
     UI.prototype.remove = function (component) {
+        if (!component)
+            return;
         component.dispose();
         Display.removeFromParent(component);
     };
