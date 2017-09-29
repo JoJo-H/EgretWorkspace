@@ -35,4 +35,26 @@ class Display {
             }
         }
     }
+
+    static getHostComponent(display:egret.DisplayObject):BaseComponent {
+        var host:any = display.parent;
+        if (this.isHostComponentType(host)) {
+            return host;
+        }
+        while (host && !(this.isHostComponentType(host))) {
+            host = host.parent;
+        }
+
+        if (this.isHostComponentType(host)) {
+            return host;
+        }
+
+        return null;
+    }
+
+    static isHostComponentType(host:any):boolean {
+        // || host instanceof meru.ItemRenderer);
+        return host instanceof BaseComponent ;
+        
+    }
 }

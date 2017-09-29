@@ -35,6 +35,23 @@ var Display = (function () {
             }
         }
     };
+    Display.getHostComponent = function (display) {
+        var host = display.parent;
+        if (this.isHostComponentType(host)) {
+            return host;
+        }
+        while (host && !(this.isHostComponentType(host))) {
+            host = host.parent;
+        }
+        if (this.isHostComponentType(host)) {
+            return host;
+        }
+        return null;
+    };
+    Display.isHostComponentType = function (host) {
+        // || host instanceof meru.ItemRenderer);
+        return host instanceof BaseComponent;
+    };
     return Display;
 }());
 __reflect(Display.prototype, "Display");

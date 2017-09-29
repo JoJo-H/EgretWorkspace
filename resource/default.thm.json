@@ -33,6 +33,7 @@
     "resource/ui/button/ButtonEmptySkin.exml",
     "resource/ui/game/2048/Game2048Skin.exml",
     "resource/ui/game/2048/GameOverSkin.exml",
+    "resource/ui/game/PanelGamesSkin.exml",
     "resource/ui/game/turntable/GameTurntableSkin.exml",
     "resource/ui/main/HomeSkin.exml",
     "resource/ui/main/MenuSkin.exml"

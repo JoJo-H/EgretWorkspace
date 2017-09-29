@@ -4,7 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var GlobalAPI = (function () {
     function GlobalAPI() {
     }
-    Object.defineProperty(GlobalAPI.prototype, "event", {
+    Object.defineProperty(GlobalAPI, "event", {
         get: function () {
             if (!this._event) {
                 this._event = new egret.EventDispatcher();
@@ -20,7 +20,6 @@ var GlobalAPI = (function () {
                 this._UI = new UI();
             }
             return this._UI;
-            //
         },
         enumerable: true,
         configurable: true
