@@ -1,0 +1,14 @@
+.DS_Store
+MooPHP
+logs
+sftp-config.json
+Rakefile
+bin-debug/
+node_modules/
+bin-release/
+.idea/
+libs/
+.exmlCrcSync
+.euiboostercfg
+.vscode/
+
