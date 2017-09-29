@@ -58,6 +58,8 @@ declare class Game2048Skin extends eui.Skin{
 }
 declare class GameOverSkin extends eui.Skin{
 }
+declare class GameTurntableSkin extends eui.Skin{
+}
 declare class HomeSkin extends eui.Skin{
 }
 declare class MenuSkin extends eui.Skin{

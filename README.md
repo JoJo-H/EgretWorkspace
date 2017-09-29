@@ -12,3 +12,6 @@
 
 --> 2017.09.27 01：21 AM
     MovieClip构建code
+
+--> 2017.09.29 11：33 AM
+    实现转盘code：GameTurntableView.ts

@@ -16,13 +16,26 @@ var Menu = (function (_super) {
     Menu.prototype.onEnter = function () {
         _super.prototype.onEnter.call(this);
         this.btn2048.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOpen2048, this);
+        this.btn2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn2, this);
+        this.btn3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn3, this);
+        this.btn4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn4, this);
     };
     Menu.prototype.onOpen2048 = function (event) {
         GlobalAPI.UI.addBox(Game2048View);
     };
+    Menu.prototype.onBtn2 = function () {
+        GlobalAPI.UI.addBox(GameTurntableView);
+    };
+    Menu.prototype.onBtn3 = function () {
+    };
+    Menu.prototype.onBtn4 = function () {
+    };
     Menu.prototype.onExit = function () {
         _super.prototype.onExit.call(this);
         this.btn2048.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOpen2048, this);
+        this.btn2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn2, this);
+        this.btn3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn3, this);
+        this.btn4.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtn4, this);
     };
     return Menu;
 }(BaseComponent));

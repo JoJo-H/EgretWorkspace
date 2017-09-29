@@ -39,7 +39,10 @@
 		"duizhanshengli_texture_png": "assets/animation/dragonBones/duizhanshengli_texture.png",
 		"robot_anim_json": "assets/animation/dragonBones/robot_anim.json",
 		"robot_texture_json": "assets/animation/dragonBones/robot_texture.json",
-		"robot_texture_png": "assets/animation/dragonBones/robot_texture.png"
+		"robot_texture_png": "assets/animation/dragonBones/robot_texture.png",
+		"s3_bg_png": "assets/game/turntable/s3_bg.png",
+		"g_png": "assets/game/turntable/g.png",
+		"z_png": "assets/game/turntable/z.png"
 	},
 	"groups": {
 		"preload": [
@@ -82,7 +85,10 @@
 			"duizhanshengli_texture_png",
 			"robot_anim_json",
 			"robot_texture_json",
-			"robot_texture_png"
+			"robot_texture_png",
+			"s3_bg_png",
+			"g_png",
+			"z_png"
 		]
 	},
 	"resources": {
@@ -106,6 +112,13 @@
 			"type": "json",
 			"name": "wing.res.json"
 		},
+		"config": {
+			"description.json": {
+				"url": "config/description.json",
+				"type": "json",
+				"name": "config/description.json"
+			}
+		},
 		"assets": {
 			"bg.jpg": {
 				"url": "assets/bg.jpg",
@@ -117,21 +130,16 @@
 				"type": "image",
 				"name": "assets/egret_icon.png"
 			},
-			"Button": {
-				"button_caipiao.png": {
-					"url": "assets/Button/button_caipiao.png",
+			"Panel": {
+				"border.png": {
+					"url": "assets/Panel/border.png",
 					"type": "image",
-					"name": "assets/Button/button_caipiao.png"
+					"name": "assets/Panel/border.png"
 				},
-				"button_down.png": {
-					"url": "assets/Button/button_down.png",
+				"header.png": {
+					"url": "assets/Panel/header.png",
 					"type": "image",
-					"name": "assets/Button/button_down.png"
-				},
-				"button_up.png": {
-					"url": "assets/Button/button_up.png",
-					"type": "image",
-					"name": "assets/Button/button_up.png"
+					"name": "assets/Panel/header.png"
 				}
 			},
 			"CheckBox": {
@@ -156,23 +164,21 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
+			"Button": {
+				"button_caipiao.png": {
+					"url": "assets/Button/button_caipiao.png",
 					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
-			"Panel": {
-				"border.png": {
-					"url": "assets/Panel/border.png",
-					"type": "image",
-					"name": "assets/Panel/border.png"
+					"name": "assets/Button/button_caipiao.png"
 				},
-				"header.png": {
-					"url": "assets/Panel/header.png",
+				"button_down.png": {
+					"url": "assets/Button/button_down.png",
 					"type": "image",
-					"name": "assets/Panel/header.png"
+					"name": "assets/Button/button_down.png"
+				},
+				"button_up.png": {
+					"url": "assets/Button/button_up.png",
+					"type": "image",
+					"name": "assets/Button/button_up.png"
 				}
 			},
 			"ProgressBar": {
@@ -185,6 +191,13 @@
 					"url": "assets/ProgressBar/track_pb.png",
 					"type": "image",
 					"name": "assets/ProgressBar/track_pb.png"
+				}
+			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"RadioButton": {
@@ -339,13 +352,25 @@
 						"name": "assets/animation/fast/penjinbi_tex.png"
 					}
 				}
-			}
-		},
-		"config": {
-			"description.json": {
-				"url": "config/description.json",
-				"type": "json",
-				"name": "config/description.json"
+			},
+			"game": {
+				"turntable": {
+					"g.png": {
+						"url": "assets/game/turntable/g.png",
+						"type": "image",
+						"name": "assets/game/turntable/g.png"
+					},
+					"s3_bg.png": {
+						"url": "assets/game/turntable/s3_bg.png",
+						"type": "image",
+						"name": "assets/game/turntable/s3_bg.png"
+					},
+					"z.png": {
+						"url": "assets/game/turntable/z.png",
+						"type": "image",
+						"name": "assets/game/turntable/z.png"
+					}
+				}
 			}
 		}
 	}

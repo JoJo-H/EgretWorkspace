@@ -39,6 +39,7 @@ var game_file_list = [
 	"bin-debug/modules/game/2048/Game2048OverView.js",
 	"bin-debug/modules/game/2048/Game2048View.js",
 	"bin-debug/modules/game/2048/GridItem.js",
+	"bin-debug/modules/game/turntable/GameTurntableView.js",
 	"bin-debug/modules/main/Home.js",
 	"bin-debug/modules/main/Menu.js",
 	"bin-debug/supports/DataCenter.js",
