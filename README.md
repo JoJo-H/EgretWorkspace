@@ -15,3 +15,6 @@
 
 --> 2017.09.29 11：33 AM
     实现转盘code：GameTurntableView.ts
+
+--> 2017.09.29 03：04 PM
+    button基类调整，支持notice配置；新增fun、str工具类
