@@ -20,7 +20,7 @@ class GameTurntableView extends BaseComponent {
         var angle = index * ( 360 / this.items.length ) + ( 360 / this.items.length / 2);
         this.stopRotate();
         this.rotate({
-            angle: 0,
+            angle: this.imgStart.rotation,
 			animateTo: angle + 1800,
 			duration: 8000,
 			easing: (x,t,b,c,d) => -c * ((t=t/d-1)*t*t*t - 1) + b,
@@ -44,11 +44,9 @@ class GameTurntableView extends BaseComponent {
     }
 
     private _startTime = 0;
-	private _startAngle = 0;
     animateStart(){
         this.stopRotate();
         this._startTime = + new Date;
-        this._startAngle = this._angle;
         this.animate();
     }
 
@@ -58,7 +56,7 @@ class GameTurntableView extends BaseComponent {
         if(checkEnd) {
             this.stopRotate();
         }else {
-            var angle = this._params.easing(0, actualTime - this._startTime, this._startAngle, this._params.animateTo - this._startAngle, this._params.duration);
+            var angle = this._params.easing(0, actualTime - this._startTime, this._params.angle, this._params.animateTo - this._params.angle, this._params.duration);
             this.doRotate((~~(angle*10)/10));
             this._timeId = egret.setTimeout(() => {
 				this.animate();
