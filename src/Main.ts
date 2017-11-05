@@ -226,6 +226,9 @@ class Main extends eui.UILayer {
         GlobalAPI.UI.setRoot(this.stage);
         GlobalAPI.UI.runScene(Home);
         GlobalAPI.UI.setMenu(Menu);
+        window["proxy"] = new ProxyTestObj();
+        window["promise"] = new PromiseTestObj();
+        window["generator"] = new GeneratorTestObj();
     }
     
 }

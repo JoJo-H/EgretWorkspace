@@ -3,13 +3,15 @@
 		"target": "es5",
 		"outDir": "bin-debug",
 		"experimentalDecorators": true,
+		"sourceMap": true,
+        "removeComments": true,
 		"lib": [
-			"es5",
-			"dom",
-			"es2015.promise"
+			"es2015",
+			"dom"
 		]
 	},
 	"exclude": [
 		"node_modules"
 	]
 }
+

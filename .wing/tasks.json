@@ -9,7 +9,8 @@
             "showOutput": "always",
             "args": [
                 "build",
-                "-sourcemap"
+                "-sourcemap",
+                "--target","es2016" 
             ],
             "problemMatcher": "$tsc"
         },
