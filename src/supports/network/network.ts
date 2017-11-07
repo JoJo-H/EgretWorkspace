@@ -31,8 +31,15 @@ interface ProxyInfo {
 class network {
 
     public static request(info:ProxyInfo):Promise<any> {
-        return new Promise<any>((resolve,rejcet)=>{
-            
+        return new Promise<any>((resolve,reject)=>{
+            var proxy = new SingleProxy(info);
+            proxy.addEventListener(ProxyEvent.RESPONSE_SUCCEED,(e:ProxyEvent)=>{
+                resolve(e.responseData);
+            },this);
+            proxy.addEventListener(ProxyEvent.ERROR, (e:ProxyEvent) => {
+                reject(e);
+            },this);
+            proxy.load();
         });
     }
 

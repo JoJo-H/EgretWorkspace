@@ -63,6 +63,6 @@ class ProxyEvent extends egret.Event{
             this._errorCode = target.errorCode;
             this._errorMessage = target.errorMessage;
             // this._isRequestSucceed = target.isRequestSucceed;
-            // this._isResponseSucceed = target.isResponseSucceed;
+            this._isResponseSucceed = target.isResponseSucceed;
         }
 }
