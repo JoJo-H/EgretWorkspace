@@ -29,3 +29,6 @@
 
 -->2017.11.06 01:38
     ecma6的测试数据与http请求代码初步构建code
+
+-->2017.11.17 01:07
+    工具库扩展 str,obj,num,Regexp,other,array,device,time,url,Keycode,fun
