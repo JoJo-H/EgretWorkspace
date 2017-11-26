@@ -6,7 +6,7 @@ class time {
     * @return {String}
     */
     static formatPassTime(startTime) {
-        var currentTime = Date.parse(new Date()),
+        var currentTime = Date.parse(new Date().toString()),
             time = currentTime - startTime,
             day = parseInt(time / (1000 * 60 * 60 * 24) +''),
             hour = parseInt(time / (1000 * 60 * 60) +''),

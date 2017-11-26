@@ -32,3 +32,7 @@
 
 -->2017.11.17 01:07
     工具库扩展 str,obj,num,Regexp,other,array,device,time,url,Keycode,fun
+
+-->2017.11.27 00:09
+    增加登录请求LoginProxy，连通php服务器，请求并接受服务器响应的数据。
+    下一步：对服务器数据进行解析 缓存数据，需要一个解析架构；需要增加多个请求；

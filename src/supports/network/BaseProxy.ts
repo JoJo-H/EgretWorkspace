@@ -9,7 +9,7 @@ class BaseProxy extends egret.EventDispatcher {
 
     private _params : any;
     private _requestUrl : string;
-    private _method : string;
+    private _method : string = egret.HttpMethod.GET;
     public _customParams:any;
 
     private _isTimeout:boolean = false;
@@ -18,7 +18,7 @@ class BaseProxy extends egret.EventDispatcher {
         super();
         this._customParams = {};
         this._params = this.formatParams(params);
-        this._requestUrl = "http://httpbin.org/get";
+        this._requestUrl = "http://localhost:4444/MyPhpProject/index.php";
     }
 
     private formatParams(params:Object):any {
@@ -30,6 +30,7 @@ class BaseProxy extends egret.EventDispatcher {
                 params['do'] = modArr[1];
             }
         }
+        return params;
     }
 
     load():void {
@@ -40,7 +41,7 @@ class BaseProxy extends egret.EventDispatcher {
 
         var request : egret.HttpRequest = new egret.HttpRequest();
         request.responseType = egret.HttpResponseType.TEXT;
-        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
         request.addEventListener(egret.Event.COMPLETE,this.onComplete,this);
         request.addEventListener(egret.IOErrorEvent.IO_ERROR,this.onError,this);
         request.addEventListener(egret.ProgressEvent.PROGRESS,this.onGetProgress,this);
@@ -59,14 +60,13 @@ class BaseProxy extends egret.EventDispatcher {
         }, this, BaseProxy._timeout);
 
 
-        var params  = {'data':this.params};
         if(this._method == egret.HttpMethod.GET) {
-            var queryString : string = network.paramsToQueryString(params,this._customParams,BaseProxy._globalParams);
+            var queryString : string = network.paramsToQueryString(this._params,this._customParams,BaseProxy._globalParams);
             url += queryString;
             request.open(url,egret.HttpMethod.GET);
             request.send();
         }else {
-            var queryString : string = network.paramsToQueryString(params,this._customParams,BaseProxy._globalParams);
+            var queryString : string = network.paramsToQueryString(this._params,this._customParams,BaseProxy._globalParams);
             request.open(url,egret.HttpMethod.POST);
             request.send(queryString);
         }

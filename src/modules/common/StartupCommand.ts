@@ -7,7 +7,11 @@ class StartupCommmand extends puremvc.SimpleCommand implements puremvc.ICommand{
         Button.THROTTLE_TIME = 500;
 
         // 注册proxy
-        // GlobalAPI.facede.registerProxy(new GoldProxy());
+        let loginProxy = new LoginProxy();
+        GlobalAPI.facede.registerProxy(loginProxy);
+        loginProxy.request();
+        
+        GlobalAPI.facede.registerProxy(new UserProxy());
 
 
 
