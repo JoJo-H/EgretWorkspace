@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,bg_zsht_png,font_huode_fnt,font_huode_png,button_caipiao_png,bg_ptht_png,bg_home_jpg,lightbutton2_tex_png,penjinbi_tex_png,duizhanshengli_anim_json,duizhanshengli_texture_json,duizhanshengli_texture_png,robot_anim_json,robot_texture_json,robot_texture_png,s3_bg_png,g_png,z_png",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,bg_zsht_png,font_huode_fnt,font_huode_png,button_caipiao_png,bg_ptht_png,bg_home_jpg,lightbutton2_tex_png,penjinbi_tex_png,duizhanshengli_anim_json,duizhanshengli_texture_json,duizhanshengli_texture_png,robot_anim_json,robot_texture_json,robot_texture_png,s3_bg_png,g_png,z_png,man_anim_json,man_texture_json,man_texture_png",
 			"name": "preload"
 		}
 	],
@@ -220,6 +220,21 @@
 			"name": "z_png",
 			"type": "image",
 			"url": "assets/game/turntable/z.png"
+		},
+		{
+			"name": "man_anim_json",
+			"type": "json",
+			"url": "assets/animation/dragonBones/man_anim.json"
+		},
+		{
+			"name": "man_texture_json",
+			"type": "json",
+			"url": "assets/animation/dragonBones/man_texture.json"
+		},
+		{
+			"name": "man_texture_png",
+			"type": "image",
+			"url": "assets/animation/dragonBones/man_texture.png"
 		}
 	]
 }

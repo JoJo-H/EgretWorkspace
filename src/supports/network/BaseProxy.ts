@@ -14,6 +14,7 @@ class BaseProxy extends egret.EventDispatcher {
 
     private _isTimeout:boolean = false;
     private _timeoutId:number = null;
+    public static frontProxyKeys:string[] = ["mask", "cache", "autoMerge", "delay", "dataMerge"];
     constructor(params:any){
         super();
         this._customParams = {};
@@ -140,6 +141,9 @@ class BaseProxy extends egret.EventDispatcher {
         }
     }
 
+    public addParam(key:string, value:any):void {
+        this._customParams[key] = value;
+    }
 
     public getParamByName(name:string):any {
         if (!this._params) {

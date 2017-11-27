@@ -43,6 +43,24 @@ class network {
         });
     }
 
+    public static multiRequest(...args:ProxyInfo[]) {
+        var promise = new Promise((resolve, reject) => {
+            var multiProxy = new MultiProxy();
+            for (var i = 0; i < args.length; i++) {
+                var arg = args[i];
+                multiProxy.addSubProxy(arg);
+            }
+            multiProxy.addEventListener(ProxyEvent.REQUEST_SUCCEED, (e: ProxyEvent) => {
+                resolve(e.responseData);
+            }, this);
+            multiProxy.addEventListener(ProxyEvent.ERROR, (e: ProxyEvent) => {
+                reject(e);
+            }, this);
+            multiProxy.load();
+        });
+        return promise;
+    }
+
     public static proxyInfo2Param(info:ProxyInfo):any {
         var proxyParams = {};
         if(info.moddo) {
