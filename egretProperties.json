@@ -46,6 +46,10 @@
     {
       "name": "puremvc",
       "path": "../MyGameTools/thirds/puremvc"
+    },
+    {
+      "name": "jszip",
+      "path": "../MyGameTools/thirds/jszip"
     }
   ]
 }

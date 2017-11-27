@@ -42,7 +42,11 @@
 		"robot_texture_png": "assets/animation/dragonBones/robot_texture.png",
 		"s3_bg_png": "assets/game/turntable/s3_bg.png",
 		"g_png": "assets/game/turntable/g.png",
-		"z_png": "assets/game/turntable/z.png"
+		"z_png": "assets/game/turntable/z.png",
+		"man_anim_json": "assets/animation/dragonBones/man_anim.json",
+		"man_texture_json": "assets/animation/dragonBones/man_texture.json",
+		"man_texture_png": "assets/animation/dragonBones/man_texture.png",
+		"Hero_json": "assets/config/Hero.json"
 	},
 	"groups": {
 		"preload": [
@@ -88,7 +92,11 @@
 			"robot_texture_png",
 			"s3_bg_png",
 			"g_png",
-			"z_png"
+			"z_png",
+			"man_anim_json",
+			"man_texture_json",
+			"man_texture_png",
+			"Hero_json"
 		]
 	},
 	"resources": {
@@ -112,13 +120,6 @@
 			"type": "json",
 			"name": "wing.res.json"
 		},
-		"config": {
-			"description.json": {
-				"url": "config/description.json",
-				"type": "json",
-				"name": "config/description.json"
-			}
-		},
 		"assets": {
 			"bg.jpg": {
 				"url": "assets/bg.jpg",
@@ -130,16 +131,21 @@
 				"type": "image",
 				"name": "assets/egret_icon.png"
 			},
-			"Panel": {
-				"border.png": {
-					"url": "assets/Panel/border.png",
+			"Button": {
+				"button_caipiao.png": {
+					"url": "assets/Button/button_caipiao.png",
 					"type": "image",
-					"name": "assets/Panel/border.png"
+					"name": "assets/Button/button_caipiao.png"
 				},
-				"header.png": {
-					"url": "assets/Panel/header.png",
+				"button_down.png": {
+					"url": "assets/Button/button_down.png",
 					"type": "image",
-					"name": "assets/Panel/header.png"
+					"name": "assets/Button/button_down.png"
+				},
+				"button_up.png": {
+					"url": "assets/Button/button_up.png",
+					"type": "image",
+					"name": "assets/Button/button_up.png"
 				}
 			},
 			"CheckBox": {
@@ -164,21 +170,23 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
-			"Button": {
-				"button_caipiao.png": {
-					"url": "assets/Button/button_caipiao.png",
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
 					"type": "image",
-					"name": "assets/Button/button_caipiao.png"
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
+			"Panel": {
+				"border.png": {
+					"url": "assets/Panel/border.png",
+					"type": "image",
+					"name": "assets/Panel/border.png"
 				},
-				"button_down.png": {
-					"url": "assets/Button/button_down.png",
+				"header.png": {
+					"url": "assets/Panel/header.png",
 					"type": "image",
-					"name": "assets/Button/button_down.png"
-				},
-				"button_up.png": {
-					"url": "assets/Button/button_up.png",
-					"type": "image",
-					"name": "assets/Button/button_up.png"
+					"name": "assets/Panel/header.png"
 				}
 			},
 			"ProgressBar": {
@@ -191,13 +199,6 @@
 					"url": "assets/ProgressBar/track_pb.png",
 					"type": "image",
 					"name": "assets/ProgressBar/track_pb.png"
-				}
-			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"RadioButton": {
@@ -268,6 +269,13 @@
 					"name": "assets/ToggleSwitch/on.png"
 				}
 			},
+			"config": {
+				"Hero.json": {
+					"url": "assets/config/Hero.json",
+					"type": "json",
+					"name": "assets/config/Hero.json"
+				}
+			},
 			"font": {
 				"font_huode.fnt": {
 					"url": "assets/font/font_huode.fnt",
@@ -298,38 +306,6 @@
 				}
 			},
 			"animation": {
-				"dragonBones": {
-					"duizhanshengli_anim.json": {
-						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
-						"type": "json",
-						"name": "assets/animation/dragonBones/duizhanshengli_anim.json"
-					},
-					"duizhanshengli_texture.json": {
-						"url": "assets/animation/dragonBones/duizhanshengli_texture.json",
-						"type": "json",
-						"name": "assets/animation/dragonBones/duizhanshengli_texture.json"
-					},
-					"duizhanshengli_texture.png": {
-						"url": "assets/animation/dragonBones/duizhanshengli_texture.png",
-						"type": "image",
-						"name": "assets/animation/dragonBones/duizhanshengli_texture.png"
-					},
-					"robot_anim.json": {
-						"url": "assets/animation/dragonBones/robot_anim.json",
-						"type": "json",
-						"name": "assets/animation/dragonBones/robot_anim.json"
-					},
-					"robot_texture.json": {
-						"url": "assets/animation/dragonBones/robot_texture.json",
-						"type": "json",
-						"name": "assets/animation/dragonBones/robot_texture.json"
-					},
-					"robot_texture.png": {
-						"url": "assets/animation/dragonBones/robot_texture.png",
-						"type": "image",
-						"name": "assets/animation/dragonBones/robot_texture.png"
-					}
-				},
 				"fast": {
 					"lightbutton2_ske.dbmv": {
 						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
@@ -351,6 +327,53 @@
 						"type": "image",
 						"name": "assets/animation/fast/penjinbi_tex.png"
 					}
+				},
+				"dragonBones": {
+					"duizhanshengli_anim.json": {
+						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/duizhanshengli_anim.json"
+					},
+					"duizhanshengli_texture.json": {
+						"url": "assets/animation/dragonBones/duizhanshengli_texture.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/duizhanshengli_texture.json"
+					},
+					"duizhanshengli_texture.png": {
+						"url": "assets/animation/dragonBones/duizhanshengli_texture.png",
+						"type": "image",
+						"name": "assets/animation/dragonBones/duizhanshengli_texture.png"
+					},
+					"man_anim.json": {
+						"url": "assets/animation/dragonBones/man_anim.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/man_anim.json"
+					},
+					"man_texture.json": {
+						"url": "assets/animation/dragonBones/man_texture.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/man_texture.json"
+					},
+					"man_texture.png": {
+						"url": "assets/animation/dragonBones/man_texture.png",
+						"type": "image",
+						"name": "assets/animation/dragonBones/man_texture.png"
+					},
+					"robot_anim.json": {
+						"url": "assets/animation/dragonBones/robot_anim.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/robot_anim.json"
+					},
+					"robot_texture.json": {
+						"url": "assets/animation/dragonBones/robot_texture.json",
+						"type": "json",
+						"name": "assets/animation/dragonBones/robot_texture.json"
+					},
+					"robot_texture.png": {
+						"url": "assets/animation/dragonBones/robot_texture.png",
+						"type": "image",
+						"name": "assets/animation/dragonBones/robot_texture.png"
+					}
 				}
 			},
 			"game": {
@@ -371,6 +394,13 @@
 						"name": "assets/game/turntable/z.png"
 					}
 				}
+			}
+		},
+		"config": {
+			"description.json": {
+				"url": "config/description.json",
+				"type": "json",
+				"name": "config/description.json"
 			}
 		}
 	}

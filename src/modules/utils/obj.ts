@@ -77,4 +77,49 @@ class obj {
     }
 
 
+    static getValue(data:any, key:any, defVal:any = null):any {
+        if (is.falsy(data)) {
+            return defVal;
+        }
+        key = key + "";
+        var keyArr = key.split('.');
+        var curObj = data;
+        for (var i = 0; i < keyArr.length; i++) {
+            var key = keyArr[i];
+            if (is.array(curObj)) {
+                curObj = curObj[parseInt(key)];
+            } else {
+                if (key == '') {
+                    curObj = curObj;
+                } else {
+                    curObj = curObj[key];
+                }
+            }
+            if (is.not.existy(curObj)) {
+                break;
+            }
+        }
+
+        if (is.not.existy(curObj)) {
+            return defVal;
+        }
+        return curObj;
+    }
+
+    static hasValue(data:any, key:any):boolean {
+        if (!data) {
+            return false;
+        }
+        key = key + "";
+        var keyArr = key.split('.');
+        var obj = data;
+        while (keyArr.length > 0 && obj) {
+            var k = keyArr.shift();
+            if (!obj.hasOwnProperty(k)) {
+                return false;
+            }
+            obj = obj[k];
+        }
+        return true;
+    }
 }
