@@ -1,5 +1,5 @@
 
-class Display {
+class display {
 
     public static setFullDisplay(display:egret.DisplayObject):void {
         display.width = GlobalAPI.stage.stageWidth;

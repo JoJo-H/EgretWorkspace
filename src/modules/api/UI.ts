@@ -67,7 +67,7 @@ class UI extends eui.UILayer{
             this.remove(this._menuInst);
         }
         let menuInst = this.getTypeInst(menuType, args, UIType.MENU);
-        Display.setFullDisplay(menuInst);
+        display.setFullDisplay(menuInst);
         this._menuInst = menuInst;
         this._menuInst.bottom = 0;
         this._menuInst.horizontalCenter = 0;
@@ -84,7 +84,7 @@ class UI extends eui.UILayer{
 
     private addScene(sceneType, ...args): BaseComponent {
         let sceneInst = this.getTypeInst(sceneType, args, UIType.SCENE);
-        Display.setFullDisplay(sceneInst);
+        display.setFullDisplay(sceneInst);
         this._sceneInst = sceneInst;
         this._scene.addChild(sceneInst);
         return sceneInst;
@@ -92,21 +92,21 @@ class UI extends eui.UILayer{
 
     addBox(boxType:any,...args):BaseComponent {
         let boxInst = this.getTypeInst(boxType,args,UIType.BOX);
-        Display.setFullDisplay(boxInst);
+        display.setFullDisplay(boxInst);
         this._box.addChild(boxInst);
         return boxInst;
     }
 
     addPanel(panelType:any, ...args):BaseComponent {
         let panelInst = this.getTypeInst(panelType, args, UIType.PANEL);
-        Display.setFullDisplay(panelInst);
+        display.setFullDisplay(panelInst);
         this._panel.addChild(panelInst);
         return panelInst;
     }
 
     addCommon(commonType: any, ...args): any {
         let commonInst = this.getTypeInst(commonType, args, UIType.COMMON);
-        Display.setFullDisplay(commonInst);
+        display.setFullDisplay(commonInst);
         this._common.addChild(commonInst);
         return commonInst;
     }
@@ -172,6 +172,6 @@ class UI extends eui.UILayer{
     remove(component:BaseComponent):void {
         if(!component) return;
         component.dispose();
-        Display.removeFromParent(component);
+        display.removeFromParent(component);
     }
 }

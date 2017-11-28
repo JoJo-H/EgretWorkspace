@@ -110,7 +110,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
     private onComplete(e: dragonBones.MovieEvent): void {
         this.dispatchEvent(new MovieEvent(MovieEvent.COMPLETE));
         if (!this.atLast) {
-            Display.removeFromParent(this._mc);
+            display.removeFromParent(this._mc);
         }
     }
     private onFrameLabel(e: dragonBones.MovieEvent): void {
@@ -131,7 +131,7 @@ class DBFaseMovie extends egret.DisplayObjectContainer implements IMovie{
             if (this._mc) {
                 this._mc.dispose();
                 this.clearEvents();
-                Display.removeFromParent(this._mc);
+                display.removeFromParent(this._mc);
                 this._mc = null;
             }
         }

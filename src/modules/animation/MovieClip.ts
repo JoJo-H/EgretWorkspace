@@ -116,7 +116,7 @@ class MovieClip extends egret.DisplayObjectContainer implements IMovie {
     private onComplete(e: egret.MovieClipEvent): void {
         this.dispatchEvent(new MovieEvent(MovieEvent.COMPLETE));
         if (!this.atLast) {
-            Display.removeFromParent(this);
+            display.removeFromParent(this);
         }
     }
 

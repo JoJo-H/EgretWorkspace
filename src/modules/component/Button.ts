@@ -218,7 +218,7 @@ class Button extends eui.Component{
         if (is.truthy(this._notice)) {
             var data = this.data;
             if (!data) {
-                var host = Display.getHostComponent(this);
+                var host = display.getHostComponent(this);
                 if (host) {
                     data = host.data;
                 }

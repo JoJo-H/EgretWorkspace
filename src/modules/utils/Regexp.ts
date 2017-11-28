@@ -1,6 +1,6 @@
 
 
-class Regexp {
+class regexp{
 
     /**
      * @desc   判断是否为邮箱地址

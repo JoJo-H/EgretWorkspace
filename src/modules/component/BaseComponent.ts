@@ -96,7 +96,7 @@ class BaseComponent extends eui.Component {
         this._data = null;
         this.componentName = "";
         this.onExit();
-        Display.destoryChildren(this);
+        display.destoryChildren(this);
     }
 
     dispose():void {

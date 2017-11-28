@@ -60,7 +60,12 @@ class pool {
     }
 
     private static _poolMap : Map<any,any> = new Map();
-    static getPool<T>(type:T):ObjectPool<T>{
+    /**
+     * 获取指定类型的对象池
+     * @param type 指定的类型    可以new
+     * @returns {ObjectPool<T>} 类型对象池
+     */
+    static getPool<T>(type:{ new(): T ;}):ObjectPool<T>{
         var typeId = other.getTypeId(type);
         if( !this._poolMap.has(typeId) ) {
             this._poolMap.set(typeId,new ObjectPool(type));
@@ -68,7 +73,13 @@ class pool {
         return this._poolMap.get(typeId);
     }
 
-    static getTypePool<T>(name:string,type:T):ObjectPool<T> {
+    /**
+     * 获取指定分组的类型对象池
+     * @param name 组名
+     * @param type 指定类型
+     * @returns {any} 类型对象池
+     */
+    static getTypePool<T>(name:string,type:{ new(): T ;}):ObjectPool<T> {
         var typeId = name + other.getTypeId(type);
         if( !this._poolMap.has(typeId) ) {
             this._poolMap.set(typeId,new ObjectPool(type));
