@@ -64,17 +64,6 @@ class obj {
         throw new Error("Unable to copy values! Its type isn't supported.");
     }
 
-     /**
-     * 
-     * @desc   判断`obj`是否为空
-     * @param  {Object} obj
-     * @return {Boolean}
-     */
-    static isEmptyObject(obj) {
-        if (!obj || typeof obj !== 'object' || Array.isArray(obj))
-            return false
-        return !Object.keys(obj).length
-    }
 
 
     static getValue(data:any, key:any, defVal:any = null):any {

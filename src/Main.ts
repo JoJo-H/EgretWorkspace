@@ -224,8 +224,6 @@ class Main extends eui.UILayer {
         GlobalAPI.setStage(this.stage);
         GlobalAPI.UI.setRoot(this.stage);
         ApplicationFacade.getInstance().startup(this.stage);
-        var json = Config.get('Hero_json');
-        console.log(json);
         Config.loadZip();
     }
     
