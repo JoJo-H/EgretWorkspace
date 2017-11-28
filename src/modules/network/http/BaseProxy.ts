@@ -7,7 +7,7 @@ class ProxyErrorCode {
 
 class BaseProxy extends egret.EventDispatcher {
 
-    private _params : any;
+    public _params : any;
     private _requestUrl : string;
     private _method : string = egret.HttpMethod.GET;
     public _customParams:any;
@@ -40,6 +40,8 @@ class BaseProxy extends egret.EventDispatcher {
             url += '&';
         } 
 
+        var paramsString:string = this.getParamString();
+        var params:Object = {"h": '453626dfgdsyey2y372365435fre'};
         var request : egret.HttpRequest = new egret.HttpRequest();
         request.responseType = egret.HttpResponseType.TEXT;
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
@@ -62,12 +64,13 @@ class BaseProxy extends egret.EventDispatcher {
 
 
         if(this._method == egret.HttpMethod.GET) {
-            var queryString : string = network.paramsToQueryString(this._params,this._customParams,BaseProxy._globalParams);
+            params['data'] = paramsString;
+            var queryString : string = network.paramsToQueryString(params,this._customParams,BaseProxy._globalParams);
             url += queryString;
             request.open(url,egret.HttpMethod.GET);
             request.send();
         }else {
-            var queryString : string = network.paramsToQueryString(this._params,this._customParams,BaseProxy._globalParams);
+            var queryString : string = network.paramsToQueryString(params,this._customParams,BaseProxy._globalParams);
             request.open(url,egret.HttpMethod.POST);
             request.send(queryString);
         }
@@ -83,6 +86,10 @@ class BaseProxy extends egret.EventDispatcher {
 
         }
         this.onResponse(data);
+    }
+
+    public getParamString():string {
+        return null;
     }
 
     private onError(event:egret.IOErrorEvent):void {
@@ -110,6 +117,7 @@ class BaseProxy extends egret.EventDispatcher {
         this._isRequestSucceed = true;
 
         if (this._isResponseSucceed) {
+            GlobalAPI.facede.sendNotification(ListenerMediator.ResponseSucceed,this);
             this.dispatchEvent(new ProxyEvent(ProxyEvent.RESPONSE_SUCCEED, this));
         } else {
             this.dispatchEvent(new ProxyEvent(ProxyEvent.RESPONSE_ERROR, this));

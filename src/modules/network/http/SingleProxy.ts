@@ -27,4 +27,14 @@ class SingleProxy extends BaseProxy{
             super.load();
         }
     };
+
+    public getParamString(): string {
+        var ret:any = {};
+        for (var key in this._params) {
+            if (BaseProxy.frontProxyKeys.indexOf(key) == -1) {
+                ret[key] = this._params[key];
+            }
+        }
+        return JSON.stringify(ret);
+    }
 }

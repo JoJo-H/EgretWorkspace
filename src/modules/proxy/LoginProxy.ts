@@ -8,7 +8,7 @@ class LoginProxy extends puremvc.Proxy {
     }
 
     request():void {
-        network.multiRequest(PUser.getInfo())
+        network.request(PUser.getInfo(true))
         .then(()=>{
             GlobalAPI.UI.runScene(Home);
             GlobalAPI.UI.setMenu(Menu);
