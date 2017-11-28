@@ -55,9 +55,9 @@ class ProxyCache {
             } else {
                 this._dataCache[smod][sdo] = data;
             }
-            // postNotification(k.Cache(smod + "." + sdo), data);
-            // postNotification(k.All(smod + "." + sdo));
-            // postNotification(k.CacheChange, smod + "." + sdo, data);
+            GlobalAPI.facede.sendNotification(NotifyName.Cache(smod + "." + sdo), data);
+            GlobalAPI.facede.sendNotification(NotifyName.All(smod + "." + sdo));
+            GlobalAPI.facede.sendNotification(NotifyName.CacheChange, smod + "." + sdo, data);
         }
     }
 
@@ -113,11 +113,11 @@ class ProxyCache {
      * @returns {Object}
      */
     public static getCache(moddo:string|ProxyInfo = null):any {
-        return ProxyCache.instance.getCache(this.getModDo(moddo));
+        return ProxyCache.instance.getCache(NotifyName.getModDo(moddo));
     }
 
     public static resetOne(moddo:string|ProxyInfo):void {
-        ProxyCache.instance.resetOne(this.getModDo(moddo));
+        ProxyCache.instance.resetOne(NotifyName.getModDo(moddo));
     }
 
     public static reset():void {
@@ -130,16 +130,6 @@ class ProxyCache {
      * @returns {boolean}
      */
     public static isCache(moddo:string|ProxyInfo):boolean {
-        return ProxyCache.instance.isCache(this.getModDo(moddo));
-    }
-
-    private static getModDo(moddo:string|ProxyInfo):any {
-        if (is.string(moddo)) {
-            return moddo;
-        }
-        if (moddo && (<any>moddo).moddo) {
-            return (<any>moddo).moddo;
-        }
-        return null;
+        return ProxyCache.instance.isCache(NotifyName.getModDo(moddo));
     }
 }

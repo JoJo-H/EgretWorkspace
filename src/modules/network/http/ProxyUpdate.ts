@@ -82,7 +82,7 @@ class ProxyUpdate {
             var pdo = arr[1];
             if ( dataCache.hasOwnProperty(pmod) && dataCache[pmod].hasOwnProperty(pdo) ) 
             {
-                // postNotification BeforeChange
+                GlobalAPI.facede.sendNotification(NotifyName.BeforeChange(pmod + "." + pdo), v1);
                 this._update(dataCache[pmod][pdo], v1);
                 this.postAction(pmod, pdo, v1);
                 modArr.push([pmod, pdo, v1]);
@@ -91,13 +91,13 @@ class ProxyUpdate {
 
         for (var i = 0; i < modArr.length; i ++) {
             var item = modArr[i];
-            // postNotification AfterChange
+            GlobalAPI.facede.sendNotification(NotifyName.AfterChange(item[0] + '.' + item[1]), item[2]);
         }
     }
 
     private postAction(pmod, pdo, v1):void {
-        // postNotification(k.Change(pmod + "." + pdo), v1);
-        // postNotification(k.All(pmod + "." + pdo));
+        GlobalAPI.facede.sendNotification(NotifyName.Change(pmod + "." + pdo), v1);
+        GlobalAPI.facede.sendNotification(NotifyName.All(pmod + "." + pdo));
     }
 
     public customUpdate(pmod:string, obj:any):void {
