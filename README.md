@@ -56,3 +56,8 @@
 
 -->2017.11.29 00:40
     http请求与响应过程中的消息推送，数据缓存和更新的消息推送。
+
+-->2017.11.29 20:40
+    借鉴https://github.com/yicaoyimuys/EgretGameEngine项目模板
+    ！！！！！！socket前端结构构造,未调试。
+    

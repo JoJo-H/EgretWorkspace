@@ -46,7 +46,9 @@
 		"man_anim_json": "assets/animation/dragonBones/man_anim.json",
 		"man_texture_json": "assets/animation/dragonBones/man_texture.json",
 		"man_texture_png": "assets/animation/dragonBones/man_texture.png",
-		"Hero_json": "assets/config/Hero.json"
+		"Hero_json": "assets/config/Hero.json",
+		"global_json": "assets/config/global.json",
+		"simple_json": "assets/config/simple.json"
 	},
 	"groups": {
 		"preload": [
@@ -96,7 +98,10 @@
 			"man_anim_json",
 			"man_texture_json",
 			"man_texture_png",
-			"Hero_json"
+			"Hero_json",
+			"global_json",
+			"simple_json",
+			"simple_proto"
 		]
 	},
 	"resources": {
@@ -274,6 +279,16 @@
 					"url": "assets/config/Hero.json",
 					"type": "json",
 					"name": "assets/config/Hero.json"
+				},
+				"global.json": {
+					"url": "assets/config/global.json",
+					"type": "json",
+					"name": "assets/config/global.json"
+				},
+				"simple.json": {
+					"url": "assets/config/simple.json",
+					"type": "json",
+					"name": "assets/config/simple.json"
 				}
 			},
 			"font": {
@@ -306,28 +321,6 @@
 				}
 			},
 			"animation": {
-				"fast": {
-					"lightbutton2_ske.dbmv": {
-						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
-					},
-					"lightbutton2_tex.png": {
-						"url": "assets/animation/fast/lightbutton2_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/lightbutton2_tex.png"
-					},
-					"penjinbi_ske.dbmv": {
-						"url": "assets/animation/fast/penjinbi_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/penjinbi_ske.dbmv"
-					},
-					"penjinbi_tex.png": {
-						"url": "assets/animation/fast/penjinbi_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/penjinbi_tex.png"
-					}
-				},
 				"dragonBones": {
 					"duizhanshengli_anim.json": {
 						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
@@ -374,6 +367,28 @@
 						"type": "image",
 						"name": "assets/animation/dragonBones/robot_texture.png"
 					}
+				},
+				"fast": {
+					"lightbutton2_ske.dbmv": {
+						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
+					},
+					"lightbutton2_tex.png": {
+						"url": "assets/animation/fast/lightbutton2_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/lightbutton2_tex.png"
+					},
+					"penjinbi_ske.dbmv": {
+						"url": "assets/animation/fast/penjinbi_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/penjinbi_ske.dbmv"
+					},
+					"penjinbi_tex.png": {
+						"url": "assets/animation/fast/penjinbi_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/penjinbi_tex.png"
+					}
 				}
 			},
 			"game": {
@@ -402,6 +417,11 @@
 				"type": "json",
 				"name": "config/description.json"
 			}
+		},
+		"simple_proto": {
+			"url": "assets/config/simple.proto",
+			"type": "text",
+			"name": "simple_proto"
 		}
 	}
 }

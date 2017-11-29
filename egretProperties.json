@@ -50,6 +50,10 @@
     {
       "name": "jszip",
       "path": "../MyGameTools/thirds/jszip"
+    },
+    {
+      "name": "protobuf",
+      "path": "../MyGameTools/thirds/protobuf"
     }
   ]
 }

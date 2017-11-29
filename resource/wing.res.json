@@ -157,6 +157,16 @@
       "name": "Hero_json"
     },
     {
+      "url": "assets/config/global.json",
+      "type": "json",
+      "name": "global_json"
+    },
+    {
+      "url": "assets/config/simple.json",
+      "type": "json",
+      "name": "simple_json"
+    },
+    {
       "url": "assets/font/font_huode.fnt",
       "type": "font",
       "name": "font_huode_fnt"
@@ -180,26 +190,6 @@
       "url": "assets/main/bg_zsht.png",
       "type": "image",
       "name": "bg_zsht_png"
-    },
-    {
-      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
-      "type": "dbmv",
-      "name": "assets/animation/fast/lightbutton2_ske.dbmv"
-    },
-    {
-      "url": "assets/animation/fast/lightbutton2_tex.png",
-      "type": "image",
-      "name": "lightbutton2_tex_png"
-    },
-    {
-      "url": "assets/animation/fast/penjinbi_ske.dbmv",
-      "type": "dbmv",
-      "name": "assets/animation/fast/penjinbi_ske.dbmv"
-    },
-    {
-      "url": "assets/animation/fast/penjinbi_tex.png",
-      "type": "image",
-      "name": "penjinbi_tex_png"
     },
     {
       "url": "assets/animation/dragonBones/duizhanshengli_anim.json",
@@ -247,6 +237,26 @@
       "name": "robot_texture_png"
     },
     {
+      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/lightbutton2_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/lightbutton2_tex.png",
+      "type": "image",
+      "name": "lightbutton2_tex_png"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/penjinbi_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_tex.png",
+      "type": "image",
+      "name": "penjinbi_tex_png"
+    },
+    {
       "url": "assets/game/turntable/g.png",
       "type": "image",
       "name": "g_png"
@@ -265,6 +275,11 @@
       "url": "config/description.json",
       "type": "json",
       "name": "description_json"
+    },
+    {
+      "url": "assets/config/simple.proto",
+      "type": "text",
+      "name": "simple_proto"
     }
   ]
 }

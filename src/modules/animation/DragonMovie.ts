@@ -192,6 +192,13 @@ class DragonMovie extends egret.DisplayObjectContainer implements IMovie {
             this._armature.replacedTexture(RES.getRes(textureName));
         }
     }
+
+    getSlot(slotName:string):dragonBones.Slot{
+        if(this._armature) {
+            return this._armature.getSlot(slotName);
+        }
+        return null;
+    }
 }
 
 

@@ -12,6 +12,7 @@ class LoginProxy extends puremvc.Proxy {
         .then(()=>{
             GlobalAPI.UI.runScene(Home);
             GlobalAPI.UI.setMenu(Menu);
+            App.Init();
         });
     }
 }

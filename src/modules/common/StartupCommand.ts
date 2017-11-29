@@ -17,6 +17,7 @@ class StartupCommmand extends puremvc.SimpleCommand implements puremvc.ICommand{
 
         // 注册mediator
         puremvc.Facade.getInstance().registerMediator(new ListenerMediator());
+        puremvc.Facade.getInstance().registerMediator(new SocketMediator());
         puremvc.Facade.getInstance().registerMediator(new CommomMediator());
         puremvc.Facade.getInstance().registerMediator(new GameMediator());
 
