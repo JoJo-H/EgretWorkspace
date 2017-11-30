@@ -5,6 +5,7 @@ class GameDefine {
     static CLICK_BUTTON : string = "CLICK_BUTTON";
 
     static OPEN_GAMNES_PANEL : string = "OPEN_GAMNES_PANEL";
+    static OPEN_BUTTON_TEST : string = "OPEN_BUTTON_TEST";
 
     static GAME_OPEN_2048 : string = "GAME_OPEN_2048";
     static GAME_OPEN_TURNTABLE : string = "GAME_OPEN_TURNTABLE";

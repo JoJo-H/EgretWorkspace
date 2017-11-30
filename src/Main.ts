@@ -45,7 +45,8 @@ RES.FEATURE_FLAG.LOADING_STATE = 1;
         "fnt": "font",
         "pvr": "pvr",
         "mp3": "sound",
-        "aa":"sound"
+        "aa":"sound",
+        "wav":"sound"
     }
     // if (path == "a/custom/file/type.bin") {
     //     return "customType";

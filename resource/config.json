@@ -48,7 +48,19 @@
 		"man_texture_png": "assets/animation/dragonBones/man_texture.png",
 		"Hero_json": "assets/config/Hero.json",
 		"global_json": "assets/config/global.json",
-		"simple_json": "assets/config/simple.json"
+		"simple_json": "assets/config/simple.json",
+		"font_common.png_fnt": "assets/font/font_common.png.fnt",
+		"font_common_png": "assets/font/font_common.png",
+		"beiji_wav": "assets/sound/beiji.wav",
+		"bg_mp3": "assets/sound/bg.mp3",
+		"bossAttack_mp3": "assets/sound/bossAttack.mp3",
+		"bossSkill_mp3": "assets/sound/bossSkill.mp3",
+		"dianji_mp3": "assets/sound/dianji.mp3",
+		"enemyAttack_mp3": "assets/sound/enemyAttack.mp3",
+		"enenyLand_wav": "assets/sound/enenyLand.wav",
+		"heroAttack_wav": "assets/sound/heroAttack.wav",
+		"heroBeiji_wav": "assets/sound/heroBeiji.wav",
+		"heroSkill_mp3": "assets/sound/heroSkill.mp3"
 	},
 	"groups": {
 		"preload": [
@@ -101,7 +113,19 @@
 			"Hero_json",
 			"global_json",
 			"simple_json",
-			"simple_proto"
+			"simple_proto",
+			"font_common.png_fnt",
+			"font_common_png",
+			"beiji_wav",
+			"bg_mp3",
+			"bossAttack_mp3",
+			"bossSkill_mp3",
+			"dianji_mp3",
+			"enemyAttack_mp3",
+			"enenyLand_wav",
+			"heroAttack_wav",
+			"heroBeiji_wav",
+			"heroSkill_mp3"
 		]
 	},
 	"resources": {
@@ -124,6 +148,13 @@
 			"url": "wing.res.json",
 			"type": "json",
 			"name": "wing.res.json"
+		},
+		"config": {
+			"description.json": {
+				"url": "config/description.json",
+				"type": "json",
+				"name": "config/description.json"
+			}
 		},
 		"assets": {
 			"bg.jpg": {
@@ -153,13 +184,6 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -180,6 +204,13 @@
 					"url": "assets/CheckBox/checkbox_unselect.png",
 					"type": "image",
 					"name": "assets/CheckBox/checkbox_unselect.png"
+				}
+			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"Panel": {
@@ -292,6 +323,16 @@
 				}
 			},
 			"font": {
+				"font_common.png": {
+					"url": "assets/font/font_common.png",
+					"type": "image",
+					"name": "assets/font/font_common.png"
+				},
+				"font_common.png.fnt": {
+					"url": "assets/font/font_common.png.fnt",
+					"type": "font",
+					"name": "assets/font/font_common.png.fnt"
+				},
 				"font_huode.fnt": {
 					"url": "assets/font/font_huode.fnt",
 					"type": "font",
@@ -318,6 +359,58 @@
 					"url": "assets/main/bg_zsht.png",
 					"type": "image",
 					"name": "assets/main/bg_zsht.png"
+				}
+			},
+			"sound": {
+				"beiji.wav": {
+					"url": "assets/sound/beiji.wav",
+					"type": "sound",
+					"name": "assets/sound/beiji.wav"
+				},
+				"bg.mp3": {
+					"url": "assets/sound/bg.mp3",
+					"type": "sound",
+					"name": "assets/sound/bg.mp3"
+				},
+				"bossAttack.mp3": {
+					"url": "assets/sound/bossAttack.mp3",
+					"type": "sound",
+					"name": "assets/sound/bossAttack.mp3"
+				},
+				"bossSkill.mp3": {
+					"url": "assets/sound/bossSkill.mp3",
+					"type": "sound",
+					"name": "assets/sound/bossSkill.mp3"
+				},
+				"dianji.mp3": {
+					"url": "assets/sound/dianji.mp3",
+					"type": "sound",
+					"name": "assets/sound/dianji.mp3"
+				},
+				"enemyAttack.mp3": {
+					"url": "assets/sound/enemyAttack.mp3",
+					"type": "sound",
+					"name": "assets/sound/enemyAttack.mp3"
+				},
+				"enenyLand.wav": {
+					"url": "assets/sound/enenyLand.wav",
+					"type": "sound",
+					"name": "assets/sound/enenyLand.wav"
+				},
+				"heroAttack.wav": {
+					"url": "assets/sound/heroAttack.wav",
+					"type": "sound",
+					"name": "assets/sound/heroAttack.wav"
+				},
+				"heroBeiji.wav": {
+					"url": "assets/sound/heroBeiji.wav",
+					"type": "sound",
+					"name": "assets/sound/heroBeiji.wav"
+				},
+				"heroSkill.mp3": {
+					"url": "assets/sound/heroSkill.mp3",
+					"type": "sound",
+					"name": "assets/sound/heroSkill.mp3"
 				}
 			},
 			"animation": {
@@ -409,13 +502,6 @@
 						"name": "assets/game/turntable/z.png"
 					}
 				}
-			}
-		},
-		"config": {
-			"description.json": {
-				"url": "config/description.json",
-				"type": "json",
-				"name": "config/description.json"
 			}
 		},
 		"simple_proto": {

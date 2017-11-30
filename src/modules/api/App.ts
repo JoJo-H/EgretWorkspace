@@ -27,6 +27,10 @@ class App {
         return Socket.getInstance();
     }
 
+    public static get SoundManager():SoundManager {
+        return SingletonFactory.singleton(SoundManager);
+    }
+
     constructor(){
 
     }
