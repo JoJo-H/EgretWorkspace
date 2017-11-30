@@ -8,6 +8,9 @@ class LoginProxy extends puremvc.Proxy {
     }
 
     request():void {
+        //全局配置数据
+        App.GlobalData = Config.get('global_json');
+        
         network.multiRequest(PUser.getInfo(true))
         .then(()=>{
             GlobalAPI.UI.runScene(Home);

@@ -35,8 +35,9 @@ class UTFMsg implements BaseMsg {
      * @param msg
      */
     public decode(msg:any):any {
-        console.log("decode需要子类重写，根据项目的协议结构解析");
-        return null;
+        // console.log("decode需要子类重写，根据项目的协议结构解析");
+        console.log(msg);
+        return msg;
     }
 
     /**
@@ -44,7 +45,7 @@ class UTFMsg implements BaseMsg {
      * @param msg
      */
     public encode(msg:any):any {
-        console.log("encode需要子类重写，根据项目的协议结构解析");
-        return null;
+        // console.log("encode需要子类重写，根据项目的协议结构解析");
+        return msg;
     }
 }

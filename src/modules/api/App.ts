@@ -32,12 +32,11 @@ class App {
     }
     
     public static Init():void {
-        //全局配置数据
-        App.GlobalData = Config.get('global_json');
-        console.log('ssss');
         //实例化ProtoBuf和Socket请求
         App.ProtoFile = dcodeIO.ProtoBuf.loadProto(Config.get(App.GlobalData.ProtoFile));
         App.ProtoConfig = Config.get(App.GlobalData.ProtoConfig);
-        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
+        // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
+        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new UTFMsg());
+        App.Socket.connect();
     }
 }

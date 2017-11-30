@@ -52,13 +52,14 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
 
         //发送一条消息到服务器
         public send():void{
-            var msg:any = {};
-            msg.key = "user_login_c2s";
-            msg.body = {
-                "accid" : 888,
-                "tstamp" : 999,
-                "ticket": "yangsong"
-            };
+            // var msg:any = {};
+            // msg.key = "user_login_c2s";
+            // msg.body = {
+            //     "accid" : 888,
+            //     "tstamp" : 999,
+            //     "ticket": "yangsong"
+            // };
+            var msg = "client : hello server!";
             Socket.getInstance().send(msg);
         }
 }

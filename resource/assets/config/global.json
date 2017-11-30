@@ -1,8 +1,8 @@
 {
     "IsDebug":false,
-    "HttpSerever":"http://www.baidu.com",
-    "SocketServer":"10.0.3.111",
-    "SocketPort":"10001/ws",
+    "HttpSerever":"http://localhost:4444/MyPhpProject/index.php",
+    "SocketServer":"127.0.0.1",
+    "SocketPort":"8000",
     "ProtoFile":"simple_proto",
     "ProtoConfig":"simple_json"
 }

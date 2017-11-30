@@ -95,7 +95,7 @@ class Main extends eui.UILayer {
         // });
         RES.processor.map("dbmv",{
             async onLoadStart(host:RES.ProcessHost, resource:RES.ResourceInfo):Promise<any>{
-                //等待dbmc的文件加载解析完
+                //等待dbmv的文件加载解析完
                 let data = await host.load(resource,RES.processor.BinaryProcessor);
                 //assets/animation/fast/lightbutton2_tex.png
                 let imagePath : string = resource.name.replace("ske.dbmv","tex.png");

@@ -19,7 +19,7 @@ class BaseProxy extends egret.EventDispatcher {
         super();
         this._customParams = {};
         this._params = this.formatParams(params);
-        this._requestUrl = "http://localhost:4444/MyPhpProject/index.php";
+        this._requestUrl = App.GlobalData.HttpSerever;
     }
 
     private formatParams(params:Object):any {

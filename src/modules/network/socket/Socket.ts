@@ -49,7 +49,7 @@ class Socket {
         if (this._msg instanceof ByteArrayMsg) {
             this._socket.type = egret.WebSocket.TYPE_BINARY;
         }
-        console.log("WebSocket: " + this._host + ":" + this._port);
+        console.log("start connect WebSocket: " + this._host + ":" + this._port);
         this.addEvents();
         this._socket.connect(this._host, this._port);
     }
@@ -137,7 +137,7 @@ class Socket {
         /**
      * 服务器连接成功
      */
-    private onSocketOpen():void {
+    private onSocketOpen(e:egret.Event):void {
         this._reconnectCount = 0;
         this._isConnecting = true;
 
@@ -153,7 +153,7 @@ class Socket {
     /**
      * 服务器断开连接
      */
-    private onSocketClose():void {
+    private onSocketClose(e:egret.Event):void {
         this._isConnecting = false;
 
         if (this._needReconnect) {
@@ -167,7 +167,7 @@ class Socket {
     /**
      * 服务器连接错误
      */
-    private onSocketError():void {
+    private onSocketError(e:egret.IOErrorEvent):void {
         if (this._needReconnect) {
             this.reconnect();
         } else {
@@ -180,7 +180,7 @@ class Socket {
      * 收到服务器消息
      * @param e
      */
-    private onReceiveMessage(e:egret.Event):void {
+    private onReceiveMessage(e:egret.ProgressEvent):void {
         this._msg.receive(this._socket);
     }
 }

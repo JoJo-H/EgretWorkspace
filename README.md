@@ -60,4 +60,6 @@
 -->2017.11.29 20:40
     借鉴https://github.com/yicaoyimuys/EgretGameEngine项目模板
     ！！！！！！socket前端结构构造,未调试。
-    
+
+-->2017.11.30 18:00
+    完成最简单的socket对接，客户端发送与接收回应。php服务端使用workman创建websocket
