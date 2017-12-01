@@ -1,8 +1,27 @@
 
-class Global {
+class Tools {
 
-    constructor(){
+    constructor(){}
 
+    private _tooltip:ITooltip;
+    getTooltip():ITooltip {
+        if (!this._tooltip) {
+            this._tooltip = Tools.getDefinitionInstance<ITooltip>(App.GlobalData.GameConfig.TooltipClass,Tooltip);
+            if (this._tooltip) {
+                App.UI.addTooltip(this._tooltip);
+            }
+            if (DEBUG && !this._tooltip) {
+                console.error("请配置TooltipClass");
+            }
+        }
+        return this._tooltip;
+    }
+
+    tooltip(info:TooltipInfo|string, skinName?:string):void {
+        var tip = this.getTooltip();
+        if (tip) {
+            tip.show(info, skinName);
+        }
     }
 
     /**
@@ -30,7 +49,7 @@ class Global {
      * @returns {null}
      */
     public static getDefinitionInstance<T>(name:string, defaultType:any = null, ...args):T {
-        var define = Global.getDefinitionType(name, defaultType);
+        var define = Tools.getDefinitionType(name, defaultType);
         if( is.truthy(define)) {
             return new define(...args);
         }

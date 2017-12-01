@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TooltipSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="560">
+	<e:Rect fillAlpha="0.6" anchorOffsetX="0" anchorOffsetY="0" ellipseWidth="15" ellipseHeight="15" left="0" right="0" top="0" bottom="0"/>
+	<e:Label id="label" text="{text}" size="28" horizontalCenter="0" verticalCenter="0" top="7" bottom="7" anchorOffsetX="0" left="30" right="30" textAlign="center" stroke="2" textColor="0xa9fcfc"/>
+</e:Skin>

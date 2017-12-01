@@ -149,13 +149,6 @@
 			"type": "json",
 			"name": "wing.res.json"
 		},
-		"config": {
-			"description.json": {
-				"url": "config/description.json",
-				"type": "json",
-				"name": "config/description.json"
-			}
-		},
 		"assets": {
 			"bg.jpg": {
 				"url": "assets/bg.jpg",
@@ -167,21 +160,11 @@
 				"type": "image",
 				"name": "assets/egret_icon.png"
 			},
-			"Button": {
-				"button_caipiao.png": {
-					"url": "assets/Button/button_caipiao.png",
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
 					"type": "image",
-					"name": "assets/Button/button_caipiao.png"
-				},
-				"button_down.png": {
-					"url": "assets/Button/button_down.png",
-					"type": "image",
-					"name": "assets/Button/button_down.png"
-				},
-				"button_up.png": {
-					"url": "assets/Button/button_up.png",
-					"type": "image",
-					"name": "assets/Button/button_up.png"
+					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"CheckBox": {
@@ -206,11 +189,21 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
+			"Button": {
+				"button_caipiao.png": {
+					"url": "assets/Button/button_caipiao.png",
 					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
+					"name": "assets/Button/button_caipiao.png"
+				},
+				"button_down.png": {
+					"url": "assets/Button/button_down.png",
+					"type": "image",
+					"name": "assets/Button/button_down.png"
+				},
+				"button_up.png": {
+					"url": "assets/Button/button_up.png",
+					"type": "image",
+					"name": "assets/Button/button_up.png"
 				}
 			},
 			"Panel": {
@@ -414,28 +407,6 @@
 				}
 			},
 			"animation": {
-				"fast": {
-					"lightbutton2_ske.dbmv": {
-						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
-					},
-					"lightbutton2_tex.png": {
-						"url": "assets/animation/fast/lightbutton2_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/lightbutton2_tex.png"
-					},
-					"penjinbi_ske.dbmv": {
-						"url": "assets/animation/fast/penjinbi_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/penjinbi_ske.dbmv"
-					},
-					"penjinbi_tex.png": {
-						"url": "assets/animation/fast/penjinbi_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/penjinbi_tex.png"
-					}
-				},
 				"dragonBones": {
 					"duizhanshengli_anim.json": {
 						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
@@ -482,6 +453,28 @@
 						"type": "image",
 						"name": "assets/animation/dragonBones/robot_texture.png"
 					}
+				},
+				"fast": {
+					"lightbutton2_ske.dbmv": {
+						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
+					},
+					"lightbutton2_tex.png": {
+						"url": "assets/animation/fast/lightbutton2_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/lightbutton2_tex.png"
+					},
+					"penjinbi_ske.dbmv": {
+						"url": "assets/animation/fast/penjinbi_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/penjinbi_ske.dbmv"
+					},
+					"penjinbi_tex.png": {
+						"url": "assets/animation/fast/penjinbi_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/penjinbi_tex.png"
+					}
 				}
 			},
 			"game": {
@@ -502,6 +495,13 @@
 						"name": "assets/game/turntable/z.png"
 					}
 				}
+			}
+		},
+		"config": {
+			"description.json": {
+				"url": "config/description.json",
+				"type": "json",
+				"name": "config/description.json"
 			}
 		},
 		"simple_proto": {

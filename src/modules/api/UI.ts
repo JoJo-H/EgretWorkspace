@@ -111,6 +111,13 @@ class UI extends eui.UILayer{
         return commonInst;
     }
 
+    addTooltip(tooltipType:any, ...args):BaseComponent {
+        var tooltipInst = this.getTypeInst(tooltipType, args, UIType.TOOLTIP);
+        display.setFullDisplay(tooltipInst);
+        this._tooltip.addChild(tooltipInst);
+        return tooltipInst;
+    }
+
     private getTypeInst(type,arg,uiType):any {
         let inst : BaseComponent = null;
         let skinName ;
@@ -167,6 +174,33 @@ class UI extends eui.UILayer{
             return true;
         }
         return false;
+    }
+
+    getContainerByType(type:UIType) {
+        switch (type) {
+            case UIType.BOX: {
+                return this._box;
+            }
+            case UIType.SCENE: {
+                return this._scene;
+            }
+            case UIType.GUIDE: {
+                return this._guide;
+            }
+            case UIType.COMMON: {
+                return this._common;
+            }
+            case UIType.MENU: {
+                return this._menu;
+            }
+            case UIType.TOOLTIP: {
+                return this._tooltip;
+            }
+            case UIType.PANEL: {
+                return this._panel;
+            }
+        }
+        return null;
     }
 
     remove(component:BaseComponent):void {

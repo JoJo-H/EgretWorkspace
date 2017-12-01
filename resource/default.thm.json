@@ -31,6 +31,7 @@
     "resource/eui_skins/VSliderSkin.exml",
     "resource/ui/button/ButtonCommonSkin.exml",
     "resource/ui/button/ButtonEmptySkin.exml",
+    "resource/ui/common/TooltipSkin.exml",
     "resource/ui/game/2048/Game2048Skin.exml",
     "resource/ui/game/2048/GameOverSkin.exml",
     "resource/ui/game/PanelGamesSkin.exml",

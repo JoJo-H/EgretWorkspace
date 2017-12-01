@@ -45,7 +45,7 @@ class ObjectPool<T> {
         var instance : any = this._leftArr.shift();
         //初始化数据
         if(is.fun(instance.init)) {
-            instance.init(args);
+            instance.init(...args);
         }
         this._useArr.push(instance);
         return instance;

@@ -81,4 +81,22 @@ class display {
         result.source = texture;
         return result;
     }
+
+    /**
+     * 设置显示对象的相对描点
+     * @param disObj 需要设置描点的显示对象
+     * @param anchorX X轴相对描点
+     * @param anchorY Y轴相对描点
+     */
+    static setAnchor(disObj:egret.DisplayObject, anchorX:number, anchorY:number = anchorX):void {
+        disObj.anchorOffsetX = disObj.width * anchorX;
+        disObj.anchorOffsetY = disObj.height * anchorY;
+    }
+
+    static get stageW():number {
+        return App.stage.stageWidth;
+    }
+    static get stageH():number {
+        return App.stage.stageHeight;
+    }
 }

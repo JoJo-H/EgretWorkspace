@@ -69,3 +69,6 @@
 
 -->2017.12.01 15:47
     新增常用工具类,如TimerManager，StringBuffer，MathUtils，DeviceUtils，RandomUtils。。。
+
+-->2017.12.01 18:06
+    新增tips弹窗Tooltip,例子App.Tools.tooltip('ddddd');

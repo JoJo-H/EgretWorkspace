@@ -93,6 +93,10 @@ class App {
         return SingletonFactory.singleton(MathUtils);
     }
 
+    public static get Tools():Tools {
+        return SingletonFactory.singleton(Tools);
+    }
+
     constructor(){
 
     }

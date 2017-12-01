@@ -4,5 +4,13 @@
     "SocketServer":"127.0.0.1",
     "SocketPort":"8000",
     "ProtoFile":"simple_proto",
-    "ProtoConfig":"simple_json"
+    "ProtoConfig":"simple_json",
+
+
+    "GameConfig": {
+        "ProjectName": "huanzhuang",
+        "TooltipClass": "Tooltip",
+        "SimpleLoadingClass": "SimpleLoading",
+        "TooltipLayout" : "TooltipLayout"
+    }
 }

@@ -44,7 +44,7 @@ class BaseComponent extends eui.Component {
             this.data = data;
             if (data != null) {
                 this.addDataMap('data');
-                Global.propertyChange(this,"data");
+                Tools.propertyChange(this,"data");
             }
             
         } else {
