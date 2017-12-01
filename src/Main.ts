@@ -26,13 +26,38 @@
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
-
+/// <reference path="AssetAdapter.ts" />
+/// <reference path="ThemeAdapter.ts" />
+/// <reference path="LoadingUI.ts" />
 
 // 资源配置，您可以访问
 // https://github.com/egret-labs/resourcemanager/tree/master/docs
 // 了解更多细节
 //避免图集重复加载
 RES.FEATURE_FLAG.LOADING_STATE = 1;
+
+async function promisify(loader: egret.ImageLoader | egret.HttpRequest | egret.Sound, resource: any): Promise<any> {
+    
+    return new Promise((reslove, reject) => {
+        let onSuccess = () => {
+            let texture = loader['data'] ? loader['data'] : loader['response'];
+            reslove(texture);
+        }
+
+        let onError = (e) => {
+            reject(new Error("1001"));
+        }
+        loader.addEventListener(egret.Event.COMPLETE, onSuccess, this);
+        loader.addEventListener(egret.IOErrorEvent.IO_ERROR, onError, this);
+    })
+}
+    
+function getURL(resource: any) {
+    let prefix = resource.extra ? "" : "resource/";
+    let url = prefix + resource.url;
+    return (<any>RES).getRealURL(url);
+}
+
 
 @RES.mapConfig("config.json",()=>"resource",path => {
     var ext = path.substr(path.lastIndexOf(".") + 1);
@@ -69,31 +94,49 @@ class Main extends eui.UILayer {
     private loadingView: LoadingUI;
     protected createChildren(): void {
 
-        // RES.processor.map("sheet",{
-        //     async onLoadStart(host: RES.ProcessHost, resource: RES.ResourceInfo):Promise<any>{
-        //         let data = await host.load(resource,RES.processor.JsonProcessor);
-        //         let imagePath = RES.processor.getRelativePath(resource.name,data.file);
-        //         // r= { name:"_png",type:"sheet",url:".png"}
-        //         let r = (<any>host.resourceConfig).getRource(imagePath);
-        //         if(!r) {
-        //             throw new RES.ResourceManagerError(1001,imagePath);
-        //         }
-        //         var texture : egret.Texture = await host.load(r);
-        //         var frames : any = data.frames;
-        //         var spriteSheet = new egret.SpriteSheet(texture);
-        //         for (var subkey in frames) {
-        //             var config: any = frames[subkey];
-        //             var texture = spriteSheet.createTexture(subkey, config.x, config.y, config.w, config.h, config.offX, config.offY, config.sourceW, config.sourceH);
-        //         }
-        //         return null;
-        //     },
-        //     async onRemoveStart(host,resource): Promise<any> {
-        //         return Promise.resolve();
-        //     },
-        //     getData(host: RES.ProcessHost, resource: RES.ResourceInfo, key: string, subkey: string): any{
+        egret.ImageLoader.crossOrigin = 'anonymous';
+        //1.45
+        if( egret.MainContext.deviceType == egret.MainContext.DEVICE_PC || (window.innerHeight / window.innerWidth) < 1.6) {
+            this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
+        }
+        if( egret.MainContext.deviceType != egret.MainContext.DEVICE_PC){
+            this.stage.orientation = egret.OrientationMode.PORTRAIT;
+        }
 
-        //     }
-        // });
+
+        RES.processor.map("sheet",{
+            async onLoadStart(host: RES.ProcessHost, resource: RES.ResourceInfo):Promise<any>{
+                let data = await host.load(resource, RES.processor.JsonProcessor);
+                let imagePath = RES.processor.getRelativePath(resource.name, data.file);
+                let r = (<any>host.resourceConfig).getResource(imagePath);
+                // r= { name:"_png",type:"sheet",url:".png"}
+                if (!r) {
+                    throw new RES.ResourceManagerError(1001, imagePath);
+                }
+                var texture: egret.Texture = await host.load(r);
+                var frames: any = data.frames;
+                var spriteSheet = new egret.SpriteSheet(texture);
+                for (var subkey in frames) {
+                    var config: any = frames[subkey];
+                    var texture = spriteSheet.createTexture(subkey, config.x, config.y, config.w, config.h, config.offX, config.offY, config.sourceW, config.sourceH);
+                }
+                return spriteSheet;
+            },
+            getData(host, resource, key, subkey) {
+                let data: egret.SpriteSheet = host.get(resource);
+                if (data) {
+                    subkey = subkey.replace('_png', '.png');
+                    return data.getTexture(subkey);
+                }
+                else {
+                    return null;
+                }
+            },
+            
+            onRemoveStart(host, resource): Promise<any> {
+                return Promise.resolve();
+            }
+        });
         RES.processor.map("dbmv",{
             async onLoadStart(host:RES.ProcessHost, resource:RES.ResourceInfo):Promise<any>{
                 //等待dbmv的文件加载解析完
@@ -121,9 +164,28 @@ class Main extends eui.UILayer {
 
             }
         });
-        if( egret.MainContext.deviceType == egret.MainContext.DEVICE_PC || window.innerHeight / window.innerWidth < 1.6){
-            this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
-        }
+        RES.processor.map('image', {
+            async onLoadStart(host, resource) {
+                var loader = new egret.ImageLoader();
+                if (resource.name.indexOf('https://') > -1 ||
+                    resource.name.indexOf('http://') > -1) {
+                    loader.load(resource.name);
+                } else {
+                    loader.load(getURL(resource));
+                }
+                var bitmapData = await promisify(loader, resource);
+                let texture = new egret.Texture();
+                texture._setBitmapData(bitmapData);
+                return texture;
+            },
+
+            onRemoveStart(host, resource) {
+
+                let texture = host.get(resource);
+                texture.dispose();
+                return Promise.resolve();
+            }
+        });
 
         super.createChildren();
         //inject the custom material parser
@@ -145,6 +207,8 @@ class Main extends eui.UILayer {
      * Loading of configuration file is complete, start to pre-load the theme configuration file and the preload resource group
      */
     private onConfigComplete(event:RES.ResourceEvent):void {
+        this.stage.dirtyRegionPolicy = egret.DirtyRegionPolicy.OFF;
+        
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         // load skin theme configuration file, you can manually modify the file. And replace the default skin.
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
