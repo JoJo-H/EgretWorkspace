@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyHSliderProgressSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="bg_base_goldslip_png" left="0" right="0"/>
+	<e:Image id="thumb" source="bg_goldslip_png" y="12" left="11" right="13" anchorOffsetX="0"/>
+</e:Skin>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyHSliderSkin" minWidth="20" minHeight="8" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<e:ProgressBar id="track" value="{maximum}" minimum="{minimum}" maximum="{maximum}" verticalCenter="0" left="0" anchorOffsetX="0" right="0" skinName="MyHSliderProgressSkin"/>
+	<e:Image id="thumb" verticalCenter="-1" source="button_drag_png"/>
+	<e:Group id="labelComp" verticalCenter="-50">
+		<e:Image x="-12" y="0" source="bg_imgbox_png" scale9Grid="22,18,82,56" height="60" anchorOffsetX="0" width="70"/>
+		<e:Label id="label" text="10" y="11" size="24" touchEnabled="false" scaleX="1" scaleY="1" textColor="0xe2a918" horizontalCenter="-6.5"/>
+	</e:Group>
+</e:Skin>

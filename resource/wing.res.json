@@ -32,9 +32,19 @@
       "name": "egret_icon_png"
     },
     {
-      "url": "assets/ItemRenderer/selected.png",
+      "url": "assets/Button/button_caipiao.png",
       "type": "image",
-      "name": "selected_png"
+      "name": "button_caipiao_png"
+    },
+    {
+      "url": "assets/Button/button_down.png",
+      "type": "image",
+      "name": "button_down_png"
+    },
+    {
+      "url": "assets/Button/button_up.png",
+      "type": "image",
+      "name": "button_up_png"
     },
     {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -57,19 +67,9 @@
       "name": "checkbox_unselect_png"
     },
     {
-      "url": "assets/Button/button_caipiao.png",
+      "url": "assets/ItemRenderer/selected.png",
       "type": "image",
-      "name": "button_caipiao_png"
-    },
-    {
-      "url": "assets/Button/button_down.png",
-      "type": "image",
-      "name": "button_down_png"
-    },
-    {
-      "url": "assets/Button/button_up.png",
-      "type": "image",
-      "name": "button_up_png"
+      "name": "selected_png"
     },
     {
       "url": "assets/Panel/border.png",
@@ -150,6 +150,36 @@
       "url": "assets/ToggleSwitch/on.png",
       "type": "image",
       "name": "on_png"
+    },
+    {
+      "url": "assets/common/bg_base_goldslip.png",
+      "type": "image",
+      "name": "bg_base_goldslip_png"
+    },
+    {
+      "url": "assets/common/bg_goldslip.png",
+      "type": "image",
+      "name": "bg_goldslip_png"
+    },
+    {
+      "url": "assets/common/bg_headviewcircle.png",
+      "type": "image",
+      "name": "bg_headviewcircle_png"
+    },
+    {
+      "url": "assets/common/bg_imgbox.png",
+      "type": "image",
+      "name": "bg_imgbox_png"
+    },
+    {
+      "url": "assets/common/button_drag.png",
+      "type": "image",
+      "name": "button_drag_png"
+    },
+    {
+      "url": "assets/common/shape_loading.png",
+      "type": "image",
+      "name": "shape_loading_png"
     },
     {
       "url": "assets/config/Hero.json",
@@ -252,6 +282,26 @@
       "name": "heroSkill_mp3"
     },
     {
+      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/lightbutton2_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/lightbutton2_tex.png",
+      "type": "image",
+      "name": "lightbutton2_tex_png"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_ske.dbmv",
+      "type": "dbmv",
+      "name": "assets/animation/fast/penjinbi_ske.dbmv"
+    },
+    {
+      "url": "assets/animation/fast/penjinbi_tex.png",
+      "type": "image",
+      "name": "penjinbi_tex_png"
+    },
+    {
       "url": "assets/animation/dragonBones/duizhanshengli_anim.json",
       "type": "json",
       "name": "duizhanshengli_anim_json"
@@ -295,26 +345,6 @@
       "url": "assets/animation/dragonBones/robot_texture.png",
       "type": "image",
       "name": "robot_texture_png"
-    },
-    {
-      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
-      "type": "dbmv",
-      "name": "assets/animation/fast/lightbutton2_ske.dbmv"
-    },
-    {
-      "url": "assets/animation/fast/lightbutton2_tex.png",
-      "type": "image",
-      "name": "lightbutton2_tex_png"
-    },
-    {
-      "url": "assets/animation/fast/penjinbi_ske.dbmv",
-      "type": "dbmv",
-      "name": "assets/animation/fast/penjinbi_ske.dbmv"
-    },
-    {
-      "url": "assets/animation/fast/penjinbi_tex.png",
-      "type": "image",
-      "name": "penjinbi_tex_png"
     },
     {
       "url": "assets/game/turntable/g.png",

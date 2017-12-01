@@ -24,6 +24,12 @@ var PUser = {
     getInfo: function(cache?:boolean,mask?:boolean,dataMerge?:boolean,delay?:any): ProxyInfo {
         return _p_("User.getInfo", {}, mask, cache, dataMerge, delay);
     },
+    getCache: function(path, defVal = null):any {
+		return {};
+	},
+	isCache: function():boolean{
+		return true;
+	},
     /*** 用户-日志上传 ***/
 	uploadLog: function(logStr?:any,cache?:boolean,mask?:boolean,dataMerge?:boolean,delay?:any): ProxyInfo {
 		return _p_("User.uploadLog", {logStr:logStr}, mask, cache, dataMerge, delay);

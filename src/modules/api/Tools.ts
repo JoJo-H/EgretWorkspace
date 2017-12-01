@@ -2,28 +2,6 @@
 class Tools {
 
     constructor(){}
-
-    private _tooltip:ITooltip;
-    getTooltip():ITooltip {
-        if (!this._tooltip) {
-            this._tooltip = Tools.getDefinitionInstance<ITooltip>(App.GlobalData.GameConfig.TooltipClass,Tooltip);
-            if (this._tooltip) {
-                App.UI.addTooltip(this._tooltip);
-            }
-            if (DEBUG && !this._tooltip) {
-                console.error("请配置TooltipClass");
-            }
-        }
-        return this._tooltip;
-    }
-
-    tooltip(info:TooltipInfo|string, skinName?:string):void {
-        var tip = this.getTooltip();
-        if (tip) {
-            tip.show(info, skinName);
-        }
-    }
-
     /**
      * 获取指定类的类型
      * @param name 类型名称
@@ -61,4 +39,38 @@ class Tools {
             eui.PropertyEvent.dispatchPropertyEvent(obj, eui.PropertyEvent.PROPERTY_CHANGE, arg[i]);
         }
     }
+
+    static getStringLen(str:string):number {
+        let len = 0;
+        //for of会被编译成for循环
+        // for( let c of str) {
+        //     len ++;
+        // }
+        let  reduce = 0;
+        for(let i = 0 ; i < str.length ; i ++) {
+            if(str.codePointAt(i) > 0xFFFF) {
+                reduce ++;
+            }
+            len ++;
+        }
+        len -= reduce;
+        return len;
+    }
+    static formatName(str:string,len):string {
+        for(let i = 0 ; i < str.length ; i ++) {
+            if(str.codePointAt(i) > 0xFFFF) {
+                len ++;
+            }
+        }
+        return str.length > len ? str.substr(0,len) +'...' : str.substr(0,len);
+    }
+
+    static timeFormat(time:number):string {
+        var h = Math.floor(time/3600);
+        var s = Math.floor( (time - h*3600) / 60);
+        var m = time - h*3600 - s*60;
+        var str : string = ( (h+"").length<2 ? "0"+h : h + "" ) + ":" + ( (s+"").length<2 ? "0"+s : s + "" ) + ":" + ( (m+"").length<2 ? "0"+m : m + "" );
+        return str;
+    }
+    
 }

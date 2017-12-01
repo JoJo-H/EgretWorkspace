@@ -54,6 +54,10 @@
     {
       "name": "protobuf",
       "path": "../MyGameTools/thirds/protobuf"
+    },
+    {
+      "name": "qrcode",
+      "path": "../MyGameTools/thirds/qrcode"
     }
   ]
 }

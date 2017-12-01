@@ -72,3 +72,6 @@
 
 -->2017.12.01 18:06
     新增tips弹窗Tooltip,例子App.Tools.tooltip('ddddd');
+
+-->2017.12.01 19:22
+    新增UITools工具类,SimpleLoading,GameShare,QRShape,MyHSlider,ScroolTooltip,HeadCircleView等常用类

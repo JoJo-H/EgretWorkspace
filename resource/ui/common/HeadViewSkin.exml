@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HeadViewSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image id="img" horizontalCenter="0" verticalCenter="0" source="{data.p.pic}"/>
+	<e:Image source="bg_headviewcircle_png" top="0" right="0" bottom="0" left="0"/>
+</e:Skin>

@@ -93,8 +93,8 @@ class App {
         return SingletonFactory.singleton(MathUtils);
     }
 
-    public static get Tools():Tools {
-        return SingletonFactory.singleton(Tools);
+    public static get UITools():UITools {
+        return SingletonFactory.singleton(UITools);
     }
 
     constructor(){
