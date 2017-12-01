@@ -49,13 +49,13 @@
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
 	<script egret="game" src="bin-debug/modules/component/Button.js"></script>
+	<script egret="game" src="bin-debug/modules/network/socket/ByteArrayMsg.js"></script>
 	<script egret="game" src="bin-debug/modules/component/BaseButton.js"></script>
 	<script egret="game" src="bin-debug/modules/component/BaseComponent.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/BaseProxy.js"></script>
-	<script egret="game" src="bin-debug/modules/network/socket/ByteArrayMsg.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/UTFMsg.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/BaseSound.js"></script>
-	<script egret="game" src="bin-debug/modules/network/http/ProxyTime.js"></script>
+	<script egret="game" src="bin-debug/modules/animation/MovieClock.js"></script>
 	<script egret="game" src="bin-debug/modules/animation/MovieEvent.js"></script>
 	<script egret="game" src="bin-debug/modules/animation/SequnceMovie.js"></script>
 	<script egret="game" src="bin-debug/modules/api/App.js"></script>
@@ -88,31 +88,42 @@
 	<script egret="game" src="bin-debug/modules/network/http/MultiProxy.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/ProxyCache.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/ProxyEvent.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/modules/network/http/ProxyTime.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/ProxyUpdate.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/SingleProxy.js"></script>
 	<script egret="game" src="bin-debug/modules/network/ListenerMediator.js"></script>
 	<script egret="game" src="bin-debug/modules/network/network.js"></script>
 	<script egret="game" src="bin-debug/modules/network/NotifyName.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/BaseMsg.js"></script>
-	<script egret="game" src="bin-debug/modules/animation/DragonMovie.js"></script>
+	<script egret="game" src="bin-debug/LoadingUI.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/ByteArrayMsgByProtobuf.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/Socket.js"></script>
-	<script egret="game" src="bin-debug/modules/animation/MovieClip.js"></script>
+	<script egret="game" src="bin-debug/modules/animation/DragonMovie.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/UTFMsgByJson.js"></script>
 	<script egret="game" src="bin-debug/modules/network/SocketMediator.js"></script>
 	<script egret="game" src="bin-debug/modules/proxy/LoginProxy.js"></script>
 	<script egret="game" src="bin-debug/modules/proxy/SeverEvent.js"></script>
 	<script egret="game" src="bin-debug/modules/proxy/UserProxy.js"></script>
-	<script egret="game" src="bin-debug/modules/animation/MovieClock.js"></script>
+	<script egret="game" src="bin-debug/modules/animation/MovieClip.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/SoundBg.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/SoundEffects.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/SoundManager.js"></script>
 	<script egret="game" src="bin-debug/modules/tools/AnchorUtil.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/DelayOptManager.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/DeviceUtils.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/FrameDelay.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/FrameExecutor.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/KeyboardUtils.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/LocationProperty.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/Log.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/MathUtils.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/RandomUtils.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/StringBuffer.js"></script>
+	<script egret="game" src="bin-debug/modules/tools/TimerManager.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/array.js"></script>
-	<script egret="game" src="bin-debug/modules/utils/device.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/display.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/fun.js"></script>
+	<script egret="game" src="bin-debug/modules/utils/md5.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/num.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/obj.js"></script>
 	<script egret="game" src="bin-debug/modules/utils/other.js"></script>
@@ -126,8 +137,10 @@
 	<script egret="game" src="bin-debug/supports/ProxyInfo.js"></script>
 	<script egret="game" src="bin-debug/supports/SocketCallback.js"></script>
 	<script egret="game" src="bin-debug/test/GeneratorTestObj.js"></script>
+	<script egret="game" src="bin-debug/test/md5Test.js"></script>
 	<script egret="game" src="bin-debug/test/PromiseTestObj.js"></script>
 	<script egret="game" src="bin-debug/test/ProxyTestObj.js"></script>
+	<script egret="game" src="bin-debug/test/TestManage.js"></script>
 	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
 	<!--game_files_end-->
 </head>

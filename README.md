@@ -66,3 +66,6 @@
 
 -->2017.11.30 20:00
     新增音频系统的初级处理。
+
+-->2017.12.01 15:47
+    新增常用工具类,如TimerManager，StringBuffer，MathUtils，DeviceUtils，RandomUtils。。。

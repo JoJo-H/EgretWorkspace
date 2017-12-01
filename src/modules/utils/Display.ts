@@ -57,4 +57,28 @@ class display {
         return host instanceof BaseComponent ;
         
     }
+
+    /**
+     * 创建一个Bitmap
+     * @param resName resource.json中配置的name
+     * @returns {egret.Bitmap}
+     */
+    static createBitmap(resName:string):egret.Bitmap {
+        var result:egret.Bitmap = new egret.Bitmap();
+        var texture:egret.Texture = RES.getRes(resName);
+        result.texture = texture;
+        return result;
+    }
+
+    /**
+     * 创建一张Gui的图片
+     * @param resName
+     * @returns {egret.Bitmap}
+     */
+    static createEuiImage(resName:string):eui.Image {
+        var result:eui.Image = new eui.Image();
+        var texture:egret.Texture = RES.getRes(resName);
+        result.source = texture;
+        return result;
+    }
 }

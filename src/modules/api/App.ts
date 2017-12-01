@@ -55,6 +55,44 @@ class App {
         return SingletonFactory.singleton(UI);
     }
 
+
+
+    /**
+     * 统一的计时器和帧刷管理类
+     * @type {TimerManager}
+     */
+    public static get TimerManager():TimerManager {
+        return SingletonFactory.singleton(TimerManager);
+    }
+
+    /**
+     * 分帧处理类
+     */
+    public static get DelayOptManager():DelayOptManager {
+        return SingletonFactory.singleton(DelayOptManager);
+    }
+
+    /**
+     * 设备工具类
+     */
+    public static get DeviceUtils():DeviceUtils {
+        return SingletonFactory.singleton(DeviceUtils);
+    }
+
+    /**
+     * 键盘操作工具类
+     */
+    public static get KeyboardUtils():KeyboardUtils {
+        return SingletonFactory.singleton(KeyboardUtils);
+    }
+
+    /**
+     * 数学计算工具类
+     */
+    public static get MathUtils():MathUtils {
+        return SingletonFactory.singleton(MathUtils);
+    }
+
     constructor(){
 
     }
