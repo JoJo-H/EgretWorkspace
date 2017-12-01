@@ -16,7 +16,7 @@ class ByteArrayMsg implements BaseMsg {
 
         var obj:any = this.decode(this._msgBuffer);
         if (obj) {
-            GlobalAPI.facede.sendNotification(obj.key, obj.body);
+            App.Facade.sendNotification(obj.key, obj.body);
         }
 
         //TODO double bytearray clear

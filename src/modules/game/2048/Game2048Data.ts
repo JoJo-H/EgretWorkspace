@@ -11,13 +11,6 @@ class Game2048Data extends egret.EventDispatcher{
         this.bestScore = parseInt(value);
     }
 
-    static getInstance():Game2048Data{
-        if(!this._instance){
-            this._instance = new Game2048Data();
-        }
-        return this._instance;
-    }
-
     get desc():string {
         return "合并数字直到出现2048甚至更高";
     }

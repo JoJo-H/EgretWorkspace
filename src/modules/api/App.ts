@@ -21,14 +21,38 @@ class App {
 
     /**
      * Socket请求
-     * @type {null}
      */
     public static get Socket():Socket {
-        return Socket.getInstance();
+        return SingletonFactory.singleton(Socket);
     }
 
+    /**
+     * 配置类
+     */
+    public static get Config():Config {
+        return SingletonFactory.singleton(Config);
+    }
+    /**
+     * 音频管理
+     */
     public static get SoundManager():SoundManager {
         return SingletonFactory.singleton(SoundManager);
+    }
+
+    public static get Facade():ApplicationFacade {
+        return ApplicationFacade.getInstance();
+    }
+    /**
+     * 自定义事件管理
+     */
+    public static get CustomEventManage():CustomEventManage {
+        return SingletonFactory.singleton(CustomEventManage);
+    }
+    /**
+     * UI管理类
+     */
+    public static get UI():UI{
+        return SingletonFactory.singleton(UI);
     }
 
     constructor(){
@@ -42,5 +66,14 @@ class App {
         // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
         App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new UTFMsg());
         App.Socket.connect();
+    }
+
+    private static _stage : egret.Stage;
+    public static setStage(s:egret.Stage):void {
+        this._stage = s;
+    }
+
+    public static get stage(){
+        return this._stage;
     }
 }

@@ -2,13 +2,6 @@
 class Config {
 
     private _configMap : Map<string,any> = new Map();
-    private static _instance : Config;
-    static getInstance():Config {
-        if(!this._instance) {
-            this._instance = new Config();
-        }
-        return this._instance;
-    }
 
     getConfig<T>(name:string,key:string,defaultValue:T):T{
         if( !this._configMap.has(name) ) {
@@ -46,11 +39,11 @@ class Config {
     }
 
     static get(name:string,key:string=null,defaultValue:any = null):any{
-        return Config.getInstance().getConfig(name,key,defaultValue);
+        return App.Config.getConfig(name,key,defaultValue);
     }
 
     static exists(name:string, key:string):boolean {
-        return Config.getInstance().exists(name, key);
+        return App.Config.exists(name, key);
     }
 
 
@@ -68,7 +61,7 @@ class Config {
     }
 
     static loadZip():any{
-        return Config.getInstance().loadZip();
+        return App.Config.loadZip();
     }
 
     //name格式 xxx_json

@@ -118,9 +118,9 @@ class BaseFactory {
             movie.x = option.container.width / 2 + ( option.offsetX || 0 );
             movie.y = option.container.height / 2 + ( option.offsetY || 0 );
         }else {
-            GlobalAPI.stage.addChild(movie);
-            movie.x = GlobalAPI.stage.width / 2 + ( option.offsetX || 0 );
-            movie.y = GlobalAPI.stage.height / 2 + ( option.offsetY || 0 );
+            App.stage.addChild(movie);
+            movie.x = App.stage.width / 2 + ( option.offsetX || 0 );
+            movie.y = App.stage.height / 2 + ( option.offsetY || 0 );
         }
     }
 

@@ -16,7 +16,7 @@ class SingletonFactory {
         if (!this._singletonMap.hasOwnProperty(typeId)) {
             this._singletonMap[typeId] = new (<any>type)();
         }
-        return <any>this._singletonMap[typeId];
+        return <T>this._singletonMap[typeId];
     }
 
     /**

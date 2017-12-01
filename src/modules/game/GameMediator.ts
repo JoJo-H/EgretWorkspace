@@ -15,11 +15,11 @@ class GameMediator extends puremvc.Mediator implements puremvc.IMediator{
             super.handleNotification(notification);
                 switch(notification.getName()){
                     case GameDefine.GAME_OPEN_2048 :
-                        GlobalAPI.UI.addBox(Game2048View);
+                        App.UI.addBox(Game2048View);
                         App.SoundManager.playEffect('beiji_wav');
                         break;
                     case GameDefine.GAME_OPEN_TURNTABLE :
-                        GlobalAPI.UI.addBox(GameTurntableView);
+                        App.UI.addBox(GameTurntableView);
                         App.SoundManager.playEffect('bossAttack_mp3');
                         break;
                 }

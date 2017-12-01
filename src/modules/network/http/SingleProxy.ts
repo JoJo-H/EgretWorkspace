@@ -17,8 +17,8 @@ class SingleProxy extends BaseProxy{
             if(type) {
                 key += '.'+type;
             }
-            if(ProxyTime.getInstance().getLeftime(key) == 0) {
-                ProxyTime.getInstance().push(key,time);
+            if(SingletonFactory.singleton(ProxyTime).getLeftime(key) == 0) {
+                SingletonFactory.singleton(ProxyTime).push(key,time);
                 super.load();
             }else {
                 this.dispatchEvent(new ProxyEvent(ProxyEvent.RESPONSE_SUCCEED,this));

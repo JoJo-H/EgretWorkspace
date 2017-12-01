@@ -15,14 +15,6 @@ class Socket {
     public constructor() {
     }
 
-    private static _instance : Socket;
-    public static getInstance():Socket {
-        if(!this._instance) {
-            this._instance = new Socket();
-        }
-        return this._instance;
-    }
-
     /**
      * 初始化服务区地址
      * @param host IP
@@ -65,9 +57,9 @@ class Socket {
         } else {
             this._reconnectCount = 0;
             if (this._connectFlag) {
-                GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_CLOSE);
+                App.Facade.sendNotification(SocketMediator.SOCKET_CLOSE);
             } else {
-                GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_NOCONNECT);
+                App.Facade.sendNotification(SocketMediator.SOCKET_NOCONNECT);
             }
         }
     }
@@ -111,7 +103,7 @@ class Socket {
      * @param str
      */
     private debugInfo(str:String):void {
-        GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_DEBUG_INFO, str);
+        App.Facade.sendNotification(SocketMediator.SOCKET_DEBUG_INFO, str);
     }
 
     /**
@@ -142,9 +134,9 @@ class Socket {
         this._isConnecting = true;
 
         if (this._connectFlag && this._needReconnect) {
-            GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_RECONNECT);
+            App.Facade.sendNotification(SocketMediator.SOCKET_RECONNECT);
         } else {
-            GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_CONNECT);
+            App.Facade.sendNotification(SocketMediator.SOCKET_CONNECT);
         }
 
         this._connectFlag = true;
@@ -157,10 +149,10 @@ class Socket {
         this._isConnecting = false;
 
         if (this._needReconnect) {
-            GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_START_RECONNECT);
+            App.Facade.sendNotification(SocketMediator.SOCKET_START_RECONNECT);
             this.reconnect();
         } else {
-            GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_CLOSE);
+            App.Facade.sendNotification(SocketMediator.SOCKET_CLOSE);
         }
     }
 
@@ -171,7 +163,7 @@ class Socket {
         if (this._needReconnect) {
             this.reconnect();
         } else {
-            GlobalAPI.facede.sendNotification(SocketMediator.SOCKET_NOCONNECT);
+            App.Facade.sendNotification(SocketMediator.SOCKET_NOCONNECT);
         }
         this._isConnecting = false;
     }

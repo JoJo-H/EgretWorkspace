@@ -55,9 +55,9 @@ class ProxyCache {
             } else {
                 this._dataCache[smod][sdo] = data;
             }
-            GlobalAPI.facede.sendNotification(NotifyName.Cache(smod + "." + sdo), data);
-            GlobalAPI.facede.sendNotification(NotifyName.All(smod + "." + sdo));
-            GlobalAPI.facede.sendNotification(NotifyName.CacheChange, smod + "." + sdo, data);
+            App.Facade.sendNotification(NotifyName.Cache(smod + "." + sdo), data);
+            App.Facade.sendNotification(NotifyName.All(smod + "." + sdo));
+            App.Facade.sendNotification(NotifyName.CacheChange, smod + "." + sdo, data);
         }
     }
 

@@ -60,6 +60,6 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
             //     "ticket": "yangsong"
             // };
             var msg = "client : hello server!";
-            Socket.getInstance().send(msg);
+            App.Socket.send(msg);
         }
 }

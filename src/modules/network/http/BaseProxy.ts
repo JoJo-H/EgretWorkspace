@@ -39,7 +39,7 @@ class BaseProxy extends egret.EventDispatcher {
         if( url[url.length - 1] != '?' && url[url.length - 1] != "&" ) {
             url += '&';
         } 
-        GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_REQUEST, this);
+        App.Facade.sendNotification(ListenerMediator.PROXY_REQUEST, this);
 
         var paramsString:string = this.getParamString();
         var params:Object = {"h": '453626dfgdsyey2y372365435fre'};
@@ -59,10 +59,10 @@ class BaseProxy extends egret.EventDispatcher {
             this._errorCode = ProxyErrorCode.TIME_OUT;
             this._errorMessage = "请求超时";
             this._isTimeout = true;
-            GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_TIMEOUT, this);
+            App.Facade.sendNotification(ListenerMediator.PROXY_TIMEOUT, this);
             this.dispatchEvent(new ProxyEvent(ProxyEvent.TIME_OUT, this));
             this.dispatchEvent(new ProxyEvent(ProxyEvent.ERROR, this));
-            GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_REQUEST_ERROR, this);
+            App.Facade.sendNotification(ListenerMediator.PROXY_REQUEST_ERROR, this);
         }, this, BaseProxy._timeout);
 
 
@@ -101,8 +101,8 @@ class BaseProxy extends egret.EventDispatcher {
         egret.clearTimeout(this._timeoutId);
         this.dispatchEvent(new ProxyEvent(ProxyEvent.REQUEST_FAIL, this));
         this.dispatchEvent(new ProxyEvent(ProxyEvent.ERROR, this));
-        GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_REQUEST_ERROR, this);
-        GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_RESPONSE, this);
+        App.Facade.sendNotification(ListenerMediator.PROXY_REQUEST_ERROR, this);
+        App.Facade.sendNotification(ListenerMediator.PROXY_RESPONSE, this);
     }
 
     private onGetProgress(event:egret.ProgressEvent):void {
@@ -121,12 +121,12 @@ class BaseProxy extends egret.EventDispatcher {
         this._errorCode = this._responseData ? this._responseData["s"] : ProxyErrorCode.ERROR_DATA;
         this._isRequestSucceed = true;
 
-        GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_RESPONSE, this);
+        App.Facade.sendNotification(ListenerMediator.PROXY_RESPONSE, this);
         if (this._isResponseSucceed) {
-            GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_RESPONSE_SUCCEED,this);
+            App.Facade.sendNotification(ListenerMediator.PROXY_RESPONSE_SUCCEED,this);
             this.dispatchEvent(new ProxyEvent(ProxyEvent.RESPONSE_SUCCEED, this));
         } else {
-            GlobalAPI.facede.sendNotification(ListenerMediator.PROXY_RESPONSE_ERROR, this);
+            App.Facade.sendNotification(ListenerMediator.PROXY_RESPONSE_ERROR, this);
             this.dispatchEvent(new ProxyEvent(ProxyEvent.RESPONSE_ERROR, this));
             this.dispatchEvent(new ProxyEvent(ProxyEvent.ERROR, this));
         }

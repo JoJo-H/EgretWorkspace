@@ -8,20 +8,20 @@ class StartupCommmand extends puremvc.SimpleCommand implements puremvc.ICommand{
 
         // 注册proxy
         let loginProxy = new LoginProxy();
-        GlobalAPI.facede.registerProxy(loginProxy);
+        App.Facade.registerProxy(loginProxy);
         loginProxy.request();
         
-        GlobalAPI.facede.registerProxy(new UserProxy());
+        App.Facade.registerProxy(new UserProxy());
 
 
 
         // 注册mediator
-        puremvc.Facade.getInstance().registerMediator(new ListenerMediator());
-        puremvc.Facade.getInstance().registerMediator(new SocketMediator());
-        puremvc.Facade.getInstance().registerMediator(new CommomMediator());
-        puremvc.Facade.getInstance().registerMediator(new GameMediator());
+        App.Facade.registerMediator(new ListenerMediator());
+        App.Facade.registerMediator(new SocketMediator());
+        App.Facade.registerMediator(new CommomMediator());
+        App.Facade.registerMediator(new GameMediator());
 
 
-        puremvc.Facade.getInstance().sendNotification("TEST");
+        App.Facade.sendNotification("TEST");
     }
 }

@@ -220,11 +220,9 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected startCreateScene(): void {
-        // facade是单例的，所以下面获取的是ApplicationFacade的实例
-        GlobalAPI.facede = ApplicationFacade.getInstance();
-        GlobalAPI.setStage(this.stage);
-        GlobalAPI.UI.setRoot(this.stage);
-        ApplicationFacade.getInstance().startup(this.stage);
+        App.setStage(this.stage);
+        App.UI.setRoot(this.stage);
+        App.Facade.startup(this.stage);
         Config.loadZip();
     }
     

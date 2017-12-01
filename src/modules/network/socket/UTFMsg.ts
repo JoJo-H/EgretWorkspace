@@ -14,7 +14,7 @@ class UTFMsg implements BaseMsg {
         var msg:string = socket.readUTF();
         var obj:any = this.decode(msg);
         if (obj) {
-            GlobalAPI.facede.sendNotification(obj.key, obj.body);
+            App.Facade.sendNotification(obj.key, obj.body);
         }
     }
 

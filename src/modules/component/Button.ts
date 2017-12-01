@@ -223,10 +223,10 @@ class Button extends eui.Component{
                     data = host.data;
                 }
             }
-            GlobalAPI.facede.sendNotification(this._notice,{ date:data ,host:host ,button:this });
+            App.Facade.sendNotification(this._notice,{ date:data ,host:host ,button:this });
         }
         if (this.name) {
-            GlobalAPI.facede.sendNotification(GameDefine.CLICK_BUTTON, { name : this.name , button: this });
+            App.Facade.sendNotification(GameDefine.CLICK_BUTTON, { name : this.name , button: this });
         }
     }
 }

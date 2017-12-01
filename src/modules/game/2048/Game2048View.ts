@@ -20,7 +20,7 @@ class Game2048View extends BaseComponent {
 
     onEnter():void {
         super.onEnter();
-        this.setData(Game2048Data.getInstance());
+        this.setData(SingletonFactory.singleton(Game2048Data));
         this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onStart,this);
 
         this.gridSize = (this.gamePanel.width - this.gridSpacing*5) / 4;
@@ -193,7 +193,7 @@ class Game2048View extends BaseComponent {
             }
         }
         this.isGameOver = true;
-        GlobalAPI.UI.addBox(Game2048OverView).setData(Game2048Data.getInstance());
+        App.UI.addBox(Game2048OverView).setData(SingletonFactory.singleton(Game2048Data));
     }
 
     /**
@@ -245,7 +245,7 @@ let key = event.code;
 
     private newGame():void {
         this.isGameOver = false;
-        Game2048Data.getInstance().curScore = 0;
+        SingletonFactory.singleton(Game2048Data).curScore = 0;
         this.resetGrids();
     }
 
@@ -320,12 +320,13 @@ let key = event.code;
     }
 
     private increaseScore(value:number) {
-        Game2048Data.getInstance().curScore += value;
-        if(Game2048Data.getInstance().bestScore < Game2048Data.getInstance().curScore) {
-            Game2048Data.getInstance().bestScore = Game2048Data.getInstance().curScore;
+        var game = SingletonFactory.singleton(Game2048Data);
+        game.curScore += value;
+        if(game.bestScore < game.curScore) {
+            game.bestScore = game.curScore;
             // 存储本地
-            localStorage.setItem("Game2048Data.bestScore",Game2048Data.getInstance().curScore+"");
-            sessionStorage.setItem("Game2048Data.bestScore",Game2048Data.getInstance().curScore+"");
+            localStorage.setItem("Game2048Data.bestScore",game.curScore+"");
+            sessionStorage.setItem("Game2048Data.bestScore",game.curScore+"");
             document.cookie = "bestScore=500";
         }
     }

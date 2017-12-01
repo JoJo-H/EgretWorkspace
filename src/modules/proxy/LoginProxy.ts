@@ -13,8 +13,8 @@ class LoginProxy extends puremvc.Proxy {
         
         network.multiRequest(PUser.getInfo(true))
         .then(()=>{
-            GlobalAPI.UI.runScene(Home);
-            GlobalAPI.UI.setMenu(Menu);
+            App.UI.runScene(Home);
+            App.UI.setMenu(Menu);
             App.Init();
         });
     }

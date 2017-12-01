@@ -16,7 +16,7 @@ class CommomMediator extends puremvc.Mediator implements puremvc.IMediator{
         super.handleNotification(notification);
 			switch(notification.getName()){
                 case GameDefine.OPEN_GAMNES_PANEL :
-                    GlobalAPI.UI.addBox(PanelGames);
+                    App.UI.addBox(PanelGames);
                     break;
                 case GameDefine.OPEN_BUTTON_TEST:
                     App.SoundManager.playEffect('beiji_wav');
@@ -29,6 +29,6 @@ class CommomMediator extends puremvc.Mediator implements puremvc.IMediator{
 
     private removeBox(data:any):void {
         if(!data || !data.host) return;
-        GlobalAPI.UI.remove(data.host);
+        App.UI.remove(data.host);
     }
 }

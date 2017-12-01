@@ -15,7 +15,7 @@ class Game2048OverView extends BaseComponent {
     }
 
     private onONewGame(event:egret.TouchEvent):void {
-        GlobalAPI.UI.remove(this);
+        App.UI.remove(this);
     }
 
     onExit():void {

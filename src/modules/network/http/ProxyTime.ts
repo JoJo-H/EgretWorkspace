@@ -28,13 +28,6 @@ class ProxyTime {
         }
     }
 
-    static getInstance():ProxyTime{
-        if(!this._instance) {
-            this._instance = new ProxyTime();
-        }
-        return this._instance;
-    }
-
     public getLeftime(key:any):any {
         if (this._tickMap.has(key)) {
             return this._tickMap[key];
