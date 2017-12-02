@@ -1,4 +1,6 @@
 
+项目进度：
+
 -->2017.09.24至2017.09.26
     创建项目
     引入第三方库  is,numeral,moment,puremvc等
@@ -75,3 +77,6 @@
 
 -->2017.12.01 19:22
     新增UITools工具类,SimpleLoading,GameShare,QRShape,MyHSlider,ScroolTooltip,HeadCircleView等常用类
+
+-->2017.09.02 16.44
+    新增res资源描述文档等。

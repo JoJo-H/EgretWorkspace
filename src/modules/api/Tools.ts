@@ -47,7 +47,7 @@ class Tools {
         //     len ++;
         // }
         let  reduce = 0;
-        for(let i = 0 ; i < str.length ; i ++) {
+        for(let i = 0 ,len = str.length; i < len ; i ++) {
             if(str.codePointAt(i) > 0xFFFF) {
                 reduce ++;
             }
