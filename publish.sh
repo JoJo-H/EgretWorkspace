@@ -1,17 +1,62 @@
-
+# 版本名称 时间串
 versionName=$(date +%Y%m%d%H%M%S)
+# 发布类型
 publishType='web'
-outPath=''
+outPath=""
 
-
+# cd 到目录 pwd
 scriptPath=$(cd `dirname $0`;pwd)
+echo $scriptPath
 cd $scriptPath
+
+# 重置
+function resetResStatus() {
+	git checkout -- resource/
+	rm -rf resource/assets/sheet/
+}
+
+function usage() {
+	echo "usage: publish [-v releaseName] [-t publishType] [-o versionOutFile]
+       releaseName=now(default)
+       publishType=web(default)|native|runtime"
+}
+
+# cksum命令是检查文件的CRC是否正确
+function cal_crc32() {
+	local filename=$1
+    //cksum $filename 会输出:  校验码 字节数 文件名
+    //然后将输出串经管道(管道符|)发给awk处理，输出格式化的串，%x:十六进制值。
+	echo $(cksum $filename | awk '{printf "%x",$1}')
+}
+
+#不知道什么意思
+# while true ; do
+
+#         case "$1" in
+
+#                 -v|--version) versionName=$2 ; shift 2 ;;
+# 				-t|--type) publishType=$2 ; shift 2 ;;
+# 				-h|--help) usage; exit 1 ;;
+# 				-o|--output) outPath=$2; shift 2 ;;
+#                 *) break ;;
+
+#         esac
+# done
+
+# ruby publish.rb -p . -t
+
+# if [ "$?" == "100" ]; then
+# 	exit 100
+# fi
+
+resetResStatus
 
 egret build -e
 egret publish --version $versionName
 
 releasePath=bin-release/web/$versionName
 
+# ruby publish.rb -p .
 
 indexPath=$releasePath/index.html
 
@@ -20,37 +65,60 @@ releaseResourcePath=$releasePath/resource
 res publish . $releasePath
 euibooster . $releasePath
 
+# 替换字符串
+# libs=$(sed -n 's/.*\"lib\"\ *src=\"\([^\"]*\)\".*/\1/p' $indexPath)
 
-# function moveTo() {
-# 	local sourcePath=$1
-# 	local distPath=$2
+# uuidgen - 可生成一个UUID到标准输出
+# tmpPath=/tmp/$(uuidgen)
 
-# 	local c32=$(cal_crc32 ${sourcePath})
-# 	distPath=${distPath/CRC/$c32}
-# 	mv $sourcePath $distPath
-# 	echo $c32
-# }
+# cat 创建一个文件 ,将几个文件合并为一个文件$cat file1 file2 > file
+# for libFile in $libs
+# do
+# 	cat $libFile >> $tmpPath
+# done
 
-# function moveConf(){
-# 	local confPath=$(ls $releaseResourcePath/config_*)
-# 	local c32=$(cal_crc32 $confPath)
+# 移动文件
+function moveTo() {
+	local sourcePath=$1
+	local distPath=$2
 
-# 	local distPath=$releaseResourcePath/config_$c32.json
-# 	mv $confPath $distPath
-# 	echo $c32
-# }
+	local c32=$(cal_crc32 ${sourcePath})
+	distPath=${distPath/CRC/$c32}
+	mv $sourcePath $distPath
+	echo $c32
+}
+
+function moveConf(){
+	local confPath=$(ls $releaseResourcePath/config_*)
+	local c32=$(cal_crc32 $confPath)
+
+	local distPath=$releaseResourcePath/config_$c32.json
+	mv $confPath $distPath
+	echo $c32
+}
 
 # libCrc=$(moveTo $tmpPath $releasePath/lib.min.CRC.js)
 # mainCrc=$(moveTo $releasePath/main.min.js $releasePath/game.min.CRC.js)
 # themeCrc=$(moveTo $releaseResourcePath/default.thm.json $releaseResourcePath/theme_CRC.json)
 # confCrc=$(moveConf)
 
-# testIndexPath=index.html
+
+# testIndexPath=platfiles/bearjoy/index.html
 # if [ -f $testIndexPath ];then
 # 	cp $testIndexPath $releasePath/index.html
 # fi
 
 
+# rm $releaseResourcePath/default.res.json
+# rm -rf $releaseResourcePath/assets
+# rm -rf $releaseResourcePath/config
+# rm -rf $releaseResourcePath/eui_skins
+# rm -rf $releaseResourcePath/ui
+# rm -rf $releasePath/resourcemanager
+# rm -rf $releasePath/polyfill
+# rm -rf $releasePath/libs
+# rm -rf $releasePath/backup
+# rm -rf $releasePath/js
 
 
 # echo "local debug url:bin-release/web/${versionName}/?codeVer=${mainCrc}.${libCrc}&resVer=${confCrc}.${themeCrc}"
@@ -61,3 +129,9 @@ euibooster . $releasePath
 # }
 
 # printVersion
+
+# if [ "$outPath" != "" ];then
+# 	printVersion >$outPath
+# fi
+
+# resetResStatus
