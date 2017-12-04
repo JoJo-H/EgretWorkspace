@@ -51,7 +51,7 @@ class Config {
     private _zip : JSZip ;
     loadZip():void {
         if(this._zip) return;
-        RES.getResByUrl("resource/assets/config/json.zip",(data)=>{
+        RES.getResByUrl("resource/assets/config/tempJsons.zip",(data)=>{
             //解压数据
             this._zip = new JSZip(data);
             //读取数据

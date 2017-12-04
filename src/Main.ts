@@ -191,15 +191,6 @@ class Main extends eui.UILayer {
                 return Promise.resolve();
             }
         });
-        RES.processor.map('jszip',{
-            async onLoadStart(host, resource) {
-                return Promise.resolve();
-            },
-
-            onRemoveStart(host, resource) {
-                return Promise.resolve();
-            }
-        });
 
         super.createChildren();
         //inject the custom material parser
