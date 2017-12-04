@@ -51,12 +51,14 @@ class Config {
     private _zip : JSZip ;
     loadZip():void {
         if(this._zip) return;
-        RES.getResByUrl("resource/assets/config/tempJsons.zip",(data)=>{
+        var r = RES.getResourceInfo('assets/config/tempJsons.zip');
+        console.log(r);
+        RES.getResByUrl("resource/"+r.url,(data)=>{
             //解压数据
             this._zip = new JSZip(data);
             //读取数据
-            // var json = this._zip.file('errorcode.json').asText();
-            // console.log(JSON.parse(json));
+            var json = this._zip.file('errorcode.json').asText();
+            console.log(JSON.parse(json));
         },this,RES.ResourceItem.TYPE_BIN);
     }
 

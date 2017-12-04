@@ -72,7 +72,7 @@ function getURL(resource: any) {
         "mp3": "sound",
         "aa":"sound",
         "wav":"sound",
-        "zip":"jszip"
+        "zip":"bin"
     }
     if (path == "assets/config/simple.proto") {
         return "text";
