@@ -71,17 +71,20 @@ function getURL(resource: any) {
         "pvr": "pvr",
         "mp3": "sound",
         "aa":"sound",
-        "wav":"sound"
+        "wav":"sound",
+        "zip":"json"
     }
-    // if (path == "a/custom/file/type.bin") {
-    //     return "customType";
-    // }
+    if (path == "assets/config/simple.proto") {
+        return "text";
+    }
     var type = typeMap[ext];
     if (type == "json") {
         if (path.indexOf("sheet") >= 0) {
             type = "sheet";
         } else if (path.indexOf("movieclip") >= 0) {
             type = "movieclip";
+        } else if(path.indexOf("zip") >= 0) {
+            type = "jszip";
         };
     }
     return type;
@@ -102,7 +105,9 @@ class Main extends eui.UILayer {
         if( egret.MainContext.deviceType != egret.MainContext.DEVICE_PC){
             this.stage.orientation = egret.OrientationMode.PORTRAIT;
         }
-
+        if (RELEASE) {
+            RES.setConfigURL('config_' + ParameterData.getResVersion() + '.json');
+        }
 
         RES.processor.map("sheet",{
             async onLoadStart(host: RES.ProcessHost, resource: RES.ResourceInfo):Promise<any>{
@@ -186,6 +191,15 @@ class Main extends eui.UILayer {
                 return Promise.resolve();
             }
         });
+        RES.processor.map('jszip',{
+            async onLoadStart(host, resource) {
+                return Promise.resolve();
+            },
+
+            onRemoveStart(host, resource) {
+                return Promise.resolve();
+            }
+        });
 
         super.createChildren();
         //inject the custom material parser
@@ -213,7 +227,11 @@ class Main extends eui.UILayer {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         // load skin theme configuration file, you can manually modify the file. And replace the default skin.
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-        let theme = new eui.Theme("resource/default.thm.json", this.stage);
+        var themeFile = "resource/default.thm.json";
+        if (RELEASE) {
+            themeFile = "resource/theme_" + ParameterData.getThemeVersion() + ".json";
+        }
+        let theme = new eui.Theme(themeFile, this.stage);
         theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);
 
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);

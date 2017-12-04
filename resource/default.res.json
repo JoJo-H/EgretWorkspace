@@ -247,6 +247,11 @@
 			"url": "assets/config/global.json"
 		},
 		{
+			"name": "tempJsons_zip",
+			"type": "jszip",
+			"url": "assets/config/tempJsons.zip"
+		},
+		{
 			"name": "simple_json",
 			"type": "json",
 			"url": "assets/config/simple.json"

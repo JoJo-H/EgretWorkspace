@@ -108,7 +108,7 @@ if [ -f $testIndexPath ];then
 	cp $testIndexPath $releasePath/index.html
 fi
 
-//删除多余的文件及目录
+# 删除多余的文件及目录
 rm $releaseResourcePath/default.res.json
 rm -rf $releaseResourcePath/assets
 rm -rf $releaseResourcePath/config
