@@ -21,3 +21,7 @@ res publish . bin-release/web/171203232431/
 euibooster . $releasePath
 
 4、压缩libs库，合并成一个js压缩文件
+对main.min.js，default.thm.json，config_*.json进行重命名,加入CRC值
+
+5、加载index不能用项目的index.html了，因为加载的文件都被我们改了，加入了CRC版本号。我们需要动态去加载
+新建一个新的 publishIndex.html
