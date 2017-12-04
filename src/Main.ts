@@ -72,7 +72,7 @@ function getURL(resource: any) {
         "mp3": "sound",
         "aa":"sound",
         "wav":"sound",
-        "zip":"json"
+        "zip":"jszip"
     }
     if (path == "assets/config/simple.proto") {
         return "text";
@@ -83,9 +83,7 @@ function getURL(resource: any) {
             type = "sheet";
         } else if (path.indexOf("movieclip") >= 0) {
             type = "movieclip";
-        } else if(path.indexOf("zip") >= 0) {
-            type = "jszip";
-        };
+        }
     }
     return type;
 })
