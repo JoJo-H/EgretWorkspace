@@ -17,7 +17,7 @@ egret publish --version $versionName
 
 releasePath=bin-release/web/$versionName
 
-ruby publish.rb .
+ruby publishSimple.rb .
 
 indexPath=$releasePath/index.html
 
@@ -73,3 +73,4 @@ rm -rf $releasePath/js
 
 echo "local debug url:bin-release/web/${versionName}/?isSimple=1"
 
+resetResStatus
