@@ -2,367 +2,367 @@
   "groups": [],
   "resources": [
     {
-      "url": "config.json",
+      "url": "46/17efa1.json",
       "type": "json",
       "name": "config.json"
     },
     {
-      "url": "default.res.json",
+      "url": "f6/3518ad.json",
       "type": "json",
       "name": "default.res.json"
     },
     {
-      "url": "default.thm.json",
+      "url": "a5/5e4bf8.json",
       "type": "json",
       "name": "default.thm.json"
     },
     {
-      "url": "wing.res.json",
+      "url": "bb/9249c0.json",
       "type": "json",
       "name": "wing.res.json"
     },
     {
-      "url": "assets/bg.jpg",
+      "url": "18/f18a5d.jpg",
       "type": "image",
       "name": "bg_jpg"
     },
     {
-      "url": "assets/egret_icon.png",
+      "url": "fe/420392.png",
       "type": "image",
       "name": "egret_icon_png"
     },
     {
-      "url": "assets/Button/button_caipiao.png",
-      "type": "image",
-      "name": "button_caipiao_png"
-    },
-    {
-      "url": "assets/Button/button_down.png",
-      "type": "image",
-      "name": "button_down_png"
-    },
-    {
-      "url": "assets/Button/button_up.png",
-      "type": "image",
-      "name": "button_up_png"
-    },
-    {
-      "url": "assets/CheckBox/checkbox_select_disabled.png",
-      "type": "image",
-      "name": "checkbox_select_disabled_png"
-    },
-    {
-      "url": "assets/CheckBox/checkbox_select_down.png",
-      "type": "image",
-      "name": "checkbox_select_down_png"
-    },
-    {
-      "url": "assets/CheckBox/checkbox_select_up.png",
-      "type": "image",
-      "name": "checkbox_select_up_png"
-    },
-    {
-      "url": "assets/CheckBox/checkbox_unselect.png",
-      "type": "image",
-      "name": "checkbox_unselect_png"
-    },
-    {
-      "url": "assets/ItemRenderer/selected.png",
+      "url": "7d/b3fa94.png",
       "type": "image",
       "name": "selected_png"
     },
     {
-      "url": "assets/Panel/border.png",
+      "url": "68/9921c8.png",
       "type": "image",
-      "name": "border_png"
+      "name": "checkbox_select_disabled_png"
     },
     {
-      "url": "assets/Panel/header.png",
+      "url": "3c/e277ad.png",
       "type": "image",
-      "name": "header_png"
+      "name": "checkbox_select_down_png"
     },
     {
-      "url": "assets/ProgressBar/thumb_pb.png",
+      "url": "f8/3ba2f6.png",
+      "type": "image",
+      "name": "checkbox_select_up_png"
+    },
+    {
+      "url": "2b/c5e460.png",
+      "type": "image",
+      "name": "checkbox_unselect_png"
+    },
+    {
+      "url": "4f/10fcfb.png",
+      "type": "image",
+      "name": "button_caipiao_png"
+    },
+    {
+      "url": "aa/0bad40.png",
+      "type": "image",
+      "name": "button_down_png"
+    },
+    {
+      "url": "66/c34920.png",
+      "type": "image",
+      "name": "button_up_png"
+    },
+    {
+      "url": "9a/65835.png",
       "type": "image",
       "name": "thumb_pb_png"
     },
     {
-      "url": "assets/ProgressBar/track_pb.png",
+      "url": "16/ecd68e.png",
       "type": "image",
       "name": "track_pb_png"
     },
     {
-      "url": "assets/RadioButton/radiobutton_select_disabled.png",
+      "url": "c1/365a48.png",
+      "type": "image",
+      "name": "border_png"
+    },
+    {
+      "url": "ee/4b876f.png",
+      "type": "image",
+      "name": "header_png"
+    },
+    {
+      "url": "ca/c29c4f.png",
       "type": "image",
       "name": "radiobutton_select_disabled_png"
     },
     {
-      "url": "assets/RadioButton/radiobutton_select_down.png",
+      "url": "ca/c29c4f.png",
       "type": "image",
       "name": "radiobutton_select_down_png"
     },
     {
-      "url": "assets/RadioButton/radiobutton_select_up.png",
+      "url": "ad/e68d7b.png",
       "type": "image",
       "name": "radiobutton_select_up_png"
     },
     {
-      "url": "assets/RadioButton/radiobutton_unselect.png",
+      "url": "26/6aaa05.png",
       "type": "image",
       "name": "radiobutton_unselect_png"
     },
     {
-      "url": "assets/ScrollBar/roundthumb.png",
+      "url": "3d/29393.png",
       "type": "image",
       "name": "roundthumb_png"
     },
     {
-      "url": "assets/ScrollBar/track_sb.png",
+      "url": "9e/16c2e5.png",
       "type": "image",
       "name": "track_sb_png"
     },
     {
-      "url": "assets/Slider/thumb.png",
+      "url": "11/c22217.png",
       "type": "image",
       "name": "thumb_png"
     },
     {
-      "url": "assets/Slider/track.png",
+      "url": "9e/16c2e5.png",
       "type": "image",
       "name": "track_png"
     },
     {
-      "url": "assets/Slider/tracklight.png",
+      "url": "3d/29393.png",
       "type": "image",
       "name": "tracklight_png"
     },
     {
-      "url": "assets/ToggleSwitch/handle.png",
+      "url": "15/a6e8d8.png",
       "type": "image",
       "name": "handle_png"
     },
     {
-      "url": "assets/ToggleSwitch/off.png",
+      "url": "6a/9ebba9.png",
       "type": "image",
       "name": "off_png"
     },
     {
-      "url": "assets/ToggleSwitch/on.png",
+      "url": "86/511d9c.png",
       "type": "image",
       "name": "on_png"
     },
     {
-      "url": "assets/common/bg_base_goldslip.png",
+      "url": "88/a14b76.png",
       "type": "image",
       "name": "bg_base_goldslip_png"
     },
     {
-      "url": "assets/common/bg_goldslip.png",
+      "url": "90/2b2b79.png",
       "type": "image",
       "name": "bg_goldslip_png"
     },
     {
-      "url": "assets/common/bg_headviewcircle.png",
+      "url": "d4/4cfad3.png",
       "type": "image",
       "name": "bg_headviewcircle_png"
     },
     {
-      "url": "assets/common/bg_imgbox.png",
+      "url": "87/1c9aa6.png",
       "type": "image",
       "name": "bg_imgbox_png"
     },
     {
-      "url": "assets/common/button_drag.png",
+      "url": "9f/980d41.png",
       "type": "image",
       "name": "button_drag_png"
     },
     {
-      "url": "assets/common/shape_loading.png",
+      "url": "db/199263.png",
       "type": "image",
       "name": "shape_loading_png"
     },
     {
-      "url": "assets/config/Hero.json",
+      "url": "cb/a8973b.json",
       "type": "json",
       "name": "Hero_json"
     },
     {
-      "url": "assets/config/global.json",
+      "url": "c0/5cadb2.json",
       "type": "json",
       "name": "global_json"
     },
     {
-      "url": "assets/config/simple.json",
+      "url": "c3/1c6242.json",
       "type": "json",
       "name": "simple_json"
     },
     {
-      "url": "assets/font/font_common.png",
+      "url": "d4/0cf4ed.png",
       "type": "image",
       "name": "font_common_png"
     },
     {
-      "url": "assets/font/font_common.png.fnt",
+      "url": "8a/c5891d.fnt",
       "type": "font",
       "name": "font_common.png_fnt"
     },
     {
-      "url": "assets/font/font_huode.fnt",
+      "url": "e8/63ee8f.fnt",
       "type": "font",
       "name": "font_huode_fnt"
     },
     {
-      "url": "assets/font/font_huode.png",
+      "url": "ee/722659.png",
       "type": "image",
       "name": "font_huode_png"
     },
     {
-      "url": "assets/main/bg_home.jpg",
+      "url": "72/78d536.jpg",
       "type": "image",
       "name": "bg_home_jpg"
     },
     {
-      "url": "assets/main/bg_ptht.png",
+      "url": "d4/5a28ef.png",
       "type": "image",
       "name": "bg_ptht_png"
     },
     {
-      "url": "assets/main/bg_zsht.png",
+      "url": "c1/609e9d.png",
       "type": "image",
       "name": "bg_zsht_png"
     },
     {
-      "url": "assets/sound/beiji.wav",
+      "url": "da/af35ba.wav",
       "type": "sound",
       "name": "beiji_wav"
     },
     {
-      "url": "assets/sound/bg.mp3",
+      "url": "53/de0871.mp3",
       "type": "sound",
       "name": "bg_mp3"
     },
     {
-      "url": "assets/sound/bossAttack.mp3",
+      "url": "5c/dea3a7.mp3",
       "type": "sound",
       "name": "bossAttack_mp3"
     },
     {
-      "url": "assets/sound/bossSkill.mp3",
+      "url": "2f/36ab7.mp3",
       "type": "sound",
       "name": "bossSkill_mp3"
     },
     {
-      "url": "assets/sound/dianji.mp3",
+      "url": "fa/3797ce.mp3",
       "type": "sound",
       "name": "dianji_mp3"
     },
     {
-      "url": "assets/sound/enemyAttack.mp3",
+      "url": "28/65dfe0.mp3",
       "type": "sound",
       "name": "enemyAttack_mp3"
     },
     {
-      "url": "assets/sound/enenyLand.wav",
+      "url": "33/c3e125.wav",
       "type": "sound",
       "name": "enenyLand_wav"
     },
     {
-      "url": "assets/sound/heroAttack.wav",
+      "url": "49/7bea7f.wav",
       "type": "sound",
       "name": "heroAttack_wav"
     },
     {
-      "url": "assets/sound/heroBeiji.wav",
+      "url": "2b/ec3acb.wav",
       "type": "sound",
       "name": "heroBeiji_wav"
     },
     {
-      "url": "assets/sound/heroSkill.mp3",
+      "url": "7f/d692da.mp3",
       "type": "sound",
       "name": "heroSkill_mp3"
     },
     {
-      "url": "assets/animation/fast/lightbutton2_ske.dbmv",
+      "url": "54/ac8caa.dbmv",
       "type": "dbmv",
       "name": "assets/animation/fast/lightbutton2_ske.dbmv"
     },
     {
-      "url": "assets/animation/fast/lightbutton2_tex.png",
+      "url": "cc/8ab8f6.png",
       "type": "image",
       "name": "lightbutton2_tex_png"
     },
     {
-      "url": "assets/animation/fast/penjinbi_ske.dbmv",
+      "url": "6b/067fa7.dbmv",
       "type": "dbmv",
       "name": "assets/animation/fast/penjinbi_ske.dbmv"
     },
     {
-      "url": "assets/animation/fast/penjinbi_tex.png",
+      "url": "1a/492d24.png",
       "type": "image",
       "name": "penjinbi_tex_png"
     },
     {
-      "url": "assets/animation/dragonBones/duizhanshengli_anim.json",
+      "url": "47/087fa8.json",
       "type": "json",
       "name": "duizhanshengli_anim_json"
     },
     {
-      "url": "assets/animation/dragonBones/duizhanshengli_texture.json",
+      "url": "84/01f502.json",
       "type": "json",
       "name": "duizhanshengli_texture_json"
     },
     {
-      "url": "assets/animation/dragonBones/duizhanshengli_texture.png",
+      "url": "4d/654b79.png",
       "type": "image",
       "name": "duizhanshengli_texture_png"
     },
     {
-      "url": "assets/animation/dragonBones/man_anim.json",
+      "url": "f0/be4705.json",
       "type": "json",
       "name": "man_anim_json"
     },
     {
-      "url": "assets/animation/dragonBones/man_texture.json",
+      "url": "98/0b26b7.json",
       "type": "json",
       "name": "man_texture_json"
     },
     {
-      "url": "assets/animation/dragonBones/man_texture.png",
+      "url": "9f/42c645.png",
       "type": "image",
       "name": "man_texture_png"
     },
     {
-      "url": "assets/animation/dragonBones/robot_anim.json",
+      "url": "e3/dc8799.json",
       "type": "json",
       "name": "robot_anim_json"
     },
     {
-      "url": "assets/animation/dragonBones/robot_texture.json",
+      "url": "a5/3f60fe.json",
       "type": "json",
       "name": "robot_texture_json"
     },
     {
-      "url": "assets/animation/dragonBones/robot_texture.png",
+      "url": "ae/5feb4a.png",
       "type": "image",
       "name": "robot_texture_png"
     },
     {
-      "url": "assets/game/turntable/g.png",
+      "url": "9c/bace5c.png",
       "type": "image",
       "name": "g_png"
     },
     {
-      "url": "assets/game/turntable/s3_bg.png",
+      "url": "ae/9e3b88.png",
       "type": "image",
       "name": "s3_bg_png"
     },
     {
-      "url": "assets/game/turntable/z.png",
+      "url": "a9/037858.png",
       "type": "image",
       "name": "z_png"
     },
     {
-      "url": "config/description.json",
+      "url": "db/04ce98.json",
       "type": "json",
       "name": "description_json"
     },

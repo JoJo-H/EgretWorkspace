@@ -24,8 +24,8 @@ function usage() {
 # cksum命令是检查文件的CRC是否正确
 function cal_crc32() {
 	local filename=$1
-    //cksum $filename 会输出:  校验码 字节数 文件名
-    //然后将输出串经管道(管道符|)发给awk处理，输出格式化的串，%x:十六进制值。
+    # cksum $filename 会输出:  校验码 字节数 文件名
+    # 然后将输出串经管道(管道符|)发给awk处理，输出格式化的串，%x:十六进制值。
 	echo $(cksum $filename | awk '{printf "%x",$1}')
 }
 
@@ -65,17 +65,22 @@ releaseResourcePath=$releasePath/resource
 res publish . $releasePath
 euibooster . $releasePath
 
-# 替换字符串
-# libs=$(sed -n 's/.*\"lib\"\ *src=\"\([^\"]*\)\".*/\1/p' $indexPath)
+
+# Sed主要用来自动编辑一个或多个文件；-n仅显示script处理后的结果；参数：指定待处理的文本文件列表。
+libs=$(sed -n 's/.*\"lib\"\ *src=\"\([^\"]*\)\".*/\1/p' $indexPath)
+# 会输出index.html中所有的lib的文件名称列表
+echo $libs
 
 # uuidgen - 可生成一个UUID到标准输出
-# tmpPath=/tmp/$(uuidgen)
+tmpPath=/tmp/$(uuidgen)
+
 
 # cat 创建一个文件 ,将几个文件合并为一个文件$cat file1 file2 > file
-# for libFile in $libs
-# do
-# 	cat $libFile >> $tmpPath
-# done
+# cat命令连接文件并打印到标准输出设备上，cat经常用来显示文件的内容
+for libFile in $libs
+do
+	cat $libFile >> $tmpPath
+done
 
 # 移动文件
 function moveTo() {
@@ -96,10 +101,12 @@ function moveConf(){
 	mv $confPath $distPath
 	echo $c32
 }
-
-# libCrc=$(moveTo $tmpPath $releasePath/lib.min.CRC.js)
-# mainCrc=$(moveTo $releasePath/main.min.js $releasePath/game.min.CRC.js)
-# themeCrc=$(moveTo $releaseResourcePath/default.thm.json $releaseResourcePath/theme_CRC.json)
+# 创建libs库的压缩文件lib.min.CRC.js
+libCrc=$(moveTo $tmpPath $releasePath/lib.min.CRC.js)
+# 创建game.min.js
+mainCrc=$(moveTo $releasePath/main.min.js $releasePath/game.min.CRC.js)
+# 
+themeCrc=$(moveTo $releaseResourcePath/default.thm.json $releaseResourcePath/theme_CRC.json)
 # confCrc=$(moveConf)
 
 
