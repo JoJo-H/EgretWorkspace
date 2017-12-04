@@ -104,7 +104,9 @@ class Main extends eui.UILayer {
             this.stage.orientation = egret.OrientationMode.PORTRAIT;
         }
         if (RELEASE) {
-            RES.setConfigURL('config_' + ParameterData.getResVersion() + '.json');
+            if(!ParameterData.isSimple()){
+                RES.setConfigURL('config_' + ParameterData.getResVersion() + '.json');
+            }
         }
 
         RES.processor.map("sheet",{
@@ -218,7 +220,9 @@ class Main extends eui.UILayer {
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
         var themeFile = "resource/default.thm.json";
         if (RELEASE) {
-            themeFile = "resource/theme_" + ParameterData.getThemeVersion() + ".json";
+            if(!ParameterData.isSimple()){
+                themeFile = "resource/theme_" + ParameterData.getThemeVersion() + ".json";
+            }
         }
         let theme = new eui.Theme(themeFile, this.stage);
         theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);

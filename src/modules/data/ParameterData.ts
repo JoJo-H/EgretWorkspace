@@ -13,4 +13,9 @@ class ParameterData {
         var arr = resVer.split('.');
         return arr[1];
     }
+
+    //isSimple==1走的是publishSimpleIndex.html,不需要版本号
+    static isSimple():boolean {
+        return egret.getOption("isSimple") == "1";
+    }
 }
