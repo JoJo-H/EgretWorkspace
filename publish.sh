@@ -35,7 +35,9 @@ egret publish --version $versionName
 
 releasePath=bin-release/web/$versionName
 
+# 参数 当前目录.
 # ruby publish.rb -p .
+ruby publish.rb .
 
 indexPath=$releasePath/index.html
 
@@ -109,7 +111,7 @@ if [ -f $testIndexPath ];then
 fi
 
 # 删除多余的文件及目录
-rm $releaseResourcePath/default.res.json
+# rm $releaseResourcePath/default.res.json
 rm -rf $releaseResourcePath/assets
 rm -rf $releaseResourcePath/config
 rm -rf $releaseResourcePath/eui_skins
