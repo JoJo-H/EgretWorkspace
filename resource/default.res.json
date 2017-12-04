@@ -1,1 +1,359 @@
-{"groups":[{"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,bg_zsht_png,font_huode_fnt,font_huode_png,button_caipiao_png,bg_ptht_png,bg_home_jpg,lightbutton2_tex_png,penjinbi_tex_png,duizhanshengli_anim_json,duizhanshengli_texture_json,duizhanshengli_texture_png,robot_anim_json,robot_texture_json,robot_texture_png,s3_bg_png,g_png,z_png,man_anim_json,man_texture_json,man_texture_png,Hero_json,global_json,simple_json,simple_proto,font_common.png_fnt,font_common_png,beiji_wav,bg_mp3,bossAttack_mp3,bossSkill_mp3,dianji_mp3,enemyAttack_mp3,enenyLand_wav,heroAttack_wav,heroBeiji_wav,heroSkill_mp3,bg_base_goldslip_png,bg_goldslip_png,button_drag_png,bg_imgbox_png,shape_loading_png,bg_headviewcircle_png","name":"preload"}],"resources":[{"url":"assets/CheckBox/checkbox_select_disabled.png","type":"image","name":"checkbox_select_disabled_png"},{"url":"assets/CheckBox/checkbox_select_down.png","type":"image","name":"checkbox_select_down_png"},{"url":"assets/CheckBox/checkbox_select_up.png","type":"image","name":"checkbox_select_up_png"},{"url":"assets/CheckBox/checkbox_unselect.png","type":"image","name":"checkbox_unselect_png"},{"url":"assets/ItemRenderer/selected.png","type":"image","name":"selected_png"},{"url":"assets/Panel/border.png","type":"image","name":"border_png"},{"url":"assets/Panel/header.png","type":"image","name":"header_png"},{"url":"assets/RadioButton/radiobutton_select_disabled.png","type":"image","name":"radiobutton_select_disabled_png"},{"url":"assets/RadioButton/radiobutton_select_down.png","type":"image","name":"radiobutton_select_down_png"},{"url":"assets/RadioButton/radiobutton_select_up.png","type":"image","name":"radiobutton_select_up_png"},{"url":"assets/RadioButton/radiobutton_unselect.png","type":"image","name":"radiobutton_unselect_png"},{"url":"assets/ScrollBar/roundthumb.png","type":"image","name":"roundthumb_png"},{"url":"assets/Slider/thumb.png","type":"image","name":"thumb_png"},{"url":"assets/Slider/track.png","type":"image","name":"track_png"},{"url":"assets/Slider/tracklight.png","type":"image","name":"tracklight_png"},{"url":"assets/ToggleSwitch/handle.png","type":"image","name":"handle_png"},{"url":"assets/ToggleSwitch/off.png","type":"image","name":"off_png"},{"url":"assets/ToggleSwitch/on.png","type":"image","name":"on_png"},{"url":"assets/Button/button_down.png","type":"image","name":"button_down_png"},{"url":"assets/Button/button_up.png","type":"image","name":"button_up_png"},{"url":"assets/ProgressBar/thumb_pb.png","type":"image","name":"thumb_pb_png"},{"url":"assets/ProgressBar/track_pb.png","type":"image","name":"track_pb_png"},{"url":"assets/ScrollBar/track_sb.png","type":"image","name":"track_sb_png"},{"url":"assets/bg.jpg","type":"image","name":"bg_jpg"},{"url":"assets/egret_icon.png","type":"image","name":"egret_icon_png"},{"name":"description_json","type":"json","url":"config/description.json"},{"name":"bg_zsht_png","type":"image","url":"assets/main/bg_zsht.png"},{"name":"font_huode_fnt","type":"font","url":"assets/font/font_huode.fnt"},{"name":"font_huode_png","type":"image","url":"assets/font/font_huode.png"},{"name":"button_caipiao_png","type":"image","url":"assets/Button/button_caipiao.png"},{"name":"bg_ptht_png","type":"image","url":"assets/main/bg_ptht.png"},{"name":"bg_home_jpg","type":"image","url":"assets/main/bg_home.jpg"},{"name":"lightbutton2_tex_png","type":"image","url":"assets/animation/fast/lightbutton2_tex.png"},{"name":"penjinbi_tex_png","type":"image","url":"assets/animation/fast/penjinbi_tex.png"},{"name":"duizhanshengli_anim_json","type":"json","url":"assets/animation/dragonBones/duizhanshengli_anim.json"},{"name":"duizhanshengli_texture_json","type":"json","url":"assets/animation/dragonBones/duizhanshengli_texture.json"},{"name":"duizhanshengli_texture_png","type":"image","url":"assets/animation/dragonBones/duizhanshengli_texture.png"},{"name":"robot_anim_json","type":"json","url":"assets/animation/dragonBones/robot_anim.json"},{"name":"robot_texture_json","type":"json","url":"assets/animation/dragonBones/robot_texture.json"},{"name":"robot_texture_png","type":"image","url":"assets/animation/dragonBones/robot_texture.png"},{"name":"s3_bg_png","type":"image","url":"assets/game/turntable/s3_bg.png"},{"name":"g_png","type":"image","url":"assets/game/turntable/g.png"},{"name":"z_png","type":"image","url":"assets/game/turntable/z.png"},{"name":"man_anim_json","type":"json","url":"assets/animation/dragonBones/man_anim.json"},{"name":"man_texture_json","type":"json","url":"assets/animation/dragonBones/man_texture.json"},{"name":"man_texture_png","type":"image","url":"assets/animation/dragonBones/man_texture.png"},{"name":"Hero_json","type":"json","url":"assets/config/Hero.json"},{"name":"global_json","type":"json","url":"assets/config/global.json"},{"name":"tempJsons_zip","type":"jszip","url":"assets/config/tempJsons.zip"},{"name":"simple_json","type":"json","url":"assets/config/simple.json"},{"name":"simple_proto","type":"text","url":"assets/config/simple.proto"},{"name":"font_common.png_fnt","type":"font","url":"assets/font/font_common.png.fnt"},{"name":"font_common_png","type":"image","url":"assets/font/font_common.png"},{"name":"beiji_wav","type":"sound","url":"assets/sound/beiji.wav"},{"name":"bg_mp3","type":"sound","url":"assets/sound/bg.mp3"},{"name":"bossAttack_mp3","type":"sound","url":"assets/sound/bossAttack.mp3"},{"name":"bossSkill_mp3","type":"sound","url":"assets/sound/bossSkill.mp3"},{"name":"dianji_mp3","type":"sound","url":"assets/sound/dianji.mp3"},{"name":"enemyAttack_mp3","type":"sound","url":"assets/sound/enemyAttack.mp3"},{"name":"enenyLand_wav","type":"sound","url":"assets/sound/enenyLand.wav"},{"name":"heroAttack_wav","type":"sound","url":"assets/sound/heroAttack.wav"},{"name":"heroBeiji_wav","type":"sound","url":"assets/sound/heroBeiji.wav"},{"name":"heroSkill_mp3","type":"sound","url":"assets/sound/heroSkill.mp3"},{"name":"bg_base_goldslip_png","type":"image","url":"assets/common/bg_base_goldslip.png"},{"name":"bg_goldslip_png","type":"image","url":"assets/common/bg_goldslip.png"},{"name":"button_drag_png","type":"image","url":"assets/common/button_drag.png"},{"name":"bg_imgbox_png","type":"image","url":"assets/common/bg_imgbox.png"},{"name":"shape_loading_png","type":"image","url":"assets/common/shape_loading.png"},{"name":"bg_headviewcircle_png","type":"image","url":"assets/common/bg_headviewcircle.png"}]}
+{
+	"groups": [
+		{
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,bg_zsht_png,font_huode_fnt,font_huode_png,button_caipiao_png,bg_ptht_png,bg_home_jpg,lightbutton2_tex_png,penjinbi_tex_png,duizhanshengli_anim_json,duizhanshengli_texture_json,duizhanshengli_texture_png,robot_anim_json,robot_texture_json,robot_texture_png,s3_bg_png,g_png,z_png,man_anim_json,man_texture_json,man_texture_png,Hero_json,global_json,simple_json,simple_proto,font_common.png_fnt,font_common_png,beiji_wav,bg_mp3,bossAttack_mp3,bossSkill_mp3,dianji_mp3,enemyAttack_mp3,enenyLand_wav,heroAttack_wav,heroBeiji_wav,heroSkill_mp3,bg_base_goldslip_png,bg_goldslip_png,button_drag_png,bg_imgbox_png,shape_loading_png,bg_headviewcircle_png",
+			"name": "preload"
+		},
+		{
+			"keys": "s3_bg_png,z_png,bg_zsht_png",
+			"name": "sheet_common"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/main/bg_zsht.png",
+			"type": "image",
+			"name": "bg_zsht_png"
+		},
+		{
+			"url": "assets/font/font_huode.fnt",
+			"type": "font",
+			"name": "font_huode_fnt"
+		},
+		{
+			"url": "assets/font/font_huode.png",
+			"type": "image",
+			"name": "font_huode_png"
+		},
+		{
+			"url": "assets/Button/button_caipiao.png",
+			"type": "image",
+			"name": "button_caipiao_png"
+		},
+		{
+			"url": "assets/main/bg_ptht.png",
+			"type": "image",
+			"name": "bg_ptht_png"
+		},
+		{
+			"url": "assets/main/bg_home.jpg",
+			"type": "image",
+			"name": "bg_home_jpg"
+		},
+		{
+			"url": "assets/animation/fast/lightbutton2_tex.png",
+			"type": "image",
+			"name": "lightbutton2_tex_png"
+		},
+		{
+			"url": "assets/animation/fast/penjinbi_tex.png",
+			"type": "image",
+			"name": "penjinbi_tex_png"
+		},
+		{
+			"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
+			"type": "json",
+			"name": "duizhanshengli_anim_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/duizhanshengli_texture.json",
+			"type": "json",
+			"name": "duizhanshengli_texture_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/duizhanshengli_texture.png",
+			"type": "image",
+			"name": "duizhanshengli_texture_png"
+		},
+		{
+			"url": "assets/animation/dragonBones/robot_anim.json",
+			"type": "json",
+			"name": "robot_anim_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/robot_texture.json",
+			"type": "json",
+			"name": "robot_texture_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/robot_texture.png",
+			"type": "image",
+			"name": "robot_texture_png"
+		},
+		{
+			"url": "assets/game/turntable/s3_bg.png",
+			"type": "image",
+			"name": "s3_bg_png"
+		},
+		{
+			"url": "assets/game/turntable/g.png",
+			"type": "image",
+			"name": "g_png"
+		},
+		{
+			"url": "assets/game/turntable/z.png",
+			"type": "image",
+			"name": "z_png"
+		},
+		{
+			"url": "assets/animation/dragonBones/man_anim.json",
+			"type": "json",
+			"name": "man_anim_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/man_texture.json",
+			"type": "json",
+			"name": "man_texture_json"
+		},
+		{
+			"url": "assets/animation/dragonBones/man_texture.png",
+			"type": "image",
+			"name": "man_texture_png"
+		},
+		{
+			"url": "assets/config/Hero.json",
+			"type": "json",
+			"name": "Hero_json"
+		},
+		{
+			"url": "assets/config/global.json",
+			"type": "json",
+			"name": "global_json"
+		},
+		{
+			"url": "assets/config/tempJsons.zip",
+			"type": "jszip",
+			"name": "tempJsons_zip"
+		},
+		{
+			"url": "assets/config/simple.json",
+			"type": "json",
+			"name": "simple_json"
+		},
+		{
+			"url": "assets/config/simple.proto",
+			"type": "text",
+			"name": "simple_proto"
+		},
+		{
+			"url": "assets/font/font_common.png.fnt",
+			"type": "font",
+			"name": "font_common.png_fnt"
+		},
+		{
+			"url": "assets/font/font_common.png",
+			"type": "image",
+			"name": "font_common_png"
+		},
+		{
+			"url": "assets/sound/beiji.wav",
+			"type": "sound",
+			"name": "beiji_wav"
+		},
+		{
+			"url": "assets/sound/bg.mp3",
+			"type": "sound",
+			"name": "bg_mp3"
+		},
+		{
+			"url": "assets/sound/bossAttack.mp3",
+			"type": "sound",
+			"name": "bossAttack_mp3"
+		},
+		{
+			"url": "assets/sound/bossSkill.mp3",
+			"type": "sound",
+			"name": "bossSkill_mp3"
+		},
+		{
+			"url": "assets/sound/dianji.mp3",
+			"type": "sound",
+			"name": "dianji_mp3"
+		},
+		{
+			"url": "assets/sound/enemyAttack.mp3",
+			"type": "sound",
+			"name": "enemyAttack_mp3"
+		},
+		{
+			"url": "assets/sound/enenyLand.wav",
+			"type": "sound",
+			"name": "enenyLand_wav"
+		},
+		{
+			"url": "assets/sound/heroAttack.wav",
+			"type": "sound",
+			"name": "heroAttack_wav"
+		},
+		{
+			"url": "assets/sound/heroBeiji.wav",
+			"type": "sound",
+			"name": "heroBeiji_wav"
+		},
+		{
+			"url": "assets/sound/heroSkill.mp3",
+			"type": "sound",
+			"name": "heroSkill_mp3"
+		},
+		{
+			"url": "assets/common/bg_base_goldslip.png",
+			"type": "image",
+			"name": "bg_base_goldslip_png"
+		},
+		{
+			"url": "assets/common/bg_goldslip.png",
+			"type": "image",
+			"name": "bg_goldslip_png"
+		},
+		{
+			"url": "assets/common/button_drag.png",
+			"type": "image",
+			"name": "button_drag_png"
+		},
+		{
+			"url": "assets/common/bg_imgbox.png",
+			"type": "image",
+			"name": "bg_imgbox_png"
+		},
+		{
+			"url": "assets/common/shape_loading.png",
+			"type": "image",
+			"name": "shape_loading_png"
+		},
+		{
+			"url": "assets/common/bg_headviewcircle.png",
+			"type": "image",
+			"name": "bg_headviewcircle_png"
+		}
+	]
+}

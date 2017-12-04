@@ -140,6 +140,11 @@
 			"bg_imgbox_png",
 			"shape_loading_png",
 			"bg_headviewcircle_png"
+		],
+		"sheet_common": [
+			"s3_bg_png",
+			"z_png",
+			"bg_zsht_png"
 		]
 	},
 	"resources": {
@@ -191,6 +196,25 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
+			"Panel": {
+				"border.png": {
+					"url": "assets/Panel/border.png",
+					"type": "image",
+					"name": "assets/Panel/border.png"
+				},
+				"header.png": {
+					"url": "assets/Panel/header.png",
+					"type": "image",
+					"name": "assets/Panel/header.png"
+				}
+			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -211,25 +235,6 @@
 					"url": "assets/CheckBox/checkbox_unselect.png",
 					"type": "image",
 					"name": "assets/CheckBox/checkbox_unselect.png"
-				}
-			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
-			"Panel": {
-				"border.png": {
-					"url": "assets/Panel/border.png",
-					"type": "image",
-					"name": "assets/Panel/border.png"
-				},
-				"header.png": {
-					"url": "assets/Panel/header.png",
-					"type": "image",
-					"name": "assets/Panel/header.png"
 				}
 			},
 			"ProgressBar": {
@@ -463,6 +468,28 @@
 				}
 			},
 			"animation": {
+				"fast": {
+					"lightbutton2_ske.dbmv": {
+						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
+					},
+					"lightbutton2_tex.png": {
+						"url": "assets/animation/fast/lightbutton2_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/lightbutton2_tex.png"
+					},
+					"penjinbi_ske.dbmv": {
+						"url": "assets/animation/fast/penjinbi_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/penjinbi_ske.dbmv"
+					},
+					"penjinbi_tex.png": {
+						"url": "assets/animation/fast/penjinbi_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/penjinbi_tex.png"
+					}
+				},
 				"dragonBones": {
 					"duizhanshengli_anim.json": {
 						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
@@ -508,28 +535,6 @@
 						"url": "assets/animation/dragonBones/robot_texture.png",
 						"type": "image",
 						"name": "assets/animation/dragonBones/robot_texture.png"
-					}
-				},
-				"fast": {
-					"lightbutton2_ske.dbmv": {
-						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
-					},
-					"lightbutton2_tex.png": {
-						"url": "assets/animation/fast/lightbutton2_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/lightbutton2_tex.png"
-					},
-					"penjinbi_ske.dbmv": {
-						"url": "assets/animation/fast/penjinbi_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/penjinbi_ske.dbmv"
-					},
-					"penjinbi_tex.png": {
-						"url": "assets/animation/fast/penjinbi_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/penjinbi_tex.png"
 					}
 				}
 			},
