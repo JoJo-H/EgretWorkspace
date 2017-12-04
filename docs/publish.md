@@ -27,3 +27,10 @@ euibooster . $releasePath
 新建一个新的 publishIndex.html
 
 额外：新增没带版本号的发布脚本
+
+
+6、合并图集
+简版ruby脚本，不会进行检测资源的问题（如重复等）：只需要执行ruby publish.rb .；脚本为publishSimple.rb;使用publishSimple.sh结合publishSimple.rb
+
+检测版脚本：ruby publish.rb -p . -t；ruby publish.rb -p .；执行两次，一次检测，一次打包；脚本为publish.rb；
+使用publish.sh结合publish.rb

@@ -23,11 +23,11 @@ function usage() {
 }
 
 
-# ruby publish.rb -p . -t
+ruby publish.rb -p . -t
 
-# if [ "$?" == "100" ]; then
-# 	exit 100
-# fi
+if [ "$?" == "100" ]; then
+	exit 100
+fi
 
 resetResStatus
 
@@ -37,13 +37,13 @@ egret publish --version $versionName
 releasePath=bin-release/web/$versionName
 
 # 参数 当前目录.
-# ruby publish.rb -p .
-ruby publish.rb .
+ruby publish.rb -p .
 
 indexPath=$releasePath/index.html
 
 releaseResourcePath=$releasePath/resource
 
+# 资源发布会自动res build
 res publish . $releasePath
 euibooster . $releasePath
 

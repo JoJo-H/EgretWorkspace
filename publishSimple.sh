@@ -10,13 +10,6 @@ function resetResStatus() {
 	rm -rf resource/assets/sheet/
 }
 
-
-# ruby publish.rb -p . -t
-
-# if [ "$?" == "100" ]; then
-# 	exit 100
-# fi
-
 resetResStatus
 
 egret build -e
@@ -24,7 +17,7 @@ egret publish --version $versionName
 
 releasePath=bin-release/web/$versionName
 
-# ruby publish.rb -p .
+ruby publish.rb .
 
 indexPath=$releasePath/index.html
 

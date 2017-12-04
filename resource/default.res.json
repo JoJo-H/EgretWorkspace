@@ -356,21 +356,6 @@
 			"name": "bg_headviewcircle_png"
 		},
 		{
-			"name": "s3_bg2_png",
-			"type": "image",
-			"url": "assets/game/turntable/s3_bg.png"
-		},
-		{
-			"name": "z2_png",
-			"type": "image",
-			"url": "assets/game/turntable/z.png"
-		},
-		{
-			"name": "bg_zsht2_png",
-			"type": "image",
-			"url": "assets/main/bg_zsht.png"
-		},
-		{
 			"name": "icon_redtips_png",
 			"type": "image",
 			"url": "assets/icon/icon_redtips.png"
