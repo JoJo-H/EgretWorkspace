@@ -9,7 +9,8 @@ scriptPath=$(cd `dirname $0`;pwd)
 # echo $scriptPath
 cd $scriptPath
 
-# 重置
+# 重置,因为执行完ruby脚本后，本地会删除图集里的小图片，然后新增sheet文件夹，存放的就是所有的图集
+# 然后再进行res publish，完后就需要调用该方法进行重置资源
 function resetResStatus() {
 	git checkout -- resource/
 	rm -rf resource/assets/sheet/
@@ -131,3 +132,5 @@ function printVersion() {
 }
 
 printVersion
+
+resetResStatus
