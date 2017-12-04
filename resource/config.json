@@ -48,7 +48,9 @@
 		"man_texture_png": "assets/animation/dragonBones/man_texture.png",
 		"Hero_json": "assets/config/Hero.json",
 		"global_json": "assets/config/global.json",
+		"tempJsons_zip": "assets/config/tempJsons.zip",
 		"simple_json": "assets/config/simple.json",
+		"simple_proto": "assets/config/simple.proto",
 		"font_common.png_fnt": "assets/font/font_common.png.fnt",
 		"font_common_png": "assets/font/font_common.png",
 		"beiji_wav": "assets/sound/beiji.wav",
@@ -189,6 +191,13 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -209,13 +218,6 @@
 					"url": "assets/CheckBox/checkbox_unselect.png",
 					"type": "image",
 					"name": "assets/CheckBox/checkbox_unselect.png"
-				}
-			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"Panel": {
@@ -357,6 +359,16 @@
 					"url": "assets/config/simple.json",
 					"type": "json",
 					"name": "assets/config/simple.json"
+				},
+				"simple.proto": {
+					"url": "assets/config/simple.proto",
+					"type": "text",
+					"name": "assets/config/simple.proto"
+				},
+				"tempJsons.zip": {
+					"url": "assets/config/tempJsons.zip",
+					"type": "jszip",
+					"name": "assets/config/tempJsons.zip"
 				}
 			},
 			"font": {
@@ -451,28 +463,6 @@
 				}
 			},
 			"animation": {
-				"fast": {
-					"lightbutton2_ske.dbmv": {
-						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
-					},
-					"lightbutton2_tex.png": {
-						"url": "assets/animation/fast/lightbutton2_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/lightbutton2_tex.png"
-					},
-					"penjinbi_ske.dbmv": {
-						"url": "assets/animation/fast/penjinbi_ske.dbmv",
-						"type": "dbmv",
-						"name": "assets/animation/fast/penjinbi_ske.dbmv"
-					},
-					"penjinbi_tex.png": {
-						"url": "assets/animation/fast/penjinbi_tex.png",
-						"type": "image",
-						"name": "assets/animation/fast/penjinbi_tex.png"
-					}
-				},
 				"dragonBones": {
 					"duizhanshengli_anim.json": {
 						"url": "assets/animation/dragonBones/duizhanshengli_anim.json",
@@ -519,6 +509,28 @@
 						"type": "image",
 						"name": "assets/animation/dragonBones/robot_texture.png"
 					}
+				},
+				"fast": {
+					"lightbutton2_ske.dbmv": {
+						"url": "assets/animation/fast/lightbutton2_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/lightbutton2_ske.dbmv"
+					},
+					"lightbutton2_tex.png": {
+						"url": "assets/animation/fast/lightbutton2_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/lightbutton2_tex.png"
+					},
+					"penjinbi_ske.dbmv": {
+						"url": "assets/animation/fast/penjinbi_ske.dbmv",
+						"type": "dbmv",
+						"name": "assets/animation/fast/penjinbi_ske.dbmv"
+					},
+					"penjinbi_tex.png": {
+						"url": "assets/animation/fast/penjinbi_tex.png",
+						"type": "image",
+						"name": "assets/animation/fast/penjinbi_tex.png"
+					}
 				}
 			},
 			"game": {
@@ -547,11 +559,6 @@
 				"type": "json",
 				"name": "config/description.json"
 			}
-		},
-		"simple_proto": {
-			"url": "assets/config/simple.proto",
-			"type": "text",
-			"name": "simple_proto"
 		}
 	}
 }
