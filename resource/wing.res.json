@@ -17,9 +17,14 @@
       "name": "default.thm.json"
     },
     {
-      "url": "be/d340ee.json",
+      "url": "85/992592.json",
       "type": "json",
       "name": "wing.res.json"
+    },
+    {
+      "url": "db/04ce98.json",
+      "type": "json",
+      "name": "description_json"
     },
     {
       "url": "18/f18a5d.jpg",
@@ -52,6 +57,11 @@
       "name": "checkbox_unselect_png"
     },
     {
+      "url": "7d/b3fa94.png",
+      "type": "image",
+      "name": "selected_png"
+    },
+    {
       "url": "4f/10fcfb.png",
       "type": "image",
       "name": "button_caipiao_png"
@@ -65,11 +75,6 @@
       "url": "66/c34920.png",
       "type": "image",
       "name": "button_up_png"
-    },
-    {
-      "url": "7d/b3fa94.png",
-      "type": "image",
-      "name": "selected_png"
     },
     {
       "url": "c1/365a48.png",
@@ -370,11 +375,6 @@
       "url": "a9/037858.png",
       "type": "image",
       "name": "z_png"
-    },
-    {
-      "url": "db/04ce98.json",
-      "type": "json",
-      "name": "description_json"
     }
   ]
 }

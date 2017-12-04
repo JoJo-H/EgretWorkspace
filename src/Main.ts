@@ -106,6 +106,8 @@ class Main extends eui.UILayer {
         if (RELEASE) {
             if(!ParameterData.isSimple()){
                 RES.setConfigURL('config_' + ParameterData.getResVersion() + '.json');
+            }else{
+                RES.setConfigURL('config.json');
             }
         }
 

@@ -25,3 +25,5 @@ euibooster . $releasePath
 
 5、加载index不能用项目的index.html了，因为加载的文件都被我们改了，加入了CRC版本号。我们需要动态去加载
 新建一个新的 publishIndex.html
+
+额外：新增没带版本号的发布脚本

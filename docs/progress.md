@@ -80,3 +80,8 @@
 
 -->2017.09.02 16.44
     新增res资源描述文档等。
+
+-->2017.12.04 18.08
+    新增发布脚本.资源都会进行crc处理
+    publish.sh -- 带有版本号的,bin-release/web/20171204181042/?codeVer=e416ff11.f83279b9&resVer=9ca219ec.989fd5b
+    publishSimple.sh -- 不需要版本号,bin-release/web/20171204180753/?isSimple=1
