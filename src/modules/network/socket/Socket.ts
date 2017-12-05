@@ -12,6 +12,8 @@ class Socket {
     private _port:any;
     private _socket:egret.WebSocket;
     private _msg:BaseMsg;
+
+    private reqId = 0;
     public constructor() {
     }
 
@@ -69,6 +71,7 @@ class Socket {
      * @param msg
      */
     public send(msg:any):void {
+        this.reqId++;
         this._msg.send(this._socket, msg);
     }
 

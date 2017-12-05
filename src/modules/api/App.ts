@@ -12,7 +12,7 @@ class App {
      * ProtoFile
      * @type {null}
      */
-    public static ProtoFile:any = null;
+    public static ProtoMessage:any = null;
     /**
      * 全局配置数据
      * @type {null}
@@ -102,11 +102,12 @@ class App {
     }
     
     public static Init():void {
-        //实例化ProtoBuf和Socket请求
-        App.ProtoFile = dcodeIO.ProtoBuf.loadProto(Config.get(App.GlobalData.ProtoFile));
+        //初始化protobuf文件
+        App.ProtoMessage = dcodeIO.ProtoBuf.loadProto(Config.get(App.GlobalData.ProtoFile));
         App.ProtoConfig = Config.get(App.GlobalData.ProtoConfig);
         // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
-        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new UTFMsg());
+        // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new UTFMsg());
+        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsg());
         App.Socket.connect();
     }
 

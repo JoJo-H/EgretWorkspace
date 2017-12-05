@@ -58,7 +58,7 @@ class Config {
             this._zip = new JSZip(data);
             //读取数据
             var json = this._zip.file('errorcode.json').asText();
-            console.log(JSON.parse(json));
+            // console.log(JSON.parse(json));
         },this,RES.ResourceItem.TYPE_BIN);
     }
 

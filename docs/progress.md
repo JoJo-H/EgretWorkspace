@@ -88,3 +88,6 @@
 
 -->2017.12.04 20:54
     新增图集打包的ruby脚本；publish.sh --> publish.rb ;publishSimple.sh --> publishSimple.rb
+
+-->2017.12.05 18.01
+    新增websocket的ArrayBuff形式的封包与解包。ByteArrayMsg,MsgUtil...

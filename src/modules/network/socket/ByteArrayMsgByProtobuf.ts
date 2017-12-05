@@ -21,13 +21,13 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
 
     /**
      * 获取msgID对应的类
-     * @param key
+     * @param key 对应simple.proto
      * @returns {any}
      */
     private getMsgClass(key:string):any {
         var cls:any = this.msgClass[key];
         if (cls == null) {
-            cls = App.ProtoFile.build(key);
+            cls = App.ProtoMessage.build(key);
             this.msgClass[key] = cls;
         }
         return cls;
@@ -65,6 +65,7 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
             var obj:any = {};
             obj.key = this.getMsgKey(msgID);
             console.log("Protobuf Decode");
+            console.log("反序列化数据：",msgID);
             obj.body = this.getMsgClass(obj.key).decode(bytes.buffer);
             console.log("Protobuf Decode");
             console.log("收到数据：", "[" + msgID + " " + obj.key + "]", obj.body);
@@ -82,7 +83,10 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
         var msgBody = new (this.getMsgClass(msg.key))(msg.body);
 
         console.log("Protobuf Encode");
-        var bodyBytes:egret.ByteArray = new egret.ByteArray(msgBody.toArrayBuffer());
+        //序列化数据
+        var bytes = msgBody.toArrayBuffer();
+        console.log("序列化数据：",msgID,bytes);
+        var bodyBytes:egret.ByteArray = new egret.ByteArray(bytes);
         console.log("Protobuf Encode");
         console.log("发送数据：", "[" + msgID + " " + msg.key + "]", msg.body);
 

@@ -12,9 +12,10 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public receive(socket:egret.WebSocket):void {
-        socket.readBytes(this._msgBuffer);
 
-        var obj:any = this.decode(this._msgBuffer);
+        var byte = new egret.ByteArray();
+        socket.readBytes(byte);
+        var obj : any = MsgUtil.decode(byte.buffer);
         if (obj) {
             App.Facade.sendNotification(obj.key, obj.body);
         }
@@ -30,10 +31,12 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public send(socket:egret.WebSocket, msg:any):void {
-        var obj:any = this.encode(msg);
-        if (obj) {
-            obj.position = 0;
-            socket.writeBytes(obj, 0, obj.bytesAvailable);
+        //发送数据msg的包装
+        var obj:Uint8Array = MsgUtil.strencode(msg);
+        // 需要加上头部信息
+        var objEncode = MsgUtil.encode(MsgUtil.TYPE_DATA,obj);
+        if (objEncode) {
+            socket.writeBytes(objEncode);
         }
     }
 
@@ -42,8 +45,7 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public decode(msg:any):any {
-        console.log("decode需要子类重写，根据项目的协议结构解析");
-        return null;
+        return MsgUtil.decode(msg);
     }
 
     /**
@@ -51,7 +53,7 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public encode(msg:any):any {
-        console.log("encode需要子类重写，根据项目的协议结构解析");
-        return null;
+        return MsgUtil.encode(4,msg);
     }
+
 }
