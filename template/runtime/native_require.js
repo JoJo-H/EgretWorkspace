@@ -79,6 +79,7 @@ var game_file_list = [
 	"bin-debug/modules/network/ListenerMediator.js",
 	"bin-debug/modules/network/network.js",
 	"bin-debug/modules/network/NotifyName.js",
+	"bin-debug/modules/network/socket/ArrayBufferUtil.js",
 	"bin-debug/modules/network/socket/BaseMsg.js",
 	"bin-debug/modules/animation/DBFaseMovie.js",
 	"bin-debug/modules/network/socket/ByteArrayMsgByProtobuf.js",

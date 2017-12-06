@@ -1,10 +1,8 @@
 
 
 class ByteArrayMsg implements BaseMsg {
-    private _msgBuffer:egret.ByteArray;
 
     public constructor() {
-        this._msgBuffer = new egret.ByteArray();
     }
 
     /**
@@ -12,17 +10,11 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public receive(socket:egret.WebSocket):void {
-
         var byte = new egret.ByteArray();
         socket.readBytes(byte);
-        var obj : any = MsgUtil.decode(byte.buffer);
+        var obj : any = this.decode(byte.buffer);
         if (obj) {
-            App.Facade.sendNotification(obj.key, obj.body);
-        }
-
-        //TODO double bytearray clear
-        if (this._msgBuffer.bytesAvailable == 0) {
-            this._msgBuffer.clear();
+            App.Facade.sendNotification(SocketMediator.SOCKET_DATA_CODE, obj);
         }
     }
 
@@ -31,12 +23,9 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public send(socket:egret.WebSocket, msg:any):void {
-        //发送数据msg的包装
-        var obj:Uint8Array = MsgUtil.strencode(msg);
-        // 需要加上头部信息
-        var objEncode = MsgUtil.encode(MsgUtil.TYPE_DATA,obj);
-        if (objEncode) {
-            socket.writeBytes(objEncode);
+        var buff = this.encode(msg);
+        if (buff) {
+            socket.writeBytes(buff);
         }
     }
 
@@ -44,8 +33,14 @@ class ByteArrayMsg implements BaseMsg {
      * 消息解析
      * @param msg
      */
-    public decode(msg:any):any {
-        return MsgUtil.decode(msg);
+    public decode(buffer:any):any {
+        var msg = MsgUtil.decode(buffer);
+        console.log('接收数据：');
+        console.log(new Uint8Array(msg.body));
+        var str = MsgUtil.strdecode(msg.body);
+        console.log(str);
+        msg.body = JSON.parse(str);
+        return msg;
     }
 
     /**
@@ -53,7 +48,13 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public encode(msg:any):any {
-        return MsgUtil.encode(4,msg);
+        console.log('发送数据：',msg);
+        // 发送数据msg的包装
+        var obj:Uint8Array = MsgUtil.strencode(msg);
+        console.log(obj);
+        // 需要加上头部信息
+        var buff = MsgUtil.encode(MsgUtil.TYPE_DATA,obj);
+        return buff;
     }
 
 }

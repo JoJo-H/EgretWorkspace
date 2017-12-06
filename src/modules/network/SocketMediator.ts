@@ -8,7 +8,7 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
         public static SOCKET_CONNECT : string = "SOCKET_CONNECT";
         public static SOCKET_START_RECONNECT : string = "SOCKET_START_RECONNECT";
 
-        public static SOCKET_DATA_CODE : string = "10001";
+        public static SOCKET_DATA_CODE : string = "SOCKET_DATA_CODE";
         constructor(viewComponet?:any){
             super(SocketMediator.NAME,viewComponet);
         }
@@ -42,10 +42,10 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
                         console.log("与服务器断开连接");
                         break;
                     case SocketMediator.SOCKET_DATA_CODE:
-                        console.log("与服务器断开连接");
+                        console.log("接收服务器数据：",notiData);
                         break;
                     case SocketMediator.SOCKET_DEBUG_INFO :
-                        console.log("收到服务器消息",notiData);
+                        console.log("SOCKET_DEBUG_INFO：",notiData);
                         break;
                 }
         }
@@ -60,7 +60,10 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
             //     "sex": 1
             // };
             // var msg : any = "hello world";
-            var msg :any = {address:'我huangguoyong',password:'123456'}
+            // var msg :any = {address:'我huangguoyong',password:'123456'};
+            var msg :any = {a:'我abc'};
             App.Socket.send(JSON.stringify(msg));
         }
 }
+
+// 查看socket.md记录文档
