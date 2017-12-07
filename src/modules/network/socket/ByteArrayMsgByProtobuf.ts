@@ -39,7 +39,7 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
      * @returns {any}
      */
     private getMsgID(key:string):number {
-        return this.protoConfigSymmetry[key];
+        return parseInt(this.protoConfigSymmetry[key]);
     }
 
     /**
@@ -52,23 +52,51 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
     }
 
     /**
+     * 发送消息处理
+     * @param msg
+     */
+    public send(socket:egret.WebSocket, msg:any):void {
+        var bytes:any = this.encode(msg);
+        if (bytes) {
+            bytes.position = 0;
+            socket.writeBytes(bytes, 0, bytes.bytesAvailable);
+        }
+    }
+
+    /**
+     * 接收消息处理
+     * @param msg
+     */
+    public receive(socket:egret.WebSocket):void {
+        var byte = new egret.ByteArray();
+        socket.readBytes(byte);
+
+        var obj:any = this.decode(byte);
+        if (obj) {
+            App.Facade.sendNotification(SocketMediator.SOCKET_DATA_CODE, obj);
+        }
+    }
+
+    /**
      * 消息解析
      * @param msg
      */
-    public decode(msg:any):any {
-        var msgID = msg.readShort();
+    public decode(msg:egret.ByteArray):any {
+        msg.position = 0;
+        msg.readShort();
+        //包含msgId的长度
         var len = msg.readShort();
-        if (msg.bytesAvailable >= len) {
+        var msgID = msg.readShort();
+        //body的长度
+        len = msg.bytesAvailable;
+        if (msg.bytesAvailable >= 0) {
             var bytes:egret.ByteArray = new egret.ByteArray();
             msg.readBytes(bytes, 0, len);
 
             var obj:any = {};
             obj.key = this.getMsgKey(msgID);
-            console.log("Protobuf Decode");
-            console.log("反序列化数据：",msgID);
+            console.log('接收数据protobuf:',new Uint8Array(bytes.buffer));
             obj.body = this.getMsgClass(obj.key).decode(bytes.buffer);
-            console.log("Protobuf Decode");
-            console.log("收到数据：", "[" + msgID + " " + obj.key + "]", obj.body);
             return obj;
         }
         return null;
@@ -82,16 +110,20 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
         var msgID = this.getMsgID(msg.key);
         var msgBody = new (this.getMsgClass(msg.key))(msg.body);
 
-        console.log("Protobuf Encode");
         //序列化数据
-        var bytes = msgBody.toArrayBuffer();
-        console.log("序列化数据：",msgID,bytes);
-        var bodyBytes:egret.ByteArray = new egret.ByteArray(bytes);
-        console.log("Protobuf Encode");
+        var buffer = msgBody.toArrayBuffer();
+        var bodyBytes:egret.ByteArray = new egret.ByteArray(buffer);
 
         var sendMsg:egret.ByteArray = new egret.ByteArray();
+        //预留消息长度的位置,四个字节
+        sendMsg.writeShort(0);
+        sendMsg.writeShort(0);
         sendMsg.writeShort(msgID);
         sendMsg.writeBytes(bodyBytes);
+        //长度信息插到第3、4个字节
+        sendMsg.position = 2;
+        sendMsg.writeShort(sendMsg.length);
+        console.log('发送protobuf：',new Uint8Array(sendMsg.buffer));
         return sendMsg;
     }
 }

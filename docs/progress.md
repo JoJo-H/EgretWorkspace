@@ -91,3 +91,9 @@
 
 -->2017.12.05 18.01
     新增websocket的ArrayBuff形式的封包与解包。ByteArrayMsg,MsgUtil...
+
+-->2017.12.07 16:55
+    使用utf-8编码格式传输二进制流,编写unicode编码与UTF-8编码的互转
+
+-->2017.12.07 20:22
+    socket使用protobuf传输二进制数据

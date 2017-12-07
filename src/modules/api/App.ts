@@ -105,9 +105,9 @@ class App {
         //初始化protobuf文件
         App.ProtoMessage = dcodeIO.ProtoBuf.loadProto(Config.get(App.GlobalData.ProtoFile));
         App.ProtoConfig = Config.get(App.GlobalData.ProtoConfig);
-        // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
+        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsgByProtobuf());
         // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new UTFMsg());
-        App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsg());
+        // App.Socket.initServer(App.GlobalData.SocketServer, App.GlobalData.SocketPort, new ByteArrayMsg());
         App.Socket.connect();
     }
 
