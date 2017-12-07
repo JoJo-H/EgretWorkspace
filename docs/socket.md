@@ -27,4 +27,5 @@ Uint8Array(23) [34, 123, 92, 34, 97, 92, 34, 58, 92, 34, 92, 117, 54, 50, 49, 49
 最后就可以使用JSON.parse(str)解析。
 
 
-5、问题：不理解strencode与strdecode方法。。。
+5、理解strencode与strdecode方法:编码不同的二进制打包不同。
+使用UTF-8编码格式进行传输数据

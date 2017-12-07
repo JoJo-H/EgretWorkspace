@@ -88,7 +88,6 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
         console.log("序列化数据：",msgID,bytes);
         var bodyBytes:egret.ByteArray = new egret.ByteArray(bytes);
         console.log("Protobuf Encode");
-        console.log("发送数据：", "[" + msgID + " " + msg.key + "]", msg.body);
 
         var sendMsg:egret.ByteArray = new egret.ByteArray();
         sendMsg.writeShort(msgID);

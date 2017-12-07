@@ -6,21 +6,58 @@ class MsgUtil {
     public static TYPE_KICK = 5;
 
     public static strencode (str):Uint8Array {
-        //不支持超过码点0xffff的字符，长度为2，会被分开两个字符封装
         var byteArray = new Uint8Array(str.length * 3);
         var offset = 0;
         for (var i = 0; i < str.length; i++) {
             var charCode = str.charCodeAt(i);
             var codes = null;
-            //ascii表常用符号0~127,127:0xxxxxxx，2的7次方
+            //ascii表常用符号0~127,如果字节小于0x80，则把它当作单字节来处理
             if (charCode <= 0x7f) {
                 codes = [charCode];
             }
-            //2047: 0xxx xxxxxxxx
             else if (charCode <= 0x7ff) {
                 codes = [0xc0 | (charCode >> 6), 0x80 | (charCode & 0x3f)];
             } else {
                 codes = [0xe0 | (charCode >> 12), 0x80 | ((charCode & 0xfc0) >> 6), 0x80 | (charCode & 0x3f)];
+            }
+            for (var j = 0; j < codes.length; j++) {
+                byteArray[offset] = codes[j];
+                ++offset;
+            }
+        }
+        var _buffer = new Uint8Array(offset);
+        MsgUtil.copyArray(_buffer, 0, byteArray, 0, offset);
+        return _buffer;
+    }
+
+    /**
+     * 支持稀有字符，四个字节：如𠮷；
+     * @param str 
+     */
+    public static strencode2(str:string):Uint8Array {
+        var byteArray = new Uint8Array(str.length * 3);
+        var offset = 0;
+        for (var i = 0; i < str.length; i++) {
+            var charCode = str.codePointAt(i);
+            var codes = null;
+            //Unicode符号范围 | UTF-8编码方式 : 
+            //(十六进制) | （二进制）
+            //  一个字节    0000 0000-0000 007F | 0xxxxxxx
+            if (charCode <= 0x7f) {
+                codes = [charCode];
+            }
+            //  两个字节  0000 0080-0000 07FF | 110xxxxx 10xxxxxx
+            else if (charCode <= 0x7ff) {
+                codes = [0xc0 | (charCode >> 6), 0x80 | (charCode & 0x3f)];
+            }
+            //  三个字节    0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
+            else if(charCode <= 0xffff) {
+                codes = [0xe0 | (charCode >> 12), 0x80 | ((charCode & 0xfc0) >> 6), 0x80 | (charCode & 0x3f)];
+            }
+            //  四个字节    0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+            else {
+                codes = [0xf0 | (charCode >> 18),0xe0 | (charCode >> 12), 0x80 | ((charCode & 0xfc0) >> 6), 0x80 | (charCode & 0x3f)];
+                i++;
             }
             for (var j = 0; j < codes.length; j++) {
                 byteArray[offset] = codes[j];
@@ -54,7 +91,45 @@ class MsgUtil {
             array.push(charCode);
         }
         return String.fromCharCode.apply(null, array);
-        // return String.fromCodePoint.apply(null, array);
+    }
+
+    /**
+     * utf-8字节数组 转换成 unicode字符串
+     * @param buffer 
+     */
+    public static utfBuffer2Uc(buffer) {
+        var bytes = new Uint8Array(buffer);
+        var array = [];
+        var offset = 0;
+        var charCode = 0;
+        var end = bytes.length;
+        //0xxxxxxx 
+        //110xxxxx 10xxxxxx
+        //1110xxxx 10xxxxxx 10xxxxxx
+        //11110xxx 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+        //查看第一个字节在哪个范围就可以判断这个字符是几个字节
+        while (offset < end) {
+            //
+            if( bytes[offset] < 0x80 ) {
+                charCode = bytes[offset];
+                offset += 1;
+            }
+            // 110xxxxx 10xxxxxx两个字节
+            else if( bytes[offset] < 0xe0 ) {
+                charCode = ((bytes[offset] & 0x1f) << 6) + (bytes[offset + 1] & 0x3f);
+                offset += 2;
+            }
+            // 1110xxxx 三个字节
+            else if( bytes[offset] < 0xf0 ) {
+                charCode = ((bytes[offset] & 0xf) << 12) + ((bytes[offset + 1] & 0x3f) << 6) + (bytes[offset + 2] & 0x3f);
+                offset += 3;
+            }else {
+                charCode = ((bytes[offset] & 0x7) << 18) + ((bytes[offset + 1] & 0x3f) << 12) + ((bytes[offset + 2] & 0x3f) << 6) + (bytes[offset + 3] & 0x3f);
+                offset += 4;
+            }
+            array.push(charCode);
+        }
+        return String.fromCodePoint.apply(null, array);
     }
 
     public static encode(type, body):any {
@@ -80,7 +155,7 @@ class MsgUtil {
         var body = length ? new Uint8Array(length) : null;
         MsgUtil.copyArray(body, 0, bytes, 4, length);
 
-        return {body:body,type:type};
+        return body ? {body:body,type:type} : null;
     }
 
     public static copyArray(dest, doffset, src, soffset, length) {

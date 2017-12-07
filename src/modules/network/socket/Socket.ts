@@ -71,6 +71,7 @@ class Socket {
      * @param msg
      */
     public send(msg:any):void {
+        console.log('发送数据：',msg);
         this.reqId++;
         this._msg.send(this._socket, msg);
     }

@@ -24,6 +24,7 @@ class ByteArrayMsg implements BaseMsg {
      */
     public send(socket:egret.WebSocket, msg:any):void {
         var buff = this.encode(msg);
+        console.log('Uint8Array:(包含头部字节)',obj);
         if (buff) {
             socket.writeBytes(buff);
         }
@@ -36,10 +37,11 @@ class ByteArrayMsg implements BaseMsg {
     public decode(buffer:any):any {
         var msg = MsgUtil.decode(buffer);
         console.log('接收数据：');
-        console.log(new Uint8Array(msg.body));
-        var str = MsgUtil.strdecode(msg.body);
-        console.log(str);
-        msg.body = JSON.parse(str);
+        if(msg) {
+            console.log('Uint8Array:(去除头部字节)',new Uint8Array(msg.body));
+            var str = MsgUtil.utfBuffer2Uc(msg.body);
+            msg.body = JSON.parse(str);
+        }
         return msg;
     }
 
@@ -48,10 +50,8 @@ class ByteArrayMsg implements BaseMsg {
      * @param msg
      */
     public encode(msg:any):any {
-        console.log('发送数据：',msg);
         // 发送数据msg的包装
-        var obj:Uint8Array = MsgUtil.strencode(msg);
-        console.log(obj);
+        var obj:Uint8Array = MsgUtil.strencode2(msg);
         // 需要加上头部信息
         var buff = MsgUtil.encode(MsgUtil.TYPE_DATA,obj);
         return buff;

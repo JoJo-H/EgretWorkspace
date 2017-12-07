@@ -50,7 +50,7 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
                 }
         }
 
-        //发送一条消息到服务器
+        //发送一条消息到服务器,𠮷
         public send():void{
             // var msg:any = {};
             // msg.key = "MyMsg";
@@ -60,8 +60,7 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
             //     "sex": 1
             // };
             // var msg : any = "hello world";
-            // var msg :any = {address:'我huangguoyong',password:'123456'};
-            var msg :any = {a:'我abc'};
+            var msg :any = {address:'我𠮷huangguoyong',password:'123456'};
             App.Socket.send(JSON.stringify(msg));
         }
 }
