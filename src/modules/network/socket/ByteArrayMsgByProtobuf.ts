@@ -52,18 +52,6 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
     }
 
     /**
-     * 发送消息处理
-     * @param msg
-     */
-    public send(socket:egret.WebSocket, msg:any):void {
-        var bytes:any = this.encode(msg);
-        if (bytes) {
-            bytes.position = 0;
-            socket.writeBytes(bytes, 0, bytes.bytesAvailable);
-        }
-    }
-
-    /**
      * 接收消息处理
      * @param msg
      */
@@ -100,6 +88,18 @@ class ByteArrayMsgByProtobuf extends ByteArrayMsg {
             return obj;
         }
         return null;
+    }
+
+    /**
+     * 发送消息处理
+     * @param msg
+     */
+    public send(socket:egret.WebSocket, msg:any):void {
+        var bytes:any = this.encode(msg);
+        if (bytes) {
+            bytes.position = 0;
+            socket.writeBytes(bytes, 0, bytes.bytesAvailable);
+        }
     }
 
     /**

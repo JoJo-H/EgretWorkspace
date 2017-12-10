@@ -58,6 +58,10 @@
     {
       "name": "qrcode",
       "path": "../MyGameTools/thirds/qrcode"
+    },
+    {
+      "name": "weixinapi",
+      "path": "../MyGameTools/thirds/weixin"
     }
   ]
 }

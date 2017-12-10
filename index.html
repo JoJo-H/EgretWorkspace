@@ -40,6 +40,7 @@
 	<script egret="lib" src="libs/modules/jszip/jszip.js" src-release="libs/modules/jszip/jszip.min.js"></script>
 	<script egret="lib" src="libs/modules/protobuf/protobuf.js" src-release="libs/modules/protobuf/protobuf.min.js"></script>
 	<script egret="lib" src="libs/modules/qrcode/qrcode.js" src-release="libs/modules/qrcode/qrcode.min.js"></script>
+	<script egret="lib" src="libs/modules/weixinapi/weixinapi.js" src-release="libs/modules/weixinapi/weixinapi.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -56,7 +57,7 @@
 	<script egret="game" src="bin-debug/modules/network/socket/ByteArrayMsg.js"></script>
 	<script egret="game" src="bin-debug/modules/network/socket/UTFMsg.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/BaseSound.js"></script>
-	<script egret="game" src="bin-debug/modules/network/http/ProxyEvent.js"></script>
+	<script egret="game" src="bin-debug/modules/network/http/ProxyTime.js"></script>
 	<script egret="game" src="bin-debug/modules/animation/MovieClock.js"></script>
 	<script egret="game" src="bin-debug/modules/animation/MovieEvent.js"></script>
 	<script egret="game" src="bin-debug/modules/animation/SequnceMovie.js"></script>
@@ -103,8 +104,8 @@
 	<script egret="game" src="bin-debug/modules/animation/BaseFactory.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/MultiProxy.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/ProxyCache.js"></script>
+	<script egret="game" src="bin-debug/modules/network/http/ProxyEvent.js"></script>
 	<script egret="game" src="bin-debug/LoadingUI.js"></script>
-	<script egret="game" src="bin-debug/modules/network/http/ProxyTime.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/ProxyUpdate.js"></script>
 	<script egret="game" src="bin-debug/modules/network/http/SingleProxy.js"></script>
 	<script egret="game" src="bin-debug/modules/network/ListenerMediator.js"></script>
@@ -126,6 +127,7 @@
 	<script egret="game" src="bin-debug/modules/sound/SoundBg.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/SoundEffects.js"></script>
 	<script egret="game" src="bin-debug/modules/sound/SoundManager.js"></script>
+	<script egret="game" src="bin-debug/modules/test/JszipTest.js"></script>
 	<script egret="game" src="bin-debug/modules/tools/AnchorUtil.js"></script>
 	<script egret="game" src="bin-debug/modules/tools/DelayOptManager.js"></script>
 	<script egret="game" src="bin-debug/modules/tools/DeviceUtils.js"></script>
@@ -171,7 +173,7 @@
          data-content-height="1280"
          data-show-paint-rect="false"
          data-multi-fingered="2"
-         data-show-fps="true" data-show-log="false"
+         data-show-fps="false" data-show-log="false"
          data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.5">
     </div>
     <script>

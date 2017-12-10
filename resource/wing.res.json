@@ -32,36 +32,6 @@
       "name": "egret_icon_png"
     },
     {
-      "url": "assets/Button/button_caipiao.png",
-      "type": "image",
-      "name": "button_caipiao_png"
-    },
-    {
-      "url": "assets/Button/button_down.png",
-      "type": "image",
-      "name": "button_down_png"
-    },
-    {
-      "url": "assets/Button/button_up.png",
-      "type": "image",
-      "name": "button_up_png"
-    },
-    {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "selected_png"
-    },
-    {
-      "url": "assets/Panel/border.png",
-      "type": "image",
-      "name": "border_png"
-    },
-    {
-      "url": "assets/Panel/header.png",
-      "type": "image",
-      "name": "header_png"
-    },
-    {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
       "type": "image",
       "name": "checkbox_select_disabled_png"
@@ -82,6 +52,26 @@
       "name": "checkbox_unselect_png"
     },
     {
+      "url": "assets/Button/button_caipiao.png",
+      "type": "image",
+      "name": "button_caipiao_png"
+    },
+    {
+      "url": "assets/Button/button_down.png",
+      "type": "image",
+      "name": "button_down_png"
+    },
+    {
+      "url": "assets/Button/button_up.png",
+      "type": "image",
+      "name": "button_up_png"
+    },
+    {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "selected_png"
+    },
+    {
       "url": "assets/ProgressBar/thumb_pb.png",
       "type": "image",
       "name": "thumb_pb_png"
@@ -90,6 +80,16 @@
       "url": "assets/ProgressBar/track_pb.png",
       "type": "image",
       "name": "track_pb_png"
+    },
+    {
+      "url": "assets/Panel/border.png",
+      "type": "image",
+      "name": "border_png"
+    },
+    {
+      "url": "assets/Panel/header.png",
+      "type": "image",
+      "name": "header_png"
     },
     {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -225,6 +225,11 @@
       "url": "assets/font/font_huode.png",
       "type": "image",
       "name": "font_huode_png"
+    },
+    {
+      "url": "assets/icon/icon_redtips.png",
+      "type": "image",
+      "name": "icon_redtips_png"
     },
     {
       "url": "assets/main/bg_home.jpg",

@@ -4,23 +4,39 @@ class Config {
     private _configMap : Map<string,any> = new Map();
 
     getConfig<T>(name:string,key:string,defaultValue:T):T{
-        if( !this._configMap.has(name) ) {
-            var data = RES.getRes(name);
-            if(data) {
-                this._configMap.set(name,data);
-            }
-        }
+        let json = this.getJson(name);
         if(key == null) {
-            return this._configMap.get(name) || defaultValue;
+            return json || defaultValue;
         }
-
         var ret = defaultValue;
-        if(this._configMap.has(name)) {
-            if (key != null) {
-                ret = obj.getValue(this._configMap.get(name), key, defaultValue);
-            }
+        if(json) {
+            ret = obj.getValue(json, key, defaultValue);
         }
         return ret;
+    }
+
+    /**
+     * 预先加载好zip
+     * @param name name格式 xxx_json
+     */
+    private getJson(name:string):any {
+        if(this._configMap.has(name)) {
+            return this._configMap.get(name);
+        }
+        let json : any = null;
+        if(this._zip) {
+            let fileName = name.split('_').join('.');
+            json = this._zip.file(fileName);
+            if(json) {
+                this._configMap.set(name,JSON.parse(json.asText()));
+                return this._configMap.get(name);
+            }
+        }
+        json = RES.getRes(name);
+        if(json) {
+            this._configMap.set(name,json);
+        }
+        return this._configMap.get(name);
     }
 
     exists(name:string, key:string):boolean {
@@ -49,41 +65,23 @@ class Config {
 
 
     private _zip : JSZip ;
-    loadZip():void {
-        if(this._zip) return;
-        var r = RES.getResourceInfo('assets/config/tempJsons.zip');
-        console.log(r);
-        RES.getResByUrl("resource/"+r.url,(data)=>{
-            //解压数据
-            this._zip = new JSZip(data);
-            //读取数据
-            var json = this._zip.file('errorcode.json').asText();
-            // console.log(JSON.parse(json));
-        },this,RES.ResourceItem.TYPE_BIN);
+    loadZip():Promise<any> {
+        if(this._zip) return Promise.resolve();
+        return new Promise<any>((resolve,reject)=>{
+            var r = RES.getResourceInfo('assets/config/tempJsons.zip');
+            console.log(r);
+            RES.getResByUrl("resource/"+r.url,(data)=>{
+                //解压数据
+                this._zip = new JSZip(data);
+                resolve();
+            },this,RES.ResourceItem.TYPE_BIN);
+        })
     }
 
-    static loadZip():any{
+    static loadZip():Promise<any>{
         return App.Config.loadZip();
     }
-
-    //name格式 xxx_json
-    getJson(name:string):any {
-        if(!this._zip) {
-            this.loadZip();
-        }
-        if(this._configMap.has(name)) {
-            return this._configMap.get(name);
-        }
-        var fileName = name.split('_').join('.');
-        var json = this._zip.file(fileName);
-        if(json) {
-            this._configMap.set(name,JSON.parse(json.asText()));
-        }else {
-            var data = RES.getRes(name);
-            if (data) {
-                this._configMap.set(name,data);
-            }
-        }
-        return this._configMap.get(name);
+    static getZip():JSZip {
+        return App.Config._zip;
     }
 }

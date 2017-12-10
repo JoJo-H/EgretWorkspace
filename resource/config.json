@@ -68,7 +68,8 @@
 		"button_drag_png": "assets/common/button_drag.png",
 		"bg_imgbox_png": "assets/common/bg_imgbox.png",
 		"shape_loading_png": "assets/common/shape_loading.png",
-		"bg_headviewcircle_png": "assets/common/bg_headviewcircle.png"
+		"bg_headviewcircle_png": "assets/common/bg_headviewcircle.png",
+		"icon_redtips_png": "assets/icon/icon_redtips.png"
 	},
 	"groups": {
 		"preload": [
@@ -139,7 +140,8 @@
 			"button_drag_png",
 			"bg_imgbox_png",
 			"shape_loading_png",
-			"bg_headviewcircle_png"
+			"bg_headviewcircle_png",
+			"icon_redtips_png"
 		],
 		"sheet_common": [
 			"s3_bg_png",
@@ -179,6 +181,28 @@
 				"type": "image",
 				"name": "assets/egret_icon.png"
 			},
+			"CheckBox": {
+				"checkbox_select_disabled.png": {
+					"url": "assets/CheckBox/checkbox_select_disabled.png",
+					"type": "image",
+					"name": "assets/CheckBox/checkbox_select_disabled.png"
+				},
+				"checkbox_select_down.png": {
+					"url": "assets/CheckBox/checkbox_select_down.png",
+					"type": "image",
+					"name": "assets/CheckBox/checkbox_select_down.png"
+				},
+				"checkbox_select_up.png": {
+					"url": "assets/CheckBox/checkbox_select_up.png",
+					"type": "image",
+					"name": "assets/CheckBox/checkbox_select_up.png"
+				},
+				"checkbox_unselect.png": {
+					"url": "assets/CheckBox/checkbox_unselect.png",
+					"type": "image",
+					"name": "assets/CheckBox/checkbox_unselect.png"
+				}
+			},
 			"Button": {
 				"button_caipiao.png": {
 					"url": "assets/Button/button_caipiao.png",
@@ -203,40 +227,6 @@
 					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
-			"Panel": {
-				"border.png": {
-					"url": "assets/Panel/border.png",
-					"type": "image",
-					"name": "assets/Panel/border.png"
-				},
-				"header.png": {
-					"url": "assets/Panel/header.png",
-					"type": "image",
-					"name": "assets/Panel/header.png"
-				}
-			},
-			"CheckBox": {
-				"checkbox_select_disabled.png": {
-					"url": "assets/CheckBox/checkbox_select_disabled.png",
-					"type": "image",
-					"name": "assets/CheckBox/checkbox_select_disabled.png"
-				},
-				"checkbox_select_down.png": {
-					"url": "assets/CheckBox/checkbox_select_down.png",
-					"type": "image",
-					"name": "assets/CheckBox/checkbox_select_down.png"
-				},
-				"checkbox_select_up.png": {
-					"url": "assets/CheckBox/checkbox_select_up.png",
-					"type": "image",
-					"name": "assets/CheckBox/checkbox_select_up.png"
-				},
-				"checkbox_unselect.png": {
-					"url": "assets/CheckBox/checkbox_unselect.png",
-					"type": "image",
-					"name": "assets/CheckBox/checkbox_unselect.png"
-				}
-			},
 			"ProgressBar": {
 				"thumb_pb.png": {
 					"url": "assets/ProgressBar/thumb_pb.png",
@@ -247,6 +237,18 @@
 					"url": "assets/ProgressBar/track_pb.png",
 					"type": "image",
 					"name": "assets/ProgressBar/track_pb.png"
+				}
+			},
+			"Panel": {
+				"border.png": {
+					"url": "assets/Panel/border.png",
+					"type": "image",
+					"name": "assets/Panel/border.png"
+				},
+				"header.png": {
+					"url": "assets/Panel/header.png",
+					"type": "image",
+					"name": "assets/Panel/header.png"
 				}
 			},
 			"RadioButton": {
@@ -396,6 +398,13 @@
 					"url": "assets/font/font_huode.png",
 					"type": "image",
 					"name": "assets/font/font_huode.png"
+				}
+			},
+			"icon": {
+				"icon_redtips.png": {
+					"url": "assets/icon/icon_redtips.png",
+					"type": "image",
+					"name": "assets/icon/icon_redtips.png"
 				}
 			},
 			"main": {
