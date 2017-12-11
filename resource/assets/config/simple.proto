@@ -2,7 +2,7 @@
 //自己
 message MyMsg {
 	required string address = 1;
-	required string password = 2;
+	required fixed32 password = 2;
 }
 
 

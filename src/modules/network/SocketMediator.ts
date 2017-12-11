@@ -55,7 +55,7 @@ class SocketMediator extends puremvc.Mediator implements puremvc.IMediator{
             //protobuf
             var msg:any = {};
             msg.key = "MyMsg";
-            msg.body = {"address" : "我𠮷huangguoyong","password" : "123456"};
+            msg.body = {"address" : "我𠮷huangguoyong","password" :123456};
             App.Socket.send(msg);
 
             // var msg : any = "hello world";
