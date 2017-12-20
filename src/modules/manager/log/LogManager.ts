@@ -1,7 +1,7 @@
 
 
 
-class Log {
+class LogManager {
 
     public static _isOpen : boolean = true;
     public static trace(...optionalParams:any[]):void {

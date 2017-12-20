@@ -1,7 +1,7 @@
 
 
-class MyCustomEvent extends egret.Event{
-    private _data : Object;
+class MyEvent extends egret.Event{
+    private _data : any;
 		constructor(type : string,data?:any, bubbles : boolean = false, cancelable : boolean = false) {
 			super(type,bubbles,cancelable,data);
 			this._data = data;
@@ -11,7 +11,11 @@ class MyCustomEvent extends egret.Event{
 			return this._data;
 		}
 
-		public set data(data : any) {
+		public set data(data : any) {CustomEvent
 			this._data = data;
+		}
+
+		clone(obj?:any):MyEvent {
+			return new MyEvent(this.type,obj?obj:this.data,this.bubbles,this.cancelable);
 		}
 }

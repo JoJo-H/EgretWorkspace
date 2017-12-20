@@ -6,6 +6,6 @@ class md5Test{
     }
     private _md5 : md5;
     test():void {
-        Log.trace(this._md5.hex_md5('hello world'));
+        LogManager.trace(this._md5.hex_md5('hello world'));
     }
 }

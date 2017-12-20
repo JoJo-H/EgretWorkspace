@@ -38,14 +38,14 @@ class TimerManager {
     private onEnterFrame():void {
         this._currFrame++;
         this._currTime = egret.getTimer();
-		Log.trace("TimerManager:");
+		LogManager.trace("TimerManager:");
         for (var i:number = 0; i < this._count; i++) {
             var handler:TimerHandler = this._handlers[i];
             var t:number = handler.userFrame ? this._currFrame : this._currTime;
             if (t >= handler.exeTime) {
-                Log.trace(handler.method.toString());
+                LogManager.trace(handler.method.toString());
                 handler.method.call(handler.methodObj, (this._currTime - handler.dealTime) * this._timeScale);
-                Log.trace(handler.method.toString());
+                LogManager.trace(handler.method.toString());
                 handler.dealTime = this._currTime;
                 handler.exeTime += handler.delay;
                 if (!handler.repeat) {
@@ -64,7 +64,7 @@ class TimerManager {
             var handler:TimerHandler = this._delHandlers.pop();
             this.remove(handler.method, handler.methodObj);
         }
-		Log.trace("TimerManager:");
+		LogManager.trace("TimerManager:");
     }
 
     private create(useFrame:boolean, delay:number, repeatCount:number, method:Function, methodObj:any, complateMethod:Function, complateMethodObj:any):void {

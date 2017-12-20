@@ -42,12 +42,7 @@ class App {
     public static get Facade():ApplicationFacade {
         return ApplicationFacade.getInstance();
     }
-    /**
-     * 自定义事件管理
-     */
-    public static get CustomEventManage():CustomEventManage {
-        return SingletonFactory.singleton(CustomEventManage);
-    }
+
     /**
      * UI管理类
      */
@@ -55,7 +50,12 @@ class App {
         return SingletonFactory.singleton(UI);
     }
 
-
+    /**
+     * 全局事件管理
+     */
+    public static get ListenerManager():ListenerManager {
+        return SingletonFactory.singleton(ListenerManager);
+    }
 
     /**
      * 统一的计时器和帧刷管理类
