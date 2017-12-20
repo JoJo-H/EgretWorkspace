@@ -119,4 +119,8 @@ class App {
     public static get stage(){
         return this._stage;
     }
+
+    public static getProxyByName(name:string) : any{
+        return App.Facade.retrieveProxy(name);
+    }
 }

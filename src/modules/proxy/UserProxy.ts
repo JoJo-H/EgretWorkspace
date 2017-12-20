@@ -1,6 +1,6 @@
 
 
-class UserProxy extends puremvc.Proxy implements puremvc.IProxy {
+class UserProxy extends BaseDataProxy {
     public static NAME:string = "UserProxy";
     constructor(){
         super(UserProxy.NAME);

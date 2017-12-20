@@ -1,6 +1,6 @@
 
 
-class LoginProxy extends puremvc.Proxy {
+class LoginProxy extends BaseDataProxy {
 
     public static NAME:string = "LoginProxy";
     constructor(){
