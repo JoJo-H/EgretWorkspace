@@ -42,5 +42,23 @@ class url {
         return pairs.join('&');
     }
 
-
+    static getOption(key:string):string {
+        if(window.location) {
+            let search = location.search;
+            if(search == "") {
+                return "";
+            }
+            search = search.slice(1);
+            let searchArr : any[] = search.split('&');
+            let len = searchArr.length;
+            for(let i:number = 0 ; i < len ; i++) {
+                let str = search[i];
+                let arr : any[] = str.split('=');
+                if(arr[0] == key) {
+                    return arr[1];
+                }
+            }
+        }
+        return "";
+    }
 }

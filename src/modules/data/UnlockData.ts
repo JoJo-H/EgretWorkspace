@@ -1,4 +1,4 @@
-///<reference path="../../supports/ProxyInfo.ts"/>
+///<reference path="../../core/supports/ProxyInfo.ts"/>
 enum UnlockType {
     userLv = 1
 }
