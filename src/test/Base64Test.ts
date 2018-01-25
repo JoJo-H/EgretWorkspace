@@ -4,6 +4,7 @@ class Base64Test {
         //http://bbs.egret.com/thread-5929-1-1.html
         //http://bbs.egret.com/thread-11566-1-1.html
         this.init();
+        // <img src="data:image/png;base64,iVBOR...uQmCC">---小图
     }
     private _img : eui.Image;
     init():void {
@@ -27,6 +28,18 @@ class Base64Test {
         // egret.BitmapData.create('base64', localStorage.getItem('imageBase64'), (bitmapData) => {
         //     bmp.bitmapData = bitmapData;
         // });
+    }
+
+    public addImg2():void{
+        //当前使用
+        var bitmapdata : any = egret.BitmapData.create('base64', localStorage.getItem('imageBase64'));
+        //去掉image/png逗号，
+        bitmapdata = bitmapdata.slice(bitmapdata.indexOf(';')+1);
+        var texture = new egret.Texture();
+        texture.bitmapData = egret.BitmapData.create('base64',bitmapdata);
+        var img : eui.Image = new eui.Image(texture);
+        App.stage.addChild(img);
+        img.x = img.y = 100;
     }
 
     addImg():void {

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>水鱼</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link href="loading.css?v=1" rel="stylesheet" type="text/css" />
+    <!-- <base id="base" href="../"/> -->
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class='fullw tc pa' id='loadingUi' style='z-index:2;width:720px;height:1280px;transform-origin:0px 0px;-webkit-transform-origin:0px 0px;display:none;'>
+    <div id='gameLogo' class='ma logo pr' style='margin-top:414px;'></div>
+    <div style='margin:60px auto 170px auto;' class='tc pr'>
+        <div class='title ib pr' style='margin-right:22px;'></div>
+    </div>
+    <div class='tc fullw' style="position:absolute;bottom:210px;">
+        <div id="gameText" class="fs22px tc pr" style='color:#808080;margin-bottom:10px;'>游戏正在加载中...</div>
+        <div class='ma loadingbar pr' id="barBg">
+            <div class='loadingfill' id='loadingBar'>
+                <div class='pa star rotateCf' id='loadingStar' style='right:-13px;top:-5px;'></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="portrait"
+         data-scale-mode="fixedHeight"
+         data-frame-rate="30"
+         data-content-width="720"
+         data-content-height="1280"
+         data-show-paint-rect="false"
+         data-multi-fingered="1"
+         data-show-fps="false" data-show-log="false"
+         data-log-filter="" data-show-fps-style="x:0,y:0,size:10,textColor:0x00c200,bgAlpha:0.9">
+    </div>
+    <script type="text/javascript" src="http://api.guiwan.net/opensdk.php"></script>
+    <script>
+		window.getQueryStringByKey = function(key) {
+			if (window.location) {
+				var search = location.search;
+				if (search == "") {
+					return "";
+				}
+				search = search.slice(1);
+				var searchArr = search.split("&");
+				var length = searchArr.length;
+				for (var i = 0; i < length; i++) {
+					var str = searchArr[i];
+					var arr = str.split("=");
+					if (arr[0] == key) {
+						return arr[1];
+					}
+				}
+			}
+			return "";
+		};
+
+        var errorMap = {};
+        window.onerror = function(msg, uri, line, column, errObj) {
+            var stackMsg = "" + errObj.stack;
+            if (stackMsg.indexOf("onResourceItemComp") == -1 && !errorMap[stackMsg]) {
+                errorMap[stackMsg] = true;
+                meru.request({"moddo": "User.uploadLog", "params": {"logStr": stackMsg}});
+            }
+        };
+
+        var loadingUi = document.getElementById('loadingUi');
+        var lbar = document.getElementById('loadingBar');
+        var uiWidth = 720;
+        var uiHeight = 1280;
+        document.body.style.backgroundColor = '#FFFFFF';
+
+        function showPro(pronum){
+            lbar.style.width = pronum+"%";
+
+            if(pronum == 101){
+                loadingUi.parentNode.removeChild(loadingUi);
+
+                document.body.style.backgroundColor = '#222222'
+            }
+        }
+
+        showPro(0);
+
+
+        setTimeout(function(){
+            var _scaleY = Math.min(window.innerWidth / uiWidth, 1);
+            var _scaleX = _scaleY;
+            var _topY = (window.innerHeight - uiHeight*_scaleY) / 2;
+            var _leftX = (window.innerWidth - uiWidth*_scaleX) / 2;
+
+            loadingUi.style.width = uiWidth;
+            loadingUi.style.height = uiHeight;
+            loadingUi.style.border = 'none';
+            loadingUi.style.left = _leftX+'px';
+            loadingUi.style.top = _topY+'px';
+            loadingUi.style.webkitTransform = 'scale('+_scaleX+','+_scaleY+')';
+            loadingUi.style.display = 'block';
+        },100);
+
+//        window.onerror = function (a,b,c) {
+//            var str = a+b+c;
+//            alert(str);
+//        };
+
+	    function formatFileName(filepath, ext) {
+	        var queryVal = window.getQueryStringByKey("codeVer").split('.');
+	        if (queryVal && queryVal.length > 1) {
+	            return filepath + "." + (filepath == 'game.min' ? queryVal[0] : queryVal[1]) + "." + ext;
+	        }
+	        return filepath + "." + ext;
+	    }
+
+	    var loadScripts = function(scripts, completeFun, progressFun) {
+	        var curFiles = 0;
+	        var totalFiles = scripts.length;
+	        var loadOneScript = function(script, sel) {
+	            var tag = document.createElement('script');
+	            tag.onload = function() {
+	                if (sel) {
+	                    sel();
+	                }
+	            };
+	            tag.src = script;
+	            document.head.appendChild(tag);
+	        };
+
+	        var load = function() {
+	            if (scripts.length > 0) {
+	                var file = scripts.shift();
+	                loadOneScript(file, function() {
+	                    curFiles ++;
+	                    if (progressFun) {
+	                        progressFun(curFiles / totalFiles * 100);
+	                    }
+	                    load();
+	                });
+	            } else {
+	                if (completeFun) {
+	                    completeFun();
+	                }
+	            }
+	        };
+
+	        load();
+	    };
+
+	    loadScripts([formatFileName('lib.min', 'js', 'libVer'), formatFileName('game.min', 'js', 'codeVer')], function() {
+	    	//默认使用 WebGL 渲染模式
+        	egret.runEgret({renderMode:"canvas"});
+	    }, function (pro) {
+            showPro(pro);
+        });
+    </script>
+</body>
+</html>
