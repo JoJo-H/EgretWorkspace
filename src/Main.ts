@@ -45,7 +45,8 @@ function getURL(resource: any) {
         "mp3": "sound",
         "aa":"sound",
         "wav":"sound",
-        "zip":"bin"
+        "zip":"bin",
+        "mergeJson": "mergeJson"
     }
     if (path == "assets/config/simple.proto") {
         return "text";
@@ -60,6 +61,25 @@ function getURL(resource: any) {
     }
     return type;
 })
+// @RES.mapResourceName((p) => {
+//     // let index = p.lastIndexOf("/");
+//     // if (index >= 0) {
+//     //     p = p.substr(index + 1);
+//     // }
+//     // p = p.replace(/\./gi, '_');
+//     return p;
+// })
+// @RES.mapResourceMerger(path => {
+//     if (path.indexOf(".json") >= 0 && path.indexOf("/") >= 0) {
+//         return {
+//             "path": "111.mergeJson",
+//             "alias": path.substr(path.lastIndexOf("/") + 1).replace(".", "_")
+//         }
+//     }
+//     else {
+//         return null;
+//     }
+// })
 class Main extends eui.UILayer {
 
     private loadingView: LoadingUI;
