@@ -27,7 +27,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends egret.Sprite {
+class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter{
 
     public constructor() {
         super();
@@ -45,7 +45,8 @@ class LoadingUI extends egret.Sprite {
         this.textField.textAlign = "center";
     }
 
-    public setProgress(current:number, total:number):void {
+    public onProgress(current:number, total:number):void {
+        console.log('加载进度 --- ',current,total);
         this.textField.text = `Loading...${current}/${total}`;
     }
 }
