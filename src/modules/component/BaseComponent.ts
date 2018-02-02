@@ -42,16 +42,12 @@ class BaseComponent extends eui.Component {
     setData(data:any, type:string = 'data'):BaseComponent {
         if (type == 'data') {
             this.data = data;
-            if (data != null) {
-                this.addDataMap('data');
-                Tools.propertyChange(this,"data");
-            }
-            
         } else {
             this[type] = data;
-            if (data != null) {
-                this.addDataMap(type);
-            }
+        }
+        if (data != null) {
+            this.addDataMap('data');
+            Tools.propertyChange(this,"data");
         }
         return this;
     }

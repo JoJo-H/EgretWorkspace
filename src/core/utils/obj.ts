@@ -7,15 +7,15 @@ class obj {
         if(!obj&& typeof obj!== 'object'){      
         return;    
         }    
-        var newObj= obj.constructor === Array ? [] : {};    
+        var newObj= Array.isArray(obj) ? [] : {};    
         for(var key in obj){       
         if(obj[key]){          
             if(obj[key] && typeof obj[key] === 'object'){  
-            newObj[key] = obj[key].constructor === Array ? [] : {}; 
-            //递归
-            newObj[key] = this.deepClone(obj[key]);          
+                newObj[key] = Array.isArray(obj[key]) ? [] : {}; 
+                //递归
+                newObj[key] = this.deepClone(obj[key]);          
             }else{            
-            newObj[key] = obj[key];         
+                newObj[key] = obj[key];         
             }       
         }    
         }    
@@ -64,7 +64,17 @@ class obj {
         throw new Error("Unable to copy values! Its type isn't supported.");
     }
 
-
+    static simpleClone(obj){
+        if(typeof obj !== 'object') return null;
+        let newObj = Array.isArray(obj) ? [] : {};
+        for(let key in obj) {
+            if(obj.hasOwnProperty(key)){
+                newObj[key] = obj[key];
+            }
+        }
+        // Object.assign(newObj,obj);
+        return newObj;
+    }
 
     static getValue(data:any, key:any, defVal:any = null):any {
         if (is.falsy(data)) {
