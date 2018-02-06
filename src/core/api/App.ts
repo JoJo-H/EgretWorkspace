@@ -97,6 +97,10 @@ class App {
         return SingletonFactory.singleton(UITools);
     }
 
+    public static get NotifierManager():NotifierManager{
+        return SingletonFactory.singleton(NotifierManager);
+    }
+
     constructor(){
 
     }

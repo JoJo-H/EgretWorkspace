@@ -104,3 +104,6 @@
 -->2018.02.06 14:57
     新增数据绑定管理类,WatcherManager.ts,Watcher.ts,Binding.ts,测试类BindingTest.ts
     待：Observer.ts订阅与通知
+
+-->2018.02.06 17:13
+    新增通知Observer.ts,NotifierManager.ts,NotificationOption.ts,测试类ObserverTest.ts
