@@ -100,3 +100,7 @@
 
 -->2017.12.20 15.17
     新增全局事件管理，目录结构调整
+
+-->2018.02.06 14:57
+    新增数据绑定管理类,WatcherManager.ts,Watcher.ts,Binding.ts,测试类BindingTest.ts
+    待：Observer.ts订阅与通知
