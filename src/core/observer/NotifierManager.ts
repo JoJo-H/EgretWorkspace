@@ -56,6 +56,14 @@ class NotifierManager {
         this.removeObserver(notifyName,context);
     }
 
+    removeNotificationByName(notifyName:string):void{
+        this.removeObserverByName(notifyName);
+    }
+
+    removeNotificationByContext(context:any):void{
+        this.removeObserverByContext(context);
+    }
+
     private removeObserver(notifyName:string,context:any):void{
         let observers : IObserver[] = this._observerMap[notifyName];
         if(observers){
@@ -70,8 +78,13 @@ class NotifierManager {
         }
     }
 
-    removeObserverByName(notifyName:string):void{
+    private removeObserverByName(notifyName:string):void{
         this._observerMap[notifyName] = [];
     }
     
+    private removeObserverByContext(context:any):void{
+        for(let notifyName in this._observerMap){
+            this.removeObserver(notifyName,context);
+        }
+    }
 }
