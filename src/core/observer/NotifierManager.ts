@@ -7,8 +7,8 @@ class NotifierManager {
 
     }
 
-    addNotification(notifyName:string,notifyMethod:Function,context:any):void {
-        this.registerObserver(notifyName,new Observer(notifyMethod,context));
+    addNotification(notifyName:string,notifyMethod:Function,context:any, priority:number = 0):void {
+        this.registerObserver(notifyName,new Observer(notifyMethod,context,priority));
     }
 
     private registerObserver(notifyName:string,observer:IObserver):void {
@@ -16,6 +16,9 @@ class NotifierManager {
         if( observers && observers.length > 0 ){
             if(!this.checkObserver(notifyName,observer.getNotifyContext())){
                 observers.push(observer);
+                observers.sort((a:IObserver,b:IObserver)=>{
+                    return b.getPriority() - a.getPriority();
+                });
             }else{
                 console.warn('registerObserver重复注册:',notifyName)
             }
@@ -44,9 +47,11 @@ class NotifierManager {
         let notifyName : string = notification.getName();
         let observers : IObserver[] = this._observerMap[notifyName];
         if(observers){
-            let len = observers.length;
+            //copy
+            let observersRef = observers.slice(0);
+            let len = observersRef.length;
             for( let i = 0 ; i < len ; i++ ) {
-                let observer = observers[i];
+                let observer = observersRef[i];
                 observer.notifyObserver(notification);
             }
         }

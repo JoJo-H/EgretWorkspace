@@ -5,6 +5,7 @@ class NotificationOption implements INotificationOption{
     private name : string = null;
     private body : any = null;
     private type : string = null;
+    
     constructor(name:string,body:any=null,type:string=null){
         this.name = name;
         this.body = body;
