@@ -45,7 +45,7 @@
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
     <!--other_libs_files_start-->
-    <script egret="lib" src="polyfill/promise.js" src-release="polyfill/promise.min.js"></script>
+	<script egret="lib" src="polyfill/promise.js" src-release="polyfill/promise.min.js"></script>
     <!--other_libs_files_end-->
 
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
@@ -190,6 +190,38 @@
          data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.5">
     </div>
     <script>
+		// function jsonpcallback(json){
+		// 	console.log(json);
+		// }
+		// //第一种：script脚本加载，可跨域
+		// var tag = document.createElement('script');
+		// tag.src = "http://localhost:3333/test.json?callback=jsonpcallback";
+		// tag.onload = function(){
+		// 	console.log('http://localhost/test.json加载完成');
+		// }
+		// document.head.appendChild(tag);
+
+		// //第二种：xmlhttprequest请求加载，遵循同源策略，不可跨域
+		// var ajax = new XMLHttpRequest();
+		// // 指定通信过程中状态改变时的回调函数
+		// ajax.onreadystatechange = function(){
+		// 	//通信成功，状态值为4
+		// 	if(ajax.readyState == 4){
+		// 		if(ajax.status == 200){
+		// 			console.log(eval("("+ajax.responseText+")"));
+		// 		}else{
+		// 			console.error(ajax.statusText);
+		// 		}
+		// 	}
+		// }
+		// ajax.onerror = function(e){
+		// 	console.log(ajax.statusText);
+		// }
+		// // open方式用于指定HTTP动词、请求的网址、是否异步
+		// // ajax.open('GET','http://localhost/test.json',true);//报错，不允许访问，不同源
+		// ajax.open('GET','http://localhost:3333/test.json',true);//成功，同源
+		// // 发送HTTP请求
+		// ajax.send(null);
         /**
          * {
          * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
