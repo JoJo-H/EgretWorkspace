@@ -33,4 +33,17 @@ class SingletonFactory {
         }
         return <any>this._singletonMap[typeId];
     }
+
+    /**
+     * 使用ecma6特性的symbol类型
+     * Symbol.for(key),获取symbol类型，不存在则新建
+     */
+    static singleton2<T>(type:{new():T}):T {
+        let name = type.name;
+        let symbol = Symbol.for(name);
+        if (!this._singletonMap.hasOwnProperty(symbol)) {
+            this._singletonMap[symbol] = new (<any>type)();
+        }
+        return <T>this._singletonMap[symbol];
+    }
 }

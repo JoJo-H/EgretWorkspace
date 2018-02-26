@@ -107,3 +107,7 @@
 
 -->2018.02.06 17:13
     新增通知Observer.ts,NotifierManager.ts,NotificationOption.ts,测试类ObserverTest.ts
+
+-->2018.02.26 15:00
+    修改SingletonFactory.ts类创建单例对象,使用es6特性symbol，方法singleton2();
+    PngPixelTest.ts像素测试，想用于png图片的透明区域不发送事件。
